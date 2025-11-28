@@ -14,3 +14,12 @@ Square 1080x1080 dimension.
 ```
 
 from [@TechieBySA](https://x.com/TechieBySA/status/1993995980405100598?s=20_)
+
+### 2. Use Lat & Lon for background
+
+<img width="600" height="448" alt="Gemini_Generated_Image_gqqt2mgqqt2mgqqt" src="https://github.com/user-attachments/assets/a9e3db0c-15ca-498d-8795-11181fa3ece4" />
+
+```text
+A hyper-realistic photograph of [description of your main subject], sightseeing at coordinates: lat 35.317, lon 139.536. The character is blending in naturally as a tourist. Matching the current local time and real-time weather conditions of the location. Cinematic lighting, 35mm photography, f/1.8 aperture, highly detailed background, photorealistic texture, 8k resolution, shot on Fujifilm GFX 100.
+```
+idea from [@KusoPhoto](https://x.com/KusoPhoto/status/1993889042052866385?s=20)
