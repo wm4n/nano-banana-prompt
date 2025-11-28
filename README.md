@@ -1,4 +1,4 @@
-# Nano Banana Prompt Collection
+# Nano Banana Prompt Pro Collection
 
 ### 1. Isometric city Scene
 
