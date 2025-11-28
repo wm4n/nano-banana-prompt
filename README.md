@@ -23,3 +23,72 @@ from [@TechieBySA](https://x.com/TechieBySA/status/1993995980405100598?s=20_)
 A hyper-realistic photograph of [description of your main subject], sightseeing at coordinates: lat 35.317, lon 139.536. The character is blending in naturally as a tourist. Matching the current local time and real-time weather conditions of the location. Cinematic lighting, 35mm photography, f/1.8 aperture, highly detailed background, photorealistic texture, 8k resolution, shot on Fujifilm GFX 100.
 ```
 idea from [@KusoPhoto](https://x.com/KusoPhoto/status/1993889042052866385?s=20)
+
+### 3. Watercolor Fashion Illustration of the attached photo
+
+<img width="704" height="376" alt="Gemini_Generated_Image_6pcjih6pcjih6pcj" src="https://github.com/user-attachments/assets/3ff1a6f0-63ef-4dfe-aa5f-3ada28a0c943" />
+
+```json
+{
+  "image_generation": {
+    "type": "hyper_realistic_cinematic_ultra_close_up",
+    "camera": {
+      "angle": "top-down",
+      "focus": "extreme close-up",
+      "depth_of_field": "shallow",
+      "sharp_focus_on": [
+        "painted watercolor details",
+        "paper grain",
+        "wet pigment textures"
+      ]
+    },
+    "subject": {
+      "object": "white sketchbook lying half-open on an artist's wooden desk",
+      "illustration": {
+        "style": "soft watercolor fashion illustration",
+        "subject_match": {
+          "reference_person": true,
+          "description": "The illustration shows the same person from the uploaded photo in the same outfit and pose, painted in flowing watercolor strokes."
+        },
+        "details": [
+          "visible pigment texture",
+          "soft gradients",
+          "flowing brushwork"
+        ]
+      },
+      "tools": {
+        "paintbrush": {
+          "description": "a slightly wet paintbrush resting on the sketchbook page edge"
+        }
+      }
+    },
+    "environment": {
+      "setting": "artist's wooden desk",
+      "lighting": {
+        "source": "warm natural daylight",
+        "effects": [
+          "light streaming from the side",
+          "reflections on wet paint",
+          "soft shadows on textured paper"
+        ]
+      }
+    },
+    "mood": "artistic, serene, tactile, cinematic watercolor-in-progress aesthetic"
+  }
+}
+```
+from [@ZaraIrahh](https://x.com/ZaraIrahh/status/1993833382695022774?s=20)
+
+### 4. Lecturer's Whiteboard
+
+<img width="704" height="376" alt="Gemini_Generated_Image_ogvdn1ogvdn1ogvd" src="https://github.com/user-attachments/assets/f3e44e09-18a5-4676-a440-598e82b8c315" />
+
+<img width="704" height="376" alt="Gemini_Generated_Image_f8j53zf8j53zf8j5" src="https://github.com/user-attachments/assets/bf27ce50-a2aa-4863-834f-69c23f81f7dd" />
+
+```
+A university professor's whiteboard filled with complex handwritten notes. The whiteboard visually explains core ideas using various charts, connecting arrows, boxes, and explanatory text. All handwriting is in [English] and uses multi-colored markers (e.g., black, red, blue, green) to differentiate concepts. The content visualized on the board is a structured breakdown of the following text:
+[All text that you want to explain e.g.
+Let the two brothers handle the cake cutting and selection themselves. The older brother cuts, and the younger brother gets first pick. This ensures both feel the outcome is fair.
+However, what if there are three siblings involved? How can the cake be distributed fairly in that case?
+Actually, the solution still relies on the "you cut, I choose" method. First, the older brother cuts the cake, and the younger brother chooses his half, ensuring the initial split is fair. Next, both brothers cut their own portions into three pieces. Then, the sister is asked to pick one piece from each brother's set. This way, each of the three siblings ends up with two out of the six total pieces.]
+```
