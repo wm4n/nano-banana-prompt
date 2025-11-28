@@ -15,6 +15,18 @@ Square 1080x1080 dimension.
 
 from [@TechieBySA](https://x.com/TechieBySA/status/1993995980405100598?s=20_)
 
+<img width="384" height="688" alt="Gemini_Generated_Image_63bi3b63bi3b63bi" src="https://github.com/user-attachments/assets/0948c579-5804-41c6-8aeb-742b40d4fb2e" />
+
+```text
+ Present a clear 45° top-down view of a vertical (9:16) isometric miniature 3D cartoon city scene. Highlight iconic landmarks centered in the composition to show precise, delicate modeling. Use soft, refined textures with realistic PBR materials, gentle lifelike lighting, and smooth shadow effects. Integrate weather elements naturally into the urban architecture so the city’s landscape and atmosphere feel connected.
+
+Create an immersive weather vibe with a clean, unified, minimalistic layout. Use a soft, solid-colored background that makes the main content pop and keeps the whole visual fresh and soothing. Place a prominent weather icon at the top center. Beneath it, include the date in extra-small text and the temperature range in medium-sized text. The city name Auckland appears in large text directly above the weather icon.
+
+Make sure the weather info has no background and can subtly overlap with the buildings. All text should match the native language of the selected city. Retrieve the current real-world weather conditions for that city before rendering. 
+```
+
+from [@icreatelife](https://x.com/icreatelife/status/1994120352247763092?s=20)
+
 ### 2. Use Lat & Lon for background
 
 <img width="600" height="448" alt="Gemini_Generated_Image_gqqt2mgqqt2mgqqt" src="https://github.com/user-attachments/assets/a9e3db0c-15ca-498d-8795-11181fa3ece4" />
