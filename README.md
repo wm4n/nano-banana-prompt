@@ -223,3 +223,16 @@ Prompt
 ```
 
 from [@awesome_visuals](https://x.com/awesome_visuals/status/1993609750051766767?s=20)
+
+## 9. 3D story book
+
+<img width="600" height="448" alt="Gemini_Generated_Image_22ku9x22ku9x22ku" src="https://github.com/user-attachments/assets/2100e596-7b22-4350-b4f9-2b9c68d23bae" />
+
+prompt
+```
+A 3D pop-up book illustration featuring a [subject], with layered paper elements unfolding
+into a miniature scene. Soft lighting, textured paper surfaces, playful handcrafted look,
+detailed, pastel [color#1] and [color#2] palette, viewed from a slight angle to show depth
+and detail. 
+```
+from [@azed_ai](https://x.com/azed_ai/status/1995084424489422885?s=20)
