@@ -236,3 +236,16 @@ detailed, pastel [color#1] and [color#2] palette, viewed from a slight angle to 
 and detail. 
 ```
 from [@azed_ai](https://x.com/azed_ai/status/1995084424489422885?s=20)
+
+## 10. UI/UX analysis
+
+<img width="344" height="768" alt="Gemini_Generated_Image_pqtal6pqtal6pqta" src="https://github.com/user-attachments/assets/2190ff84-1428-4f4b-bb76-1d553fabaf9a" />
+
+prompt
+```
+Act as an expert UI/UX designer. Conduct an in-depth analysis of the attached screenshot
+and provide your critique. Annotate the image using a red pen to highlight areas requiring
+modification, improvement, or enhancement, and a green pen to highlight well-executed
+elements. Provide a candid, neutral evaluation based on the highest industry standards,
+embodying the persona of a world-class UI/UX professional master. 
+```
