@@ -106,7 +106,7 @@ from [@ZaraIrahh](https://x.com/ZaraIrahh/status/1993833382695022774?s=20)
 <img width="704" height="376" alt="Gemini_Generated_Image_f8j53zf8j53zf8j5" src="https://github.com/user-attachments/assets/bf27ce50-a2aa-4863-834f-69c23f81f7dd" />
 
 Prompt
-```
+```text
 A university professor's whiteboard filled with complex handwritten notes. The whiteboard visually
 explains core ideas using various charts, connecting arrows, boxes, and explanatory text. All
 handwriting is in [English] and uses multi-colored markers (e.g., black, red, blue, green) to
@@ -127,7 +127,7 @@ the six total pieces.]
 ## 5. Old Photo Restore
 
 Prompt
-```
+```text
 Faithfully restore this image with high fidelity to modern photograph quality, in full color, upscale to 4K
 ```
 
@@ -136,7 +136,7 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1993980476902527425?s=20)
 ## 6. Upsacle Low Res Photo
 
 Prompt
-```
+```text
 Prompt: Upscale to 4K
 Input: 150 × 150
 Output: 4096 × 4096
@@ -151,7 +151,7 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1993980476902527425?s=20)
 
 
 Prompt
-```
+```text
 A highly stylized 3D caricature of [Name], with an oversized head, expressive facial features,
 and playful exaggeration. Rendered in a smooth, polished style with clean materials and soft
 ambient lighting. Minimal background to emphasize the character’s charm and presence. 
@@ -229,7 +229,7 @@ from [@awesome_visuals](https://x.com/awesome_visuals/status/1993609750051766767
 <img width="600" height="448" alt="Gemini_Generated_Image_22ku9x22ku9x22ku" src="https://github.com/user-attachments/assets/2100e596-7b22-4350-b4f9-2b9c68d23bae" />
 
 prompt
-```
+```text
 A 3D pop-up book illustration featuring a [subject], with layered paper elements unfolding
 into a miniature scene. Soft lighting, textured paper surfaces, playful handcrafted look,
 detailed, pastel [color#1] and [color#2] palette, viewed from a slight angle to show depth
@@ -242,10 +242,206 @@ from [@azed_ai](https://x.com/azed_ai/status/1995084424489422885?s=20)
 <img width="344" height="768" alt="Gemini_Generated_Image_pqtal6pqtal6pqta" src="https://github.com/user-attachments/assets/2190ff84-1428-4f4b-bb76-1d553fabaf9a" />
 
 prompt
-```
+```text
 Act as an expert UI/UX designer. Conduct an in-depth analysis of the attached screenshot
 and provide your critique. Annotate the image using a red pen to highlight areas requiring
 modification, improvement, or enhancement, and a green pen to highlight well-executed
 elements. Provide a candid, neutral evaluation based on the highest industry standards,
 embodying the persona of a world-class UI/UX professional master. 
 ```
+
+## 11. Cute Character Model
+
+<img width="688" height="384" alt="Gemini_Generated_Image_bp17r3bp17r3bp17" src="https://github.com/user-attachments/assets/c89ebd8b-4b2b-4199-8e62-3ac46816fcc3" />
+
+prompt
+```text
+Greek mythology character group illustration, featuring Ares, Heracles, and Hermes.
+Classic trio, Q-version, chibi cute style, dynamic and lively composition.
+
+Ares (The War God): Calm and steady expression, wearing a majestic golden helmet with
+a red plume, clad in intricate ancient Greek bronze armor, holding a spear and a shield.
+Accompanied by a cute, goofy-looking little wolf pup by his side.
+
+Heracles (The Hero): Confident and mischievous expression, wearing a cute Nemean Lion
+skin hood on his head and a lion-skin cape, muscular but chubby body, holding a heavy
+wooden club. Striking a classic pose looking into the distance, spirited and proud.
+
+Hermes (The Messenger): Playful and brave face, youthful look. Wearing a winged helmet
+(Petasos) and a flowing white tunic. Flying slightly off the ground with winged sandals,
+holding the Caduceus (staff with snakes). Surrounded by wind effects, energetic boy hero
+vibe.
+
+Style parameters: 3D render, blind box toy style, C4D, octane render, bright lighting,
+high quality, clean background, soft textures, vivid colors. --ar 16:9 
+```
+
+## 12. Watercolor Drawing of "Journey to the West"
+
+<img width="688" height="384" alt="Gemini_Generated_Image_je56x7je56x7je56" src="https://github.com/user-attachments/assets/82623af8-b8dc-41cf-aa23-342623f0d2ff" />
+
+prompt
+```text
+Chinese mythology character illustration, featuring Monkey King, Pigsy, and Sha Wujing.
+Classic trio, Q-version, chibi cute style, dynamic and lively composition.
+
+Monkey King: Naughty and confident expression, wearing a Phoenix-feather cap with two
+long pheasant tails, clad in intricate ancient golden glowing armor, holding a golden
+cudgel. Sitting cross-legged on a fluffy floating cloud, hovering slightly above the
+others.
+
+Pigsy: Arrogant and funny expression, wearing a loose black monk robe revealing a cute
+round belly, big pig ears and snout. Holding a Nine-toothed Rake. Striking a classic
+pose pretending to look into the distance, spirited and proud.
+
+Sha Wujing: Honest, silly, and diligent expression. Having a bushy beard and messy hair,
+wearing a purple robe and a necklace of large prayer beads. Holding a Crescent Moon
+Spade and carrying a heavy luggage pole on his shoulder.
+
+Style parameters: Chinese art render, ink wash painting style with vibrant colors,
+thick outlines, watercolor texture, bright lighting, high quality, simple and mystic
+mountain background, soft textures. --ar 16:9
+```
+
+## 13. Hand-Drawn Scribble Breakdown
+
+<img width="384" height="688" alt="Gemini_Generated_Image_v6j5giv6j5giv6j5" src="https://github.com/user-attachments/assets/08403232-6638-41bb-960a-6ff624d1ef2a" />
+
+prompt
+```
+Breakdown the look into a fun OOTD Fashion Collage, 9:16. Paper scribble aesthetic
+with hand-drawn arrows, doodles, and handwritten labels pointing to each outfit
+piece. Notebook paper texture background with ink sketch style. 
+```
+
+from [@ShreyaYadav___](https://x.com/ShreyaYadav___/status/1995482012124434547?s=20)
+
+## 14. Split Effect
+
+<img width="704" height="384" alt="Gemini_Generated_Image_pfaip4pfaip4pfai" src="https://github.com/user-attachments/assets/d741e313-df88-4e61-be3d-0fb12902f23f" />
+
+prompt
+```json
+{
+  "image_generation": {
+    "requirements": {
+      "face_preservation": {
+        "preserve_original": true,
+        "accuracy_level": "100% identical to reference",
+        "details": [
+          "real facial proportions",
+          "exact skin texture",
+          "true eye shape and color",
+          "natural soft makeup",
+          "subtle upward eyeliner",
+          "soft pink eyeshadow",
+          "natural rosy lips"
+        ]
+      },
+      "pose": {
+        "match_reference_pose": true,
+        "description": "Chest-up portrait, face facing forward but gently tilted to the right from the viewer’s perspective."
+      },
+      "lighting": {
+        "match_reference_lighting": true,
+        "type": "soft diffused indoor lighting",
+        "direction": "from the front and slightly from the left",
+        "shadows": "gentle soft shadows on the sides of the face and neck",
+        "background_tone": "soft neutral with slight bluish tint"
+      }
+    },
+    "subject": {
+      "gender": "female",
+      "hairstyle": {
+        "match_reference": true,
+        "description": "same exact hairstyle as in reference image"
+      },
+      "expression": "neutral, slightly thoughtful",
+      "clothing": {
+        "top": "simple black T-shirt",
+        "necklace": "thin silver necklace with a small minimal pendant"
+      }
+    },
+    "composition": {
+      "frame": "chest-up portrait",
+      "orientation": "frontal with slight rightward tilt",
+      "style": "hyper-realistic with split real/cartoon effect"
+    },
+    "special_effects": {
+      "split_effect": {
+        "type": "irregular centered tear",
+        "edges": "white angled torn-paper look",
+        "description": "image appears ripped down the middle"
+      },
+      "realistic_side": {
+        "background": "soft, neutral, slightly bluish environment",
+        "filters": [
+          "soft analog grain",
+          "lightly aged texture",
+          "reduced saturation",
+          "subtle film imperfections"
+        ],
+        "overlays": [
+          "blue stylized teardrop stickers below the left eye",
+          "small 'Zzz' sleep symbols near forehead",
+          "yellow crescent moon in upper-left corner",
+          "light blue hand-drawn cloud"
+        ]
+      },
+      "illustrated_side": {
+        "art_style": "bold cartoon, digital illustration",
+        "color_palette": "bright, vibrant, saturated",
+        "hair": "same tone as realistic side but stylized",
+        "eyes": "exaggerated eyeliner, dramatic expression",
+        "background": "vibrant light pink pop-art style",
+        "decorations": {
+          "kawaii_elements": [
+            "Hello Kitty holding a microphone",
+            "pixel-art pink mascot character",
+            "yellow stars",
+            "pink hearts",
+            "colorful planets",
+            "bold pink Japanese characters"
+          ]
+        }
+      }
+    },
+    "aesthetic": {
+      "overall_tone": "soft, dreamy, lightly vintage",
+      "lighting_consistency": "must match reference perfectly",
+      "skin_texture_realism": "high",
+      "blending_quality": "smooth, natural transition between real and illustrated halves with crisp tear edge"
+    },
+    "output": {
+      "style": "hyper-realistic + digital cartoon fusion",
+      "quality": "ultra-high-resolution",
+      "filters": ["subtle analog vintage film filter", "soft grain"]
+    }
+  }
+}
+
+```
+
+from [@ZaraIrahh](https://x.com/ZaraIrahh/status/1995304550610407807?s=20)
+
+## 15. 3D Chibi-Style Miniature Concept Store
+
+<img width="424" height="632" alt="Gemini_Generated_Image_fmbtzffmbtzffmbt" src="https://github.com/user-attachments/assets/364c9194-4ae6-4b92-996e-822daf768636" />
+
+prompt
+```text
+3D chibi-style miniature concept store of {Brand Name}, creatively designed with an
+exterior inspired by the brand's most iconic product or packaging (such as a giant
+{brand's core product, e.g., chicken bucket/hamburger/donut/roast duck}). The store
+features two floors with large glass windows clearly showcasing the cozy and finely
+decorated interior: {brand's primary color}-themed decor, warm lighting, and busy
+staff dressed in outfits matching the brand. Adorable tiny figures stroll or sit
+along the street, surrounded by benches, street lamps, and potted plants, creating
+a charming urban scene. Rendered in a miniature cityscape style using Cinema 4D,
+with a blind-box toy aesthetic, rich in details and realism, and bathed in soft
+lighting that evokes a relaxing afternoon atmosphere. --ar 2:3
+
+Brand name: Starbucks
+```
+
+from [@dotey](https://x.com/dotey/status/1995190286775881780?s=20)
