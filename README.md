@@ -6,11 +6,21 @@
 
 Prompt
 ```text
-Present a clear, 45° top-down isometric miniature 3D cartoon scene of [CITY], featuring its most iconic landmarks and architectural elements. Use soft, refined textures with realistic PBR materials and gentle, lifelike lighting and shadows. Integrate the current weather conditions directly into the city environment to create an immersive atmospheric mood.
+Present a clear, 45° top-down isometric miniature 3D cartoon scene of [CITY],
+featuring its most iconic landmarks and architectural elements. Use soft,
+refined textures with realistic PBR materials and gentle, lifelike lighting
+and shadows. Integrate the current weather conditions directly into the city
+environment to create an immersive atmospheric mood.
+
 Use a clean, minimalistic composition with a soft, solid-colored background.
 
-At the top-center, place the title “[CITY]” in large bold text, a prominent weather icon beneath it, then the date (small text) and temperature (medium text).
-All text must be centered with consistent spacing, and may subtly overlap the tops of the buildings.
+At the top-center, place the title “[CITY]” in large bold text, a prominent
+weather icon beneath it, then the date (small text) and temperature
+(medium text).
+
+All text must be centered with consistent spacing, and may subtly overlap
+the tops of the buildings.
+
 Square 1080x1080 dimension.
 ```
 
@@ -20,11 +30,24 @@ from [@TechieBySA](https://x.com/TechieBySA/status/1993995980405100598?s=20_)
 
 Prompt
 ```text
- Present a clear 45° top-down view of a vertical (9:16) isometric miniature 3D cartoon city scene. Highlight iconic landmarks centered in the composition to show precise, delicate modeling. Use soft, refined textures with realistic PBR materials, gentle lifelike lighting, and smooth shadow effects. Integrate weather elements naturally into the urban architecture so the city’s landscape and atmosphere feel connected.
+Present a clear 45° top-down view of a vertical (9:16) isometric miniature
+3D cartoon city scene. Highlight iconic landmarks centered in the composition
+to show precise, delicate modeling. Use soft, refined textures with realistic
+PBR materials, gentle lifelike lighting, and smooth shadow effects. Integrate
+weather elements naturally into the urban architecture so the city’s
+landscape and atmosphere feel connected.
 
-Create an immersive weather vibe with a clean, unified, minimalistic layout. Use a soft, solid-colored background that makes the main content pop and keeps the whole visual fresh and soothing. Place a prominent weather icon at the top center. Beneath it, include the date in extra-small text and the temperature range in medium-sized text. The city name Auckland appears in large text directly above the weather icon.
+Create an immersive weather vibe with a clean, unified, minimalistic layout.
+Use a soft, solid-colored background that makes the main content pop and keeps
+the whole visual fresh and soothing. Place a prominent weather icon at the top
+center. Beneath it, include the date in extra-small text and the temperature
+range in medium-sized text. The city name Auckland appears in large text directly
+above the weather icon.
 
-Make sure the weather info has no background and can subtly overlap with the buildings. All text should match the native language of the selected city. Retrieve the current real-world weather conditions for that city before rendering. 
+Make sure the weather info has no background and can subtly overlap with the
+buildings. All text should match the native language of the selected city.
+Retrieve the current real-world weather conditions for that city before
+rendering. 
 ```
 
 from [@icreatelife](https://x.com/icreatelife/status/1994120352247763092?s=20)
@@ -450,6 +473,7 @@ from [@dotey](https://x.com/dotey/status/1995190286775881780?s=20)
 
 <img width="704" height="384" alt="Gemini_Generated_Image_f8sl8kf8sl8kf8sl" src="https://github.com/user-attachments/assets/44645ff6-8cc3-4b93-b211-f5489592c90b" />
 
+#### prompt
 ```text
 Present a clear, directly top-down photograph of [CITY] landmarks as 3D magnets,
 arranged neatly in parallel lines and right angles, knolling. The objects are
@@ -459,3 +483,67 @@ Incorporate items necessary for today's weather into the knolling. No repeats.
 ```
 
 from [@NanoBanana](https://x.com/NanoBanana/status/1995921399207100510?s=20)
+
+## 17. Real-Time status report
+
+<img width="704" height="384" alt="Gemini_Generated_Image_zhyko9zhyko9zhyk" src="https://github.com/user-attachments/assets/71096dea-f6be-4439-a0ae-4a203450e946" />
+
+#### prompt
+```text
+Present a clear, 45° top-down isometric miniature 3D scene of the London
+Underground.
+
+At the top-center, place the title "CENTRAL LINE" in bold sans-serif text,
+a train icon beneath it, then "Service Status" (small text) and
+"[current status]" (red medium text). Background is a soft, solid tile white.
+
+Get the current live status of the Central Line using search. 
+```
+
+from [@NanoBanana](https://x.com/NanoBanana/status/1995921399207100510?s=20)
+
+<img width="704" height="384" alt="Gemini_Generated_Image_uj8vxquj8vxquj8v" src="https://github.com/user-attachments/assets/6e39dec6-8035-42f8-beeb-2e0237ee5119" />
+
+#### prompt
+```text
+Present a clear, 45° top-down isometric miniature 3D scene of the London
+Heathrow Airport.
+
+At the top-center, place the title "Heathrow" in bold sans-serif
+text, a aircraft icon beneath it, then "Service Status" (small text) and
+"[current status]" (red medium text). Background is a soft, solid tile
+white.
+
+Get the current live status of the Heathrow Airport using search. 
+```
+
+<img width="704" height="384" alt="Gemini_Generated_Image_rmusuhrmusuhrmus" src="https://github.com/user-attachments/assets/ab4cada9-8c81-46b3-8126-2f43b42adbee" />
+
+
+#### prompt
+```text
+Present a clear, 45° top-down isometric miniature 3D scene of a high-tech
+"US Stock Market Dashboard".
+
+Visual Elements:
+1. Scene: A sleek, white-tiled digital trading floor. Place miniature
+stylized 3D financial charts (candlesticks) and a metallic geometric
+statue of a Bull (if market is up) or Bear (if market is down) in the
+center.
+
+2. Top Text: At the top-center, place the title "Wall St. Pulse" in
+bold sans-serif text.
+
+3. Data Panels: Below the title, display three distinct floating glass
+panels showing the live data for:
+- "S&P 500"
+- "Dow Jones"
+- "Nasdaq"
+
+4. Color Coding* Use Green accents for positive numbers and Red accents
+for negative numbers based on today's performance.
+
+Use the browser tool to search for the current live points and percentage
+change for the S&P 500, Dow Jones Industrial Average, and Nasdaq Composite.
+Then, generate the image using these real values in the text panels. 
+```
