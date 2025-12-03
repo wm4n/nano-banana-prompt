@@ -445,3 +445,17 @@ Brand name: Starbucks
 ```
 
 from [@dotey](https://x.com/dotey/status/1995190286775881780?s=20)
+
+## 16. City Souvenir Magnet
+
+<img width="704" height="384" alt="Gemini_Generated_Image_f8sl8kf8sl8kf8sl" src="https://github.com/user-attachments/assets/44645ff6-8cc3-4b93-b211-f5489592c90b" />
+
+```text
+Present a clear, directly top-down photograph of [CITY] landmarks as 3D magnets,
+arranged neatly in parallel lines and right angles, knolling. The objects are
+realistic miniatures. At the top-center, place the city name as a souvenir magnet,
+and a handwritten post-it note for the temperature and weather conditions.
+Incorporate items necessary for today's weather into the knolling. No repeats.
+```
+
+from [@NanoBanana](https://x.com/NanoBanana/status/1995921399207100510?s=20)
