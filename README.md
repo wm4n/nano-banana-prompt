@@ -560,3 +560,14 @@ Then, generate the image using these real values in the text panels.
 > 
 > Put the issue number and today's date in the corner along with a barcode and a price. The magazine is on a white shelf against a wall.
 
+from [@NanoBanana](https://x.com/NanoBanana/status/1996262496802361675?s=20)
+
+## 19. Use Emoji for Generation
+
+<img width="512" height="512" alt="Gemini_Generated_Image_lse5gylse5gylse5" src="https://github.com/user-attachments/assets/5c36e5d0-e717-460b-b78b-0e6103e36a8f" />
+
+#### Prompt
+
+> combine these emojis: 🤖 + ⛄️ , on a white background as a vector emoji design 
+
+from [@NanoBanana](https://x.com/NanoBanana/status/1996193397913317384?s=20)
