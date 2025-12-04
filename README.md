@@ -547,3 +547,16 @@ Use the browser tool to search for the current live points and percentage
 change for the S&P 500, Dow Jones Industrial Average, and Nasdaq Composite.
 Then, generate the image using these real values in the text panels. 
 ```
+
+## 18. Magazine Cover
+
+<img width="704" height="384" alt="Gemini_Generated_Image_uth9o6uth9o6uth9" src="https://github.com/user-attachments/assets/373d3810-8dc1-4d0c-b462-b2a1f296fd91" />
+
+#### Prompt
+
+> A photo of a game player magazine cover, the cover has the large bold words "Game Pulse" for title and an smaller article title "Player’s Choice: Top 10 Games That Almost Made Us Smash Our Phones". The text is in a serif font, black on white, and fills the view. No other text.
+> 
+> In front of the text there is a dynamic portrait of a person in blue and cyber purple colored high-tech fashion.
+> 
+> Put the issue number and today's date in the corner along with a barcode and a price. The magazine is on a white shelf against a wall.
+
