@@ -571,3 +571,17 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1996262496802361675?s=20)
 > combine these emojis: 🤖 + ⛄️ , on a white background as a vector emoji design 
 
 from [@NanoBanana](https://x.com/NanoBanana/status/1996193397913317384?s=20)
+
+## 20. View in Different Angles
+
+<img width="512" height="512" alt="Gemini_Generated_Image_82fwaq82fwaq82fw" src="https://github.com/user-attachments/assets/ebe98386-bbcd-47b5-bd48-da6a0ef266b6" />
+
+#### prompt
+
+> In a 3x3 grid show me different angles of this [scene]
+
+scene can be attachment.
+
+from [@NanoBanana](https://x.com/NanoBanana/status/1996604581313220931?s=20)
+
+
