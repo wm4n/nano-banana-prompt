@@ -580,8 +580,49 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1996193397913317384?s=20)
 
 > In a 3x3 grid show me different angles of this [scene]
 
-scene can be attachment.
+💡 `scene` can be attachment!
 
 from [@NanoBanana](https://x.com/NanoBanana/status/1996604581313220931?s=20)
 
+## 21. Stylized 3D Caricature
 
+<img width="131" height="132" alt="person model" src="https://github.com/user-attachments/assets/e0dd2d80-b7f5-410f-83f1-73af43f3461a" />
+<img width="352" height="192" alt="Gemini_Generated_Image_msn4fcmsn4fcmsn4" src="https://github.com/user-attachments/assets/3ab0bbce-79fd-4924-8f36-0278e6f9a305" />
+
+#### prompt
+
+```text wrap
+A highly stylized 3D caricature of the person in the uploaded image, with expressive facial features, and playful exaggeration. Rendered in a smooth, polished style with clean materials and soft ambient lighting. Bold color background to emphasize the character’s charm and presence. 
+```
+
+from [@NanoBanana](https://x.com/NanoBanana/status/1996554636166049928?s=20)
+
+## 22. Crayon Drawing
+
+<img width="352" height="192" alt="Gemini_Generated_Image_75ofav75ofav75of" src="https://github.com/user-attachments/assets/4abb07fa-0a4d-40ee-b6fd-b398585b505b" />
+
+#### prompt
+
+```text wrap
+A drawing of [character], crayon on white paper, in the style of a children's book illustration – simple, cute, and full-color, with [two gitter colors] glitter accents and high detail.
+```
+
+#### Gitter Suggestion (just replace [two gitter colors] in the prompt)
+
+##### ✨ Elegant & Premium
+- Gold & Burgundy
+- Rose Gold & Navy Glitter
+
+##### ✨ Soft & Dreamy
+- Silver & Soft Pink 
+- Ice Blue & Lavender 
+
+##### ✨ Bold & Futuristic
+- Black Silver & Electric Blue
+- Gunmetal & Violet
+
+##### ✨ Vibrant & Festive
+- Red & Gold 
+- Lime Green & Purple
+
+prompt from [@CharaspowerAI](https://x.com/CharaspowerAI/status/1996270726026784792?s=20)
