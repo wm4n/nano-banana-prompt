@@ -485,72 +485,51 @@ Incorporate items necessary for today's weather into the knolling. No repeats.
 from [@NanoBanana](https://x.com/NanoBanana/status/1995921399207100510?s=20)
 
 ## 17. Real-Time status report
-
-<img width="704" height="384" alt="Gemini_Generated_Image_zhyko9zhyko9zhyk" src="https://github.com/user-attachments/assets/71096dea-f6be-4439-a0ae-4a203450e946" />
+f
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/e5deb8c6-2a2e-4d2e-8b63-5813f43198bf" />
 
 ### prompt
-```text
-Present a clear, 45° top-down isometric miniature 3D scene of the London
-Underground.
 
-At the top-center, place the title "CENTRAL LINE" in bold sans-serif text,
-a train icon beneath it, then "Service Status" (small text) and
-"[current status]" (red medium text). Background is a soft, solid tile white.
-
-Get the current live status of the Central Line using search. 
-```
+> Present a clear, 45° top-down isometric miniature 3D scene of the London Underground.
+> 
+> At the top-center, place the title "CENTRAL LINE" in bold sans-serif text, a train icon beneath it, then "Service Status" (small text) and "[current status]" (red medium text). Background is a soft, solid tile white.
+>
+> Get the current live status of the Central Line using search. 
 
 from [@NanoBanana](https://x.com/NanoBanana/status/1995921399207100510?s=20)
 
-<img width="704" height="384" alt="Gemini_Generated_Image_uj8vxquj8vxquj8v" src="https://github.com/user-attachments/assets/6e39dec6-8035-42f8-beeb-2e0237ee5119" />
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/f17274e1-28f0-4931-9822-2772987627b6" />
 
 ### prompt
-```text
-Present a clear, 45° top-down isometric miniature 3D scene of the London
-Heathrow Airport.
 
-At the top-center, place the title "Heathrow" in bold sans-serif
-text, a aircraft icon beneath it, then "Service Status" (small text) and
-"[current status]" (red medium text). Background is a soft, solid tile
-white.
+> Present a clear, 45° top-down isometric miniature 3D scene of the London Heathrow Airport.
+>
+> At the top-center, place the title "Heathrow" in bold sans-serif text, a aircraft icon beneath it, then "Service Status" (small text) and "[current status]" (red medium text). Background is a soft, solid tile white.
+> 
+> Get the current live status of the Heathrow Airport using search. 
 
-Get the current live status of the Heathrow Airport using search. 
-```
-
-<img width="704" height="384" alt="Gemini_Generated_Image_rmusuhrmusuhrmus" src="https://github.com/user-attachments/assets/ab4cada9-8c81-46b3-8126-2f43b42adbee" />
-
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/19267d1a-686f-4452-9f72-f2f5debaef5e" />
 
 ### prompt
-```text
-Present a clear, 45° top-down isometric miniature 3D scene of a high-tech
-"US Stock Market Dashboard".
-
-Visual Elements:
-1. Scene: A sleek, white-tiled digital trading floor. Place miniature
-stylized 3D financial charts (candlesticks) and a metallic geometric
-statue of a Bull (if market is up) or Bear (if market is down) in the
-center.
-
-2. Top Text: At the top-center, place the title "Wall St. Pulse" in
-bold sans-serif text.
-
-3. Data Panels: Below the title, display three distinct floating glass
-panels showing the live data for:
-- "S&P 500"
-- "Dow Jones"
-- "Nasdaq"
-
-4. Color Coding* Use Green accents for positive numbers and Red accents
-for negative numbers based on today's performance.
-
-Use the browser tool to search for the current live points and percentage
-change for the S&P 500, Dow Jones Industrial Average, and Nasdaq Composite.
-Then, generate the image using these real values in the text panels. 
-```
+> Present a clear, 45° top-down isometric miniature 3D scene of a high-tech "US Stock Market Dashboard".
+> 
+> Visual Elements:
+> 1. Scene: A sleek, white-tiled digital trading floor. Place miniature stylized 3D financial charts (candlesticks) and a metallic geometric statue of a Bull (if market is up) or Bear (if market is down) in the center.
+> 
+> 2. Top Text: At the top-center, place the title "Wall St. Pulse" in bold sans-serif text.
+> 
+> 3. Data Panels: Below the title, display three distinct floating glass panels showing the live data for:
+>   - "S&P 500"
+>   - "Dow Jones"
+>   - "Nasdaq"
+> 
+> 4. Color Coding* Use Green accents for positive numbers and Red accents for negative numbers based on today's performance.
+>
+> Use the browser tool to search for the current live points and percentage change for the S&P 500, Dow Jones Industrial Average, and Nasdaq Composite. Then, generate the image using these real values in the text panels. 
 
 ## 18. Magazine Cover
 
-<img width="704" height="384" alt="Gemini_Generated_Image_uth9o6uth9o6uth9" src="https://github.com/user-attachments/assets/373d3810-8dc1-4d0c-b462-b2a1f296fd91" />
+<img width="400" height="218" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/1efe4965-9f82-4872-b01d-2481e6819718" />
 
 ### Prompt
 
@@ -564,7 +543,7 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1996262496802361675?s=20)
 
 ## 19. Use Emoji for Generation
 
-<img width="512" height="512" alt="Gemini_Generated_Image_lse5gylse5gylse5" src="https://github.com/user-attachments/assets/5c36e5d0-e717-460b-b78b-0e6103e36a8f" />
+<img width="400" height="400" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/534cef4b-1899-48f8-972b-3a214f98a01f" />
 
 ### Prompt
 
@@ -574,7 +553,7 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1996193397913317384?s=20)
 
 ## 20. View in Different Angles
 
-<img width="512" height="512" alt="Gemini_Generated_Image_82fwaq82fwaq82fw" src="https://github.com/user-attachments/assets/ebe98386-bbcd-47b5-bd48-da6a0ef266b6" />
+<img width="400" height="400" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/447963e0-1344-4ed2-8655-f1f1e7623f68" />
 
 ### prompt
 
@@ -587,7 +566,7 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1996604581313220931?s=20)
 ## 21. Stylized 3D Caricature
 
 <img width="131" height="132" alt="person model" src="https://github.com/user-attachments/assets/e0dd2d80-b7f5-410f-83f1-73af43f3461a" />
-<img width="400" height="214" alt="temp2" src="https://github.com/user-attachments/assets/2ab660d8-a648-402d-952e-e99abe8a6d33" />
+<img width="400" height="214" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/2ab660d8-a648-402d-952e-e99abe8a6d33" />
 
 ### prompt
 
@@ -597,7 +576,7 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1996554636166049928?s=20)
 
 ## 22. Crayon Drawing
 
-<img width="400" height="214" alt="temp" src="https://github.com/user-attachments/assets/6212b5f5-987b-4c55-b0fa-a41279a4b8ad" />
+<img width="400" height="214" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/6212b5f5-987b-4c55-b0fa-a41279a4b8ad" />
 
 ### prompt
 
@@ -625,7 +604,7 @@ prompt from [@CharaspowerAI](https://x.com/CharaspowerAI/status/1996270726026784
 
 ## 23. Character Sticker from Uploaded Image
 
-<img width="400" height="643" alt="Gemini_Generated_Image_bd9hlnbd9hlnbd9h" src="https://github.com/user-attachments/assets/7f226fde-f1a7-48ca-aa9a-4a29c4f1ea92" />
+<img width="400" height="643" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/7f226fde-f1a7-48ca-aa9a-4a29c4f1ea92" />
 
 ### Prompt
 
@@ -635,8 +614,8 @@ from [@ShreyaYadav___](https://x.com/ShreyaYadav___/status/1996645201633591504)
 
 ## 24. Cute Movie Poster
 
-<img width="400" height="717" alt="Gemini_Generated_Image_b2eahob2eahob2ea" src="https://github.com/user-attachments/assets/afa5e46b-451b-4632-873a-c48966377abb" />
-<img width="400" height="717" alt="Gemini_Generated_Image_kwow3hkwow3hkwow" src="https://github.com/user-attachments/assets/215aa7c9-b5ae-4a4d-90e4-24fbc2a4c273" />
+<img width="400" height="717" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/afa5e46b-451b-4632-873a-c48966377abb" />
+<img width="400" height="717" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/215aa7c9-b5ae-4a4d-90e4-24fbc2a4c273" />
 
 ### How to use the prompt
 
@@ -695,7 +674,7 @@ Paste the prompt below into your AI tool and ask them to change every "Laputa: C
 
 ## 25. Claymation Art
 
-<img width="400" height="223" alt="Gemini_Generated_Image_4haqwz4haqwz4haq拷貝" src="https://github.com/user-attachments/assets/d316386d-651b-4cc6-a467-e39969b20f73" />
+<img width="400" height="223" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/d316386d-651b-4cc6-a467-e39969b20f73" />
 (I really like this one 🤣)
 
 ### How to use the prompt
