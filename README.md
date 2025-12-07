@@ -587,25 +587,22 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1996604581313220931?s=20)
 ## 21. Stylized 3D Caricature
 
 <img width="131" height="132" alt="person model" src="https://github.com/user-attachments/assets/e0dd2d80-b7f5-410f-83f1-73af43f3461a" />
-<img width="352" height="192" alt="Gemini_Generated_Image_msn4fcmsn4fcmsn4" src="https://github.com/user-attachments/assets/3ab0bbce-79fd-4924-8f36-0278e6f9a305" />
+<img width="400" height="214" alt="temp2" src="https://github.com/user-attachments/assets/2ab660d8-a648-402d-952e-e99abe8a6d33" />
 
 #### prompt
 
-```text wrap
-A highly stylized 3D caricature of the person in the uploaded image, with expressive facial features, and playful exaggeration. Rendered in a smooth, polished style with clean materials and soft ambient lighting. Bold color background to emphasize the character’s charm and presence. 
-```
+
+> A highly stylized 3D caricature of the person in the uploaded image, with expressive facial features, and playful exaggeration. Rendered in a smooth, polished style with clean materials and soft ambient lighting. Bold color background to emphasize the character’s charm and presence. 
 
 from [@NanoBanana](https://x.com/NanoBanana/status/1996554636166049928?s=20)
 
 ## 22. Crayon Drawing
 
-<img width="352" height="192" alt="Gemini_Generated_Image_75ofav75ofav75of" src="https://github.com/user-attachments/assets/4abb07fa-0a4d-40ee-b6fd-b398585b505b" />
+<img width="400" height="214" alt="temp" src="https://github.com/user-attachments/assets/6212b5f5-987b-4c55-b0fa-a41279a4b8ad" />
 
 #### prompt
 
-```text wrap
-A drawing of [character], crayon on white paper, in the style of a children's book illustration – simple, cute, and full-color, with [two gitter colors] glitter accents and high detail.
-```
+> A drawing of [character], crayon on white paper, in the style of a children's book illustration – simple, cute, and full-color, with [two gitter colors] glitter accents and high detail.
 
 #### Gitter Suggestion (just replace [two gitter colors] in the prompt)
 
@@ -626,3 +623,13 @@ A drawing of [character], crayon on white paper, in the style of a children's bo
 - Lime Green & Purple
 
 prompt from [@CharaspowerAI](https://x.com/CharaspowerAI/status/1996270726026784792?s=20)
+
+## 23. Character Sticker from Uploaded Image
+
+<img width="400" height="643" alt="Gemini_Generated_Image_bd9hlnbd9hlnbd9h" src="https://github.com/user-attachments/assets/7f226fde-f1a7-48ca-aa9a-4a29c4f1ea92" />
+
+#### Prompt
+
+> Create a 3D kawaii 10:16 canvas featuring nine chibi-style stickers in various outfits, poses, and expressions. Use the attached image for reference. Each sticker has a white border and includes a speech bubble with phrases like "Goodmorning", "Lunch kana", "Huh", "Hugs", "Thank you", "Goodnight", "You're the best" "miss you" "mwah 😙" "good job" and "Ingat ka". Set on a soft white-to-pastel blue gradient background for a fun, positive vibe.
+
+from [@ShreyaYadav___](https://x.com/ShreyaYadav___/status/1996645201633591504)
