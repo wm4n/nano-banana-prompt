@@ -473,7 +473,7 @@ from [@dotey](https://x.com/dotey/status/1995190286775881780?s=20)
 
 <img width="704" height="384" alt="Gemini_Generated_Image_f8sl8kf8sl8kf8sl" src="https://github.com/user-attachments/assets/44645ff6-8cc3-4b93-b211-f5489592c90b" />
 
-#### prompt
+### prompt
 ```text
 Present a clear, directly top-down photograph of [CITY] landmarks as 3D magnets,
 arranged neatly in parallel lines and right angles, knolling. The objects are
@@ -488,7 +488,7 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1995921399207100510?s=20)
 
 <img width="704" height="384" alt="Gemini_Generated_Image_zhyko9zhyko9zhyk" src="https://github.com/user-attachments/assets/71096dea-f6be-4439-a0ae-4a203450e946" />
 
-#### prompt
+### prompt
 ```text
 Present a clear, 45° top-down isometric miniature 3D scene of the London
 Underground.
@@ -504,7 +504,7 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1995921399207100510?s=20)
 
 <img width="704" height="384" alt="Gemini_Generated_Image_uj8vxquj8vxquj8v" src="https://github.com/user-attachments/assets/6e39dec6-8035-42f8-beeb-2e0237ee5119" />
 
-#### prompt
+### prompt
 ```text
 Present a clear, 45° top-down isometric miniature 3D scene of the London
 Heathrow Airport.
@@ -520,7 +520,7 @@ Get the current live status of the Heathrow Airport using search.
 <img width="704" height="384" alt="Gemini_Generated_Image_rmusuhrmusuhrmus" src="https://github.com/user-attachments/assets/ab4cada9-8c81-46b3-8126-2f43b42adbee" />
 
 
-#### prompt
+### prompt
 ```text
 Present a clear, 45° top-down isometric miniature 3D scene of a high-tech
 "US Stock Market Dashboard".
@@ -552,7 +552,7 @@ Then, generate the image using these real values in the text panels.
 
 <img width="704" height="384" alt="Gemini_Generated_Image_uth9o6uth9o6uth9" src="https://github.com/user-attachments/assets/373d3810-8dc1-4d0c-b462-b2a1f296fd91" />
 
-#### Prompt
+### Prompt
 
 > A photo of a game player magazine cover, the cover has the large bold words "Game Pulse" for title and an smaller article title "Player’s Choice: Top 10 Games That Almost Made Us Smash Our Phones". The text is in a serif font, black on white, and fills the view. No other text.
 > 
@@ -566,7 +566,7 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1996262496802361675?s=20)
 
 <img width="512" height="512" alt="Gemini_Generated_Image_lse5gylse5gylse5" src="https://github.com/user-attachments/assets/5c36e5d0-e717-460b-b78b-0e6103e36a8f" />
 
-#### Prompt
+### Prompt
 
 > combine these emojis: 🤖 + ⛄️ , on a white background as a vector emoji design 
 
@@ -576,7 +576,7 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1996193397913317384?s=20)
 
 <img width="512" height="512" alt="Gemini_Generated_Image_82fwaq82fwaq82fw" src="https://github.com/user-attachments/assets/ebe98386-bbcd-47b5-bd48-da6a0ef266b6" />
 
-#### prompt
+### prompt
 
 > In a 3x3 grid show me different angles of this [scene]
 
@@ -589,8 +589,7 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1996604581313220931?s=20)
 <img width="131" height="132" alt="person model" src="https://github.com/user-attachments/assets/e0dd2d80-b7f5-410f-83f1-73af43f3461a" />
 <img width="400" height="214" alt="temp2" src="https://github.com/user-attachments/assets/2ab660d8-a648-402d-952e-e99abe8a6d33" />
 
-#### prompt
-
+### prompt
 
 > A highly stylized 3D caricature of the person in the uploaded image, with expressive facial features, and playful exaggeration. Rendered in a smooth, polished style with clean materials and soft ambient lighting. Bold color background to emphasize the character’s charm and presence. 
 
@@ -600,25 +599,25 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1996554636166049928?s=20)
 
 <img width="400" height="214" alt="temp" src="https://github.com/user-attachments/assets/6212b5f5-987b-4c55-b0fa-a41279a4b8ad" />
 
-#### prompt
+### prompt
 
 > A drawing of [character], crayon on white paper, in the style of a children's book illustration – simple, cute, and full-color, with [two gitter colors] glitter accents and high detail.
 
-#### Gitter Suggestion (just replace [two gitter colors] in the prompt)
+### Gitter Suggestion (just replace [two gitter colors] in the prompt)
 
-##### ✨ Elegant & Premium
+#### ✨ Elegant & Premium
 - Gold & Burgundy
 - Rose Gold & Navy Glitter
 
-##### ✨ Soft & Dreamy
+#### ✨ Soft & Dreamy
 - Silver & Soft Pink 
 - Ice Blue & Lavender 
 
-##### ✨ Bold & Futuristic
+#### ✨ Bold & Futuristic
 - Black Silver & Electric Blue
 - Gunmetal & Violet
 
-##### ✨ Vibrant & Festive
+#### ✨ Vibrant & Festive
 - Red & Gold 
 - Lime Green & Purple
 
@@ -628,7 +627,7 @@ prompt from [@CharaspowerAI](https://x.com/CharaspowerAI/status/1996270726026784
 
 <img width="400" height="643" alt="Gemini_Generated_Image_bd9hlnbd9hlnbd9h" src="https://github.com/user-attachments/assets/7f226fde-f1a7-48ca-aa9a-4a29c4f1ea92" />
 
-#### Prompt
+### Prompt
 
 > Create a 3D kawaii 10:16 canvas featuring nine chibi-style stickers in various outfits, poses, and expressions. Use the attached image for reference. Each sticker has a white border and includes a speech bubble with phrases like "Goodmorning", "Lunch kana", "Huh", "Hugs", "Thank you", "Goodnight", "You're the best" "miss you" "mwah 😙" "good job" and "Ingat ka". Set on a soft white-to-pastel blue gradient background for a fun, positive vibe.
 
@@ -639,11 +638,11 @@ from [@ShreyaYadav___](https://x.com/ShreyaYadav___/status/1996645201633591504)
 <img width="400" height="717" alt="Gemini_Generated_Image_b2eahob2eahob2ea" src="https://github.com/user-attachments/assets/afa5e46b-451b-4632-873a-c48966377abb" />
 <img width="400" height="717" alt="Gemini_Generated_Image_kwow3hkwow3hkwow" src="https://github.com/user-attachments/assets/215aa7c9-b5ae-4a4d-90e4-24fbc2a4c273" />
 
-#### How to use the prompt
+### How to use the prompt
 
 Paste the prompt below into your AI tool and ask them to change every "Laputa: Castle in the Sky" and related text to your selected movie title.
 
-#### Prompt
+### Prompt
 ```json
 {
   "style_name": "3D Q-Version Healing Toy Movie Poster - Laputa: Castle in the Sky (Optimized)",
@@ -693,3 +692,52 @@ Paste the prompt below into your AI tool and ask them to change every "Laputa: C
   }
 }
 ```
+
+## 25. Claymation Art
+
+<img width="400" height="223" alt="Gemini_Generated_Image_4haqwz4haqwz4haq拷貝" src="https://github.com/user-attachments/assets/d316386d-651b-4cc6-a467-e39969b20f73" />
+(I really like this one 🤣)
+
+### How to use the prompt
+
+Paste the below prompt into your AI tool to generate a new prompt for Nano Banana, then use the generated prompt for Nano Banana.
+
+### Generate Intermediate Prompt
+```markdown
+# Role: Visual Storyteller & Miniature Artist
+
+# Project: "{Title}" (e.g., The Matrix, Pokemon, etc)
+
+# Goal:
+Create a prompt for a 4K, hyper-detailed, isometric 3D claymation diorama image that visualizes the essence of the specified literary work/movie.
+
+# Workflow (Do this internally):
+1.  **Analyze the Work:** Identify the core setting/landscape (e.g., Loess Plateau, Hogwarts, Cyberpunk City).
+2.  **Extract Characters:** Select 5-7 key characters.
+3.  **Map Fates:** For each character, assign a visual action/prop that symbolizes their destiny, personality, or iconic ending in the story.
+4.  **Apply Style:** Enforce the "Exquisite Miniature Claymation" aesthetic.
+
+# Output Format (Generate the final Image Prompt based on this structure):
+
+**Image Prompt:**
+
+> **(Style & Atmosphere):**
+> A hyper-realistic, wide-angle 4K isometric view of a miniature diorama representing the world of **[Insert Title Here]**. The style is "Exquisite Claymation" with tactile textures (fingerprints on clay, felt, resin water, wood grain). The lighting is cinematic and warm, utilizing a tilt-shift effect to emphasize the scale of a tiny, handcrafted world.
+>
+> **(The Setting):**
+> The base landscape depicts **[Insert Core Setting Description automatically based on the work]**. It is rich in detail, serving as the stage for the characters.
+>
+> **(Character Vignettes - The Fates):**
+> Scattered across this landscape are distinct, animated clay figures representing the main cast:
+> 1.  **[Character A Name]:** [Visual description of action symbolizing their fate/role].
+> 2.  **[Character B Name]:** [Visual description of action symbolizing their fate/role].
+> 3.  **[Character C Name]:** [Visual description of action symbolizing their fate/role].
+> 4.  **[Character D Name]:** [Visual description of action symbolizing their fate/role].
+> 5.  **[Character E Name]:** [Visual description of action symbolizing their fate/role].
+> *(Add more if necessary to capture the story's depth)*
+>
+> **(Title Element):**
+>
+```
+
+from [@langzihan](https://x.com/langzihan/status/1996435316341924046?s=20)
