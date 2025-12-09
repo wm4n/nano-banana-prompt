@@ -731,7 +731,7 @@ from [@langzihan](https://x.com/langzihan/status/1996435316341924046?s=20)
 
 from [@GeminiApp](https://x.com/GeminiApp/status/1996617890506981743?s=20)
 
-## 27. 
+## 27. Miniature inside Glass Marble
 
 <img width="500" height="500" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/76e19bd2-6f92-498c-972d-9d38bd7adb25" />
 
@@ -740,3 +740,25 @@ from [@GeminiApp](https://x.com/GeminiApp/status/1996617890506981743?s=20)
 > Generate a portrait image of a detailed, transparent glass sphere/capsule held between two fingers against a neutral background. Inside the capsule is a miniature chibi version of {Doreamon} with realistic facial features but cute proportions - oversized head, small body. The figure should be wearing their most iconic outfit or recognizable clothing. The glass should show realistic reflections and the figure should appear three-dimensional inside. Photorealistic style with perfect lighting. 1080x1080 dimension
 
 from [@TechieBySA](https://x.com/TechieBySA/status/1996537753434243181?s=20)
+
+## 28. Isometric View
+
+<img width="500" height="273" alt="Gemini_Generated_Image_by9guqby9guqby9g" src="https://github.com/user-attachments/assets/2599d8ec-f176-4878-95d7-182e4c6d2f4e" />
+
+### Prompt
+
+> Make a photo that is perfectly isometric. It is not a miniature, it is a captured photo that just happened to be perfectly isometric. It is a photo of a {subject}.
+
+from [@NanoBanana](https://x.com/NanoBanana/status/1998085942201163905?s=20)
+
+## 29. Combine Different Styles
+
+<img width="500" height="273" alt="Gemini_Generated_Image_1eozwj1eozwj1eoz" src="https://github.com/user-attachments/assets/56e1e996-55e6-45af-80bd-711033e7de9a" />
+
+### Prompt
+
+> A photo of an everyday scene at a busy cafe serving breakfast. In the foreground is an anime man with blue hair, one of the people is a pencil sketch, another is a claymation person
+
+from [@NanoBanana](https://x.com/NanoBanana/status/1997971252858982531?s=20)
+
+
