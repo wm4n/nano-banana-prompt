@@ -2,53 +2,29 @@
 
 ## 1. Isometric City Scene
 
-<img width="512" height="512" alt="Gemini_Generated_Image_89oegx89oegx89oe" src="https://github.com/user-attachments/assets/8f11d0f2-a906-439d-bd3c-636bfef42d86" />
+<img width="500" height="500" alt="519926115-8f11d0f2-a906-439d-bd3c-636bfef42d86" src="https://github.com/user-attachments/assets/6c9c7e27-a1d3-4328-8290-cd8d639d92f2" />
 
-Prompt
-```text
-Present a clear, 45° top-down isometric miniature 3D cartoon scene of [CITY],
-featuring its most iconic landmarks and architectural elements. Use soft,
-refined textures with realistic PBR materials and gentle, lifelike lighting
-and shadows. Integrate the current weather conditions directly into the city
-environment to create an immersive atmospheric mood.
-
-Use a clean, minimalistic composition with a soft, solid-colored background.
-
-At the top-center, place the title “[CITY]” in large bold text, a prominent
-weather icon beneath it, then the date (small text) and temperature
-(medium text).
-
-All text must be centered with consistent spacing, and may subtly overlap
-the tops of the buildings.
-
-Square 1080x1080 dimension.
-```
+### Prompt
+> Present a clear, 45° top-down isometric miniature 3D cartoon scene of [CITY],featuring its most iconic landmarks and architectural elements. Use soft, refined textures with realistic PBR materials and gentle, lifelike lighting and shadows. Integrate the current weather conditions directly into the city environment to create an immersive atmospheric mood.
+>
+> Use a clean, minimalistic composition with a soft, solid-colored background.
+>
+> At the top-center, place the title “[CITY]” in large bold text, a prominent weather icon beneath it, then the date (small text) and temperature (medium text).
+> 
+> All text must be centered with consistent spacing, and may subtly overlap the tops of the buildings.
+> 
+> Square 1080x1080 dimension.
 
 from [@TechieBySA](https://x.com/TechieBySA/status/1993995980405100598?s=20_)
 
-<img width="384" height="688" alt="Gemini_Generated_Image_63bi3b63bi3b63bi" src="https://github.com/user-attachments/assets/0948c579-5804-41c6-8aeb-742b40d4fb2e" />
+<img width="500" height="896" alt="520032266-0948c579-5804-41c6-8aeb-742b40d4fb2e" src="https://github.com/user-attachments/assets/006ae96d-84c2-41a8-bb45-04a1be1dfdce" />
 
-Prompt
-```text
-Present a clear 45° top-down view of a vertical (9:16) isometric miniature
-3D cartoon city scene. Highlight iconic landmarks centered in the composition
-to show precise, delicate modeling. Use soft, refined textures with realistic
-PBR materials, gentle lifelike lighting, and smooth shadow effects. Integrate
-weather elements naturally into the urban architecture so the city’s
-landscape and atmosphere feel connected.
-
-Create an immersive weather vibe with a clean, unified, minimalistic layout.
-Use a soft, solid-colored background that makes the main content pop and keeps
-the whole visual fresh and soothing. Place a prominent weather icon at the top
-center. Beneath it, include the date in extra-small text and the temperature
-range in medium-sized text. The city name Auckland appears in large text directly
-above the weather icon.
-
-Make sure the weather info has no background and can subtly overlap with the
-buildings. All text should match the native language of the selected city.
-Retrieve the current real-world weather conditions for that city before
-rendering. 
-```
+### Prompt
+>  Present a clear 45° top-down view of a vertical (9:16) isometric miniature 3D cartoon city scene. Highlight iconic landmarks centered in the composition to show precise, delicate modeling. Use soft, refined textures with realistic PBR materials, gentle lifelike lighting, and smooth shadow effects. Integrate weather elements naturally into the urban architecture so the city’s landscape and atmosphere feel connected.
+> 
+> Create an immersive weather vibe with a clean, unified, minimalistic layout. Use a soft, solid-colored background that makes the main content pop and keeps the whole visual fresh and soothing. Place a prominent weather icon at the top center. Beneath it, include the date in extra-small text and the temperature range in medium-sized text. The city name Auckland appears in large text directly above the weather icon.
+> 
+> Make sure the weather info has no background and can subtly overlap with the buildings. All text should match the native language of the selected city. Retrieve the current real-world weather conditions for that city before rendering. 
 
 from [@icreatelife](https://x.com/icreatelife/status/1994120352247763092?s=20)
 
@@ -675,6 +651,7 @@ Paste the prompt below into your AI tool and ask them to change every "Laputa: C
 ## 25. Claymation Art
 
 <img width="400" height="223" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/d316386d-651b-4cc6-a467-e39969b20f73" />
+
 (I really like this one 🤣)
 
 ### How to use the prompt
@@ -743,7 +720,7 @@ from [@TechieBySA](https://x.com/TechieBySA/status/1996537753434243181?s=20)
 
 ## 28. Isometric View
 
-<img width="500" height="273" alt="Gemini_Generated_Image_by9guqby9guqby9g" src="https://github.com/user-attachments/assets/2599d8ec-f176-4878-95d7-182e4c6d2f4e" />
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/2599d8ec-f176-4878-95d7-182e4c6d2f4e" />
 
 ### Prompt
 
@@ -753,7 +730,7 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1998085942201163905?s=20)
 
 ## 29. Combine Different Styles
 
-<img width="500" height="273" alt="Gemini_Generated_Image_1eozwj1eozwj1eoz" src="https://github.com/user-attachments/assets/56e1e996-55e6-45af-80bd-711033e7de9a" />
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/56e1e996-55e6-45af-80bd-711033e7de9a" />
 
 ### Prompt
 
@@ -761,4 +738,34 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1998085942201163905?s=20)
 
 from [@NanoBanana](https://x.com/NanoBanana/status/1997971252858982531?s=20)
 
+## 30. Advertising Food Photo
 
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/34358e92-1d1a-41fc-8b70-6b0533b53197" />
+
+### Prompt
+
+>  Advertising-style food photography of {subject1} arranged on a rustic table, with {subject2} floating above in mid-air and a splash of {subject1} frozen in motion. High-resolution photo manipulation with selective soft focus, clean negative space for text, dramatic lighting, and crisp detail.
+
+from [@NanoBanana](https://x.com/NanoBanana/status/1997460283669831973?s=20)
+
+## 31. High-Contrast Scientific Heatmap Photo
+
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/abdf2ec2-80e5-4c4f-acbb-8ebb3329f148" />
+
+### Prompt
+
+> The {v8 engine}, presented in a high-contrast scientific studio render against a pure black void. This tight right-side profile features a false-color thermal X-ray aesthetic, where the transparent shell reveals a sharply detailed internal architecture of batteries, drivers, and sensors using a vibrant heatmap gradient. The colors shift from deep cool blues to intense yellows and red highlights, creating a futuristic, clinical look with orthographic perspective and a soft, neon-like glow.
+
+from [@NanoBanana](https://x.com/NanoBanana/status/1997085645538472118?s=20)
+
+## 32. Re-generate Old Screenshot
+
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/9cdbcb02-b2f1-427c-8a8d-f31ed028fc38" />
+
+You've gotta be old enough to get this one.
+
+### Prompt
+
+> A screenshot of a geocities website called {website}
+
+from [@NanoBanana](https://x.com/NanoBanana/status/1997390810543726903?s=20)
