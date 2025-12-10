@@ -30,17 +30,13 @@ from [@icreatelife](https://x.com/icreatelife/status/1994120352247763092?s=20)
 
 ## 2. Use Lat & Lon for Background
 
-<img width="600" height="448" alt="Gemini_Generated_Image_gqqt2mgqqt2mgqqt" src="https://github.com/user-attachments/assets/a9e3db0c-15ca-498d-8795-11181fa3ece4" />
+<img width="500" height="373" alt="519930969-a9e3db0c-15ca-498d-8795-11181fa3ece4" src="https://github.com/user-attachments/assets/4836df50-e726-4e30-9d8f-c69876e7bfd2" />
 
-Prompt
-```text
-A hyper-realistic photograph of [description of your main subject], sightseeing at coordinates:
-lat 35.317, lon 139.536. The character is blending in naturally as a tourist. Matching the current
-local time and real-time weather conditions of the location. Cinematic lighting, 35mm photography,
-f/1.8 aperture, highly detailed background, photorealistic texture, 8k resolution, shot on Fujifilm
-GFX 100.
-```
-idea from [@KusoPhoto](https://x.com/KusoPhoto/status/1993889042052866385?s=20)
+### Prompt
+
+> A hyper-realistic photograph of {description of your main character}, sightseeing at coordinates: {lat 35.317, lon 139.536}. The character is blending in naturally as a tourist. Matching the current local time and real-time weather conditions of the location. Cinematic lighting, 35mm photography, f/1.8 aperture, highly detailed background, photorealistic texture, 8k resolution, shot on Fujifilm GFX 100.
+
+from [@KusoPhoto](https://x.com/KusoPhoto/status/1993889042052866385?s=20)
 
 ## 3. Watercolor Fashion Illustration of the Attached Photo
 
@@ -769,3 +765,13 @@ You've gotta be old enough to get this one.
 > A screenshot of a geocities website called {website}
 
 from [@NanoBanana](https://x.com/NanoBanana/status/1997390810543726903?s=20)
+
+## 33. 3D LED Screen at the Urban Intersection
+
+<img width="500" height="273" alt="Gemini_Generated_Image_monm8jmonm8jmonm" src="https://github.com/user-attachments/assets/703831cf-7c40-4469-be56-2e46cbcc71ab" />
+
+> An enormous L-shaped glasses-free 3D LED screen situated prominently at a bustling urban intersection, designed in an iconic architectural style reminiscent of Shinjuku in Tokyo or Taikoo Li in Chengdu. The screen displays a captivating glasses-free 3D animation featuring {scene}. The characters and objects possess striking depth and appear to break through the screen’s boundaries, extending outward or floating vividly in mid-air. Under realistic daylight conditions, these elements cast lifelike shadows onto the screen’s surface and surrounding buildings. Rich in intricate detail and vibrant colors, the animation seamlessly integrates with the urban setting and the bright sky overhead.
+>
+> Scene: A massive Godzilla emerges slowly from drifting sea fog, its metallic-scaled body shimmering under natural light. Its dorsal fins light up one by one with a vibrant blue glow, signaling an imminent atomic breath. 
+
+from [@dotey](https://x.com/dotey/status/1997574511705657772?s=20)
