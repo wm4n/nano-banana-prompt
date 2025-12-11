@@ -768,10 +768,26 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1997390810543726903?s=20)
 
 ## 33. 3D LED Screen at the Urban Intersection
 
-<img width="500" height="273" alt="Gemini_Generated_Image_monm8jmonm8jmonm" src="https://github.com/user-attachments/assets/703831cf-7c40-4469-be56-2e46cbcc71ab" />
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/703831cf-7c40-4469-be56-2e46cbcc71ab" />
 
 > An enormous L-shaped glasses-free 3D LED screen situated prominently at a bustling urban intersection, designed in an iconic architectural style reminiscent of Shinjuku in Tokyo or Taikoo Li in Chengdu. The screen displays a captivating glasses-free 3D animation featuring {scene}. The characters and objects possess striking depth and appear to break through the screen’s boundaries, extending outward or floating vividly in mid-air. Under realistic daylight conditions, these elements cast lifelike shadows onto the screen’s surface and surrounding buildings. Rich in intricate detail and vibrant colors, the animation seamlessly integrates with the urban setting and the bright sky overhead.
 >
 > Scene: A massive Godzilla emerges slowly from drifting sea fog, its metallic-scaled body shimmering under natural light. Its dorsal fins light up one by one with a vibrant blue glow, signaling an imminent atomic breath. 
 
 from [@dotey](https://x.com/dotey/status/1997574511705657772?s=20)
+
+## 34. Ultra-Surreal Neon Effect
+
+<img width="500" height="335" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/60e4fe76-5577-497c-a25a-7cd0e3d51d31" />
+
+### Prompt
+
+> Create an imaginative, ultra-surreal image based on the provided picture or description.
+> 
+> Reimagine the scene ${SCENE} by transforming all ${SUBJECTS} (animals, humans, creatures) into surreal beings made of transparent glass and glowing neon lights. Their bodies resemble crystal sculptures that refract ambient light, while vibrant neon streams (colors like electric blue, magenta, purple, orange-gold, etc.) flow inside them, emitting a soft yet radiant glow into the environment.
+>
+> Keep the original structure and layout of the scene, but re-render the lighting and atmosphere to respond to these luminous glass beings—reflections, refractions, glowing highlights, and atmospheric color shifts.
+>
+> The overall mood should be dreamlike, futuristic, vividly colored, highly detailed, and visually stunning, as if the world is illuminated by living neon glass creatures in a surreal alternate reality.
+
+💡 SCENE can be replaced with uploaded photo
