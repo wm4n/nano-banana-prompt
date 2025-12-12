@@ -819,3 +819,12 @@ from [@dotey](https://x.com/dotey/status/1998095424394007000?s=20)
 > There are no visible dividing lines between seasons; the weather, lighting, and vegetation blend smoothly to create a unified and harmonious panorama. Rich in detail, symbolic of the passage of time, cinematic lighting, 8k resolution, highly detailed textures. --ar 4:3
 
 from [@dotey](https://x.com/dotey/status/1997787952110239874?s=20)
+
+## 37. Ironman Style HUD
+
+<img width="500" height="273" alt="Gemini_Generated_Image_h3qiv2h3qiv2h3qi" src="https://github.com/user-attachments/assets/b7ac890e-fd5c-4993-ae05-5811b52f73bd" />
+
+### Prompt
+
+> A first-person view from inside a futuristic Iron Man-style armor helmet. The holographic HUD interface is semi-transparent, superimposed over a breathtaking aerial view of flying high above a sprawling metropolis during the daytime. The complex UI features neon cyan and orange glowing lines, modular data boxes displaying suit integrity, screen object analysis recticles locking onto buildings below, and luminous altitude charts. The layout is structured and clear. Cinematic lighting blends the sunlight with the interface glow. Highly detailed UI design, 4k resolution.
+
