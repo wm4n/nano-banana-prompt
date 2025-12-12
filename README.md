@@ -421,38 +421,23 @@ from [@ZaraIrahh](https://x.com/ZaraIrahh/status/1995304550610407807?s=20)
 
 ## 15. 3D Chibi-Style Miniature Concept Store
 
-<img width="424" height="632" alt="Gemini_Generated_Image_fmbtzffmbtzffmbt" src="https://github.com/user-attachments/assets/364c9194-4ae6-4b92-996e-822daf768636" />
+<img width="500" height="745" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/e197d66e-d6b5-43af-9116-7193a616a276" />
 
-prompt
-```text
-3D chibi-style miniature concept store of {Brand Name}, creatively designed with an
-exterior inspired by the brand's most iconic product or packaging (such as a giant
-{brand's core product, e.g., chicken bucket/hamburger/donut/roast duck}). The store
-features two floors with large glass windows clearly showcasing the cozy and finely
-decorated interior: {brand's primary color}-themed decor, warm lighting, and busy
-staff dressed in outfits matching the brand. Adorable tiny figures stroll or sit
-along the street, surrounded by benches, street lamps, and potted plants, creating
-a charming urban scene. Rendered in a miniature cityscape style using Cinema 4D,
-with a blind-box toy aesthetic, rich in details and realism, and bathed in soft
-lighting that evokes a relaxing afternoon atmosphere. --ar 2:3
+### Prompt
 
-Brand name: Starbucks
-```
+> 3D chibi-style miniature concept store of {Brand Name}, creatively designed with an exterior inspired by the brand's most iconic product or packaging (such as a giant {brand's core product, e.g., chicken bucket/hamburger/donut/roast duck}). The store features two floors with large glass windows clearly showcasing the cozy and finely decorated interior: {brand's primary color}-themed decor, warm lighting, and busy staff dressed in outfits matching the brand. Adorable tiny figures stroll or sit along the street, surrounded by benches, street lamps, and potted plants, creating a charming urban scene. Rendered in a miniature cityscape style using Cinema 4D, with a blind-box toy aesthetic, rich in details and realism, and bathed in soft lighting that evokes a relaxing afternoon atmosphere. --ar 2:3
+> 
+> Brand name: Starbucks
 
 from [@dotey](https://x.com/dotey/status/1995190286775881780?s=20)
 
 ## 16. City Souvenir Magnet
 
-<img width="704" height="384" alt="Gemini_Generated_Image_f8sl8kf8sl8kf8sl" src="https://github.com/user-attachments/assets/44645ff6-8cc3-4b93-b211-f5489592c90b" />
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/fa8e6acc-f938-4273-b3a5-0fb6f9875183" />
 
-### prompt
-```text
-Present a clear, directly top-down photograph of [CITY] landmarks as 3D magnets,
-arranged neatly in parallel lines and right angles, knolling. The objects are
-realistic miniatures. At the top-center, place the city name as a souvenir magnet,
-and a handwritten post-it note for the temperature and weather conditions.
-Incorporate items necessary for today's weather into the knolling. No repeats.
-```
+### Prompt
+
+> Present a clear, directly top-down photograph of [CITY] landmarks as 3D magnets, arranged neatly in parallel lines and right angles, knolling. The objects are realistic miniatures. At the top-center, place the city name as a souvenir magnet, and a handwritten post-it note for the temperature and weather conditions. Incorporate items necessary for today's weather into the knolling. No repeats.
 
 from [@NanoBanana](https://x.com/NanoBanana/status/1995921399207100510?s=20)
 
@@ -796,7 +781,7 @@ from [@dotey](https://x.com/dotey/status/1998454127152500959?s=20)
 
 ## 35. Blending Two Era in One
 
-<img width="600" height="255" alt="Gemini_Generated_Image_3se7s43se7s43se7" src="https://github.com/user-attachments/assets/ea6ef358-5ed3-4e27-9ea5-fe0f4187602c" />
+<img width="600" height="255" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/ea6ef358-5ed3-4e27-9ea5-fe0f4187602c" />
 
 ### How to use the prompt
 
@@ -820,3 +805,17 @@ Paste the below prompt into your AI tool ask it to write for you by providing 1)
 > Aspect Ratio: 4:3
 
 from [@dotey](https://x.com/dotey/status/1998095424394007000?s=20)
+
+## 36. Season Blending
+
+<img width="500" height="373" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/3be36550-d143-42fe-9d52-501e3f29ec1b" />
+
+### Prompt
+
+>  Hyper-realistic digital illustration of {scene}, presented as a single continuous composition showcasing the cycle of seasons. The scene flows seamlessly from left to right in a natural progression: Winter, Spring, Summer, and Autumn. 
+>
+> The left side features cold snowy winter elements, gradually thawing into the fresh green buds and blooms of spring, then morphing into the lush vibrant vegetation and bright sunlight of summer, and finally transitioning into the golden, orange, and red hues of autumn on the far right. 
+>
+> There are no visible dividing lines between seasons; the weather, lighting, and vegetation blend smoothly to create a unified and harmonious panorama. Rich in detail, symbolic of the passage of time, cinematic lighting, 8k resolution, highly detailed textures. --ar 4:3
+
+from [@dotey](https://x.com/dotey/status/1997787952110239874?s=20)
