@@ -868,3 +868,22 @@ from [@TechieBySA](https://x.com/TechieBySA/status/1999477885246066789?s=20)
 > Create a highly detailed blueprint-style technical schematic based on the uploaded photo. Use clean, blue line art on a beige, aged engineering paper background.
 
 from [@_MehdiSharifi_](https://x.com/_MehdiSharifi_/status/1999640304069279795?s=20)
+
+## 41. Isometric 3D Cube Diorama
+
+<img width="500" height="500" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/9ce3f228-e52c-4874-9c8c-4befa78eac1c" />
+
+### Prompt
+
+> A Santa is going down Chimney in a christmas snowy night. Isometric 3D cube diorama with internal lighting, cute chibi figurine style, matte PVC material, big head/small body. Neutral background on a table in a dark room. Enclosed in a cube. Fill the diorama with many cute little details. Add delicate imperfections like dust, scratches and textures to make it real.
+
+from [@NanoBanana](https://x.com/NanoBanana/status/1999478400042320108?s=20)
+
+## 42. Imagine Events Earlier
+
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/f3147b2d-55d7-48e9-8b7d-db847058b326" />
+<img width="500" height="276" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/2247321e-2367-4983-a125-a6d8d0f43fc2" />
+
+### Prompt
+
+> In a 2x2 grid, show the events leading up to this scene. Think 5 hours, 3 hours, 2 hours and 1 hour earlier.
