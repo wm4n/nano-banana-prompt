@@ -848,5 +848,11 @@ Paste the below prompt into your AI tool and ask it to re-write prompt for diffe
 > 
 > All on a simple transparent background, no background, isolated objects. 
 
+## 39. Folded Paper
 
+<img width="500" height="500" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/c1f82a2b-09c4-4593-b361-e4d629f7c6e5" />
+
+### Prompt
+
+> A hyper-detailed origami version of [SUBJECT], folded from high-quality paper with crisp edges and realistic paper texture. Intricate folds capture its iconic shape and features in simplified geometric form. Placed on a clean studio surface with soft shadows. Minimalist collectible art style, photorealistic. 1080x1080 square
 
