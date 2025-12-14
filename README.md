@@ -856,3 +856,15 @@ Paste the below prompt into your AI tool and ask it to re-write prompt for diffe
 
 > A hyper-detailed origami version of [SUBJECT], folded from high-quality paper with crisp edges and realistic paper texture. Intricate folds capture its iconic shape and features in simplified geometric form. Placed on a clean studio surface with soft shadows. Minimalist collectible art style, photorealistic. 1080x1080 square
 
+from [@TechieBySA](https://x.com/TechieBySA/status/1999477885246066789?s=20)
+
+## 40. Blueprint Schematic
+
+<img width="250" height="251" alt="game_asset_piggy_bank_1" src="https://github.com/user-attachments/assets/55199291-f440-4351-b798-e91526ef783b" />
+<img width="500" height="508" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/59381a12-f571-434e-84a5-476f97710619" />
+
+### Prompt
+
+> Create a highly detailed blueprint-style technical schematic based on the uploaded photo. Use clean, blue line art on a beige, aged engineering paper background.
+
+from [@_MehdiSharifi_](https://x.com/_MehdiSharifi_/status/1999640304069279795?s=20)
