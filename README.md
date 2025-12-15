@@ -17,7 +17,7 @@
 
 from [@TechieBySA](https://x.com/TechieBySA/status/1993995980405100598?s=20_)
 
-<img width="500" height="896" alt="520032266-0948c579-5804-41c6-8aeb-742b40d4fb2e" src="https://github.com/user-attachments/assets/006ae96d-84c2-41a8-bb45-04a1be1dfdce" />
+<img width="500" height="896" alt="1. Isometric City Scene" src="https://github.com/user-attachments/assets/006ae96d-84c2-41a8-bb45-04a1be1dfdce" />
 
 ### Prompt
 >  Present a clear 45° top-down view of a vertical (9:16) isometric miniature 3D cartoon city scene. Highlight iconic landmarks centered in the composition to show precise, delicate modeling. Use soft, refined textures with realistic PBR materials, gentle lifelike lighting, and smooth shadow effects. Integrate weather elements naturally into the urban architecture so the city’s landscape and atmosphere feel connected.
@@ -30,7 +30,7 @@ from [@icreatelife](https://x.com/icreatelife/status/1994120352247763092?s=20)
 
 ## 2. Use Lat & Lon for Background
 
-<img width="500" height="373" alt="519930969-a9e3db0c-15ca-498d-8795-11181fa3ece4" src="https://github.com/user-attachments/assets/4836df50-e726-4e30-9d8f-c69876e7bfd2" />
+<img width="500" height="373" alt="2. Use Lat & Lon for Background" src="https://github.com/user-attachments/assets/4836df50-e726-4e30-9d8f-c69876e7bfd2" />
 
 ### Prompt
 
@@ -40,9 +40,10 @@ from [@KusoPhoto](https://x.com/KusoPhoto/status/1993889042052866385?s=20)
 
 ## 3. Watercolor Fashion Illustration of the Attached Photo
 
-<img width="704" height="376" alt="Gemini_Generated_Image_6pcjih6pcjih6pcj" src="https://github.com/user-attachments/assets/3ff1a6f0-63ef-4dfe-aa5f-3ada28a0c943" />
+<img width="500" height="267" alt="3. Watercolor Fashion Illustration of the Attached Photo" src="https://github.com/user-attachments/assets/45049612-f978-42cd-b430-9482e0a21b14" />
 
-Prompt
+### Prompt
+
 ```json
 {
   "image_generation": {
@@ -96,46 +97,46 @@ from [@ZaraIrahh](https://x.com/ZaraIrahh/status/1993833382695022774?s=20)
 
 ## 4. Lecturer's Whiteboard
 
-<img width="704" height="376" alt="Gemini_Generated_Image_ogvdn1ogvdn1ogvd" src="https://github.com/user-attachments/assets/f3e44e09-18a5-4676-a440-598e82b8c315" />
+<img width="500" height="273" alt="4. Lecturer's Whiteboard in English" src="https://github.com/user-attachments/assets/af73bb9f-44bf-46bf-a2a7-470c6354c8b7" />
 
-<img width="704" height="376" alt="Gemini_Generated_Image_f8j53zf8j53zf8j5" src="https://github.com/user-attachments/assets/bf27ce50-a2aa-4863-834f-69c23f81f7dd" />
+<img width="500" height="273" alt="4. Lecturer's Whiteboard in Traditional Chinese" src="https://github.com/user-attachments/assets/9c59566f-92a7-4966-a58d-e32bd327fcaa" />
 
-Prompt
-```text
-A university professor's whiteboard filled with complex handwritten notes. The whiteboard visually
-explains core ideas using various charts, connecting arrows, boxes, and explanatory text. All
-handwriting is in [English] and uses multi-colored markers (e.g., black, red, blue, green) to
-differentiate concepts. The content visualized on the board is a structured breakdown of the
-following text:
-[All text that you want to explain e.g.
-Let the two brothers handle the cake cutting and selection themselves. The older brother cuts,
-and the younger brother gets first pick. This ensures both feel the outcome is fair.
-However, what if there are three siblings involved? How can the cake be distributed fairly in
-that case?
-Actually, the solution still relies on the "you cut, I choose" method. First, the older brother
-cuts the cake, and the younger brother chooses his half, ensuring the initial split is fair.
-Next, both brothers cut their own portions into three pieces. Then, the sister is asked to pick
-one piece from each brother's set. This way, each of the three siblings ends up with two out of
-the six total pieces.]
-```
+### How to use this prompt
+
+Ask your AI tool to explain something and summarize to you, then place the summary into the [All text you want to explain].
+
+### Prompt
+
+> A university professor's whiteboard filled with complex handwritten notes. The whiteboard visually explains core ideas using various charts, connecting arrows, boxes, and explanatory text. All handwriting is in [English] and uses multi-colored markers (e.g., black, red, blue, green) to differentiate concepts. The content visualized on the board is a structured breakdown of the following text:
+>
+> [All text that you want to explain]
+
+**Example:** Let the two brothers handle the cake cutting and selection themselves. The older brother cuts, and the younger brother gets first pick. This ensures both feel the outcome is fair. However, what if there are three siblings involved? How can the cake be distributed fairly in that case? Actually, the solution still relies on the "you cut, I choose" method. First, the older brother cuts the cake, and the younger brother chooses his half, ensuring the initial split is fair. Next, both brothers cut their own portions into three pieces. Then, the sister is asked to pick one piece from each brother's set. This way, each of the three siblings ends up with two out of
+the six total pieces.
 
 ## 5. Old Photo Restore
 
-Prompt
-```text
-Faithfully restore this image with high fidelity to modern photograph quality, in full color, upscale to 4K
-```
+![shared image](https://github.com/user-attachments/assets/e35a9f1f-dc56-47ad-ba8f-62562d69ca87)
+
+<img width="1000" height="558" alt="5. Old Photo Restore (restored version)" src="https://github.com/user-attachments/assets/acb360ac-f79f-45f8-a8a1-c5da25977d2f" />
+
+This is [Jiufen](https://newtaipei.travel/en/attractions/detail/112939) in Taiwan. Welcome to Taiwan 🇹🇼
+
+### Prompt
+
+> Faithfully restore this image with high fidelity to modern photograph quality, in full color, upscale to 4K.
 
 from [@NanoBanana](https://x.com/NanoBanana/status/1993980476902527425?s=20)
 
 ## 6. Upsacle Low Res Photo
 
-Prompt
-```text
-Prompt: Upscale to 4K
-Input: 150 × 150
-Output: 4096 × 4096
-```
+***I don't have a low res on my hand. Check the Nano Banana post on X for example***
+
+### Prompt
+
+> Prompt: Upscale to 4K
+> Input: 150 × 150
+> Output: 4096 × 4096
 
 from [@NanoBanana](https://x.com/NanoBanana/status/1993980476902527425?s=20)
 
@@ -887,3 +888,17 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1999478400042320108?s=20)
 ### Prompt
 
 > In a 2x2 grid, show the events leading up to this scene. Think 5 hours, 3 hours, 2 hours and 1 hour earlier.
+
+### 43. Signature Dish in Isometric Miniature View
+
+<img width="500" height="500" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/e4c9cd6f-4999-4784-b0f2-8de06009946f" />
+
+### Prompt
+
+> Present a clear, 45° top-down isometric miniature 3D cartoon scene of [COUNTRY]’s signature dish: [DISH], with soft refined textures, realistic PBR materials, and gentle lifelike lighting. Create a small raised diorama-style base showcasing the dish in a highly recognizable presentation, with simple complementary elements (plate, table surface, or minimal garnish). Use a clean solid [BACKGROUND COLOR] background.
+>
+> At the top-center, display [COUNTRY] in large bold text, directly beneath it show [DISH] in medium text, and place a small simplified national icon or flag below the subtext. All text must automatically match the background contrast (white or black).
+>
+> Composition: perfectly centered layout, square 1080x1080, ultra-clean, high-clarity miniature diorama aesthetic.
+
+from [@TechieBySA](https://x.com/TechieBySA/status/2000156778026131734?s=20)
