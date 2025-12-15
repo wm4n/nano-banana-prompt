@@ -142,22 +142,18 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1993980476902527425?s=20)
 
 ## 7. 3D caricature
 
-<img width="704" height="376" alt="Gemini_Generated_Image_619uoj619uoj619u" src="https://github.com/user-attachments/assets/d5e93a2c-88c7-423b-bdae-73a6b0699e7f" />
-<img width="704" height="376" alt="Gemini_Generated_Image_c5iytac5iytac5iy" src="https://github.com/user-attachments/assets/00a2e2d1-8c06-4361-ae11-d8dccd8bc939" />
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/9005ad7b-05bb-41ca-9308-f545822a13c9" />
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/0482cf69-cd8b-4d23-b598-591978aa66f2" />
 
+### Prompt
 
-Prompt
-```text
-A highly stylized 3D caricature of [Name], with an oversized head, expressive facial features,
-and playful exaggeration. Rendered in a smooth, polished style with clean materials and soft
-ambient lighting. Minimal background to emphasize the character’s charm and presence. 
-```
+> A highly stylized 3D caricature of [Name], with an oversized head, expressive facial features, and playful exaggeration. Rendered in a smooth, polished style with clean materials and soft ambient lighting. Minimal background to emphasize the character’s charm and presence. 
 
 from [@azed_ai](https://x.com/azed_ai/status/1994360708637794410?s=20)
 
 ## 8. Art Overlay
 
-<img width="704" height="376" alt="Gemini_Generated_Image_z8xcvvz8xcvvz8xc" src="https://github.com/user-attachments/assets/1c00dbeb-55d9-47de-a494-dafdbeb07eb6" />
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/ca68acad-bde2-4492-8155-88525cdd4b55" />
 
 Prompt
 ```json
@@ -222,15 +218,12 @@ from [@awesome_visuals](https://x.com/awesome_visuals/status/1993609750051766767
 
 ## 9. 3D story book
 
-<img width="600" height="448" alt="Gemini_Generated_Image_22ku9x22ku9x22ku" src="https://github.com/user-attachments/assets/2100e596-7b22-4350-b4f9-2b9c68d23bae" />
+<img width="500" height="373" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/235cd123-3fb1-4eef-82d4-35ee9d042b48" />
 
-prompt
-```text
-A 3D pop-up book illustration featuring a [subject], with layered paper elements unfolding
-into a miniature scene. Soft lighting, textured paper surfaces, playful handcrafted look,
-detailed, pastel [color#1] and [color#2] palette, viewed from a slight angle to show depth
-and detail. 
-```
+### prompt
+
+> A 3D pop-up book illustration featuring a [subject], with layered paper elements unfolding into a miniature scene. Soft lighting, textured paper surfaces, playful handcrafted look, detailed, pastel [color#1] and [color#2] palette, viewed from a slight angle to show depth and detail. 
+
 from [@azed_ai](https://x.com/azed_ai/status/1995084424489422885?s=20)
 
 ## 10. UI/UX analysis
