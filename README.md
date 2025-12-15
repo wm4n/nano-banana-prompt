@@ -882,7 +882,7 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1999478400042320108?s=20)
 
 > In a 2x2 grid, show the events leading up to this scene. Think 5 hours, 3 hours, 2 hours and 1 hour earlier.
 
-### 43. Signature Dish in Isometric Miniature View
+## 43. Signature Dish in Isometric Miniature View
 
 <img width="500" height="500" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/e4c9cd6f-4999-4784-b0f2-8de06009946f" />
 
@@ -895,3 +895,13 @@ from [@NanoBanana](https://x.com/NanoBanana/status/1999478400042320108?s=20)
 > Composition: perfectly centered layout, square 1080x1080, ultra-clean, high-clarity miniature diorama aesthetic.
 
 from [@TechieBySA](https://x.com/TechieBySA/status/2000156778026131734?s=20)
+
+## 44. Species Migration Routes
+
+<img width="500" height="279" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/995073cf-d68e-4869-85f7-075a4985d12f" />
+
+### Prompt
+
+> An educational infographic map clearly visualizing the major migration routes of the [ANIMAL_NAME]. The map displays the appropriate geographical region (land masses or oceans regions) relevant to this species' lifecycle. Distinct, flowing color-coded arrows and pathways connect their summer breeding grounds to their wintering habitats. The migratory corridors are highlighted with a glowing effect, showing the flow of movement. Small, stylized icons of the [ANIMAL_NAME] are placed along the path to indicate direction. The overall aesthetic is clean, detailed, and highly visual, similar to a professional National Geographic diagram with clear legends. —ar 16:9
+>
+> ANIME_NAME: snow goose 
