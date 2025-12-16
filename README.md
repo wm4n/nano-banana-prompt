@@ -918,7 +918,7 @@ from [@TechieBySA](https://x.com/TechieBySA/status/2000156778026131734?s=20)
 
 ## 45. Hand Written Note + Hand Drawing
 
-<img width="500" height="273" alt="Gemini_Generated_Image_rqd7aarqd7aarqd7" src="https://github.com/user-attachments/assets/a9b4b42c-fd82-4533-ba1b-3de9fca8bc5a" />
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/a9b4b42c-fd82-4533-ba1b-3de9fca8bc5a" />
 
 ### Prompt
 
@@ -929,3 +929,34 @@ from [@TechieBySA](https://x.com/TechieBySA/status/2000156778026131734?s=20)
 >
 > Below the handwritten text, near the bottom edge of the paper, there is a quick, somewhat messy sketch drawn with the same blue ballpoint pen. The sketch illustrates the content above
 
+## 46. Step by Step Drawing
+
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/d278283a-f4c5-409b-a464-3b126d23af54" />
+
+### How to use this prompt
+
+Paste the entire prompt into your AI tool. Ask it to change the character.
+
+### Prompt
+
+> A step-by-step drawing tutorial sheet of a cute chibi Doraemon, 8 distinct progressive steps. Step 1 starts with a large round circle for the head. Gradually adding facial features, whiskers, round body, bell, and magic pocket in subsequent steps. The final step is fully colored featuring iconic blue body, white belly, red nose, and yellow bell. Simple line art, smooth curves, marker pen texture, instructional layout, isolated on white background, vector style illustration.
+
+## 47. 3D Halogram Projection
+
+<img width="500" height="500" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/455e449b-8066-4b15-9f5a-e6b9084bb15c" />
+
+### Prompt
+
+> Create a futuristic 3D hologram projection of [CITY], rising upward from a flat circular hologram base. The city appears as a clean 45° top-down isometric miniature with glowing wireframe + semi-solid structures, combining transparent neon geometry with subtle solid surfaces.
+>
+> Include the most iconic landmarks of [CITY], simplified but instantly recognizable, floating slightly above the hologram base. Use soft refined lighting, volumetric glow, light bloom, and crisp holographic edges to enhance the sci-fi look.
+> 
+> Use a dark neutral background to maximize hologram contrast. The hologram glow color should be [HOLOGRAM COLOR].
+> 
+> At the top-center, display [CITY] in large bold text, directly beneath it place a small round city or country flag icon. All text must automatically match background contrast (white or light neon).
+> 
+> Composition: perfectly centered layout, square 1080x1080, ultra-clean, premium futuristic hologram aesthetic.
+>
+> [CITY] = Taipei
+
+[@TechieBySA](https://x.com/TechieBySA/status/2000516727864480226?s=20)
