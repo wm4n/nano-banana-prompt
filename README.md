@@ -905,3 +905,27 @@ from [@TechieBySA](https://x.com/TechieBySA/status/2000156778026131734?s=20)
 > An educational infographic map clearly visualizing the major migration routes of the [ANIMAL_NAME]. The map displays the appropriate geographical region (land masses or oceans regions) relevant to this species' lifecycle. Distinct, flowing color-coded arrows and pathways connect their summer breeding grounds to their wintering habitats. The migratory corridors are highlighted with a glowing effect, showing the flow of movement. Small, stylized icons of the [ANIMAL_NAME] are placed along the path to indicate direction. The overall aesthetic is clean, detailed, and highly visual, similar to a professional National Geographic diagram with clear legends. —ar 16:9
 >
 > ANIME_NAME: snow goose 
+
+## 45. Hand Written Note
+
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/935c1991-9170-4ef0-aa3d-af3275f7b76e" />
+
+### Prompt
+
+>  A top-down photograph of a standard exam answer sheet, filled with handwritten script written in blue ballpoint pen. The text on the page reads content below:
+> 
+> [content]
+
+## 45. Hand Written Note + Hand Drawing
+
+<img width="500" height="273" alt="Gemini_Generated_Image_rqd7aarqd7aarqd7" src="https://github.com/user-attachments/assets/a9b4b42c-fd82-4533-ba1b-3de9fca8bc5a" />
+
+### Prompt
+
+> A top-down photograph of a standard exam answer sheet, filled with handwritten script written in blue ballpoint pen. The text on the page reads content below:
+>
+> content:
+> [content]
+>
+> Below the handwritten text, near the bottom edge of the paper, there is a quick, somewhat messy sketch drawn with the same blue ballpoint pen. The sketch illustrates the content above
+
