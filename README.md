@@ -960,3 +960,60 @@ Paste the entire prompt into your AI tool. Ask it to change the character.
 > [CITY] = Taipei
 
 [@TechieBySA](https://x.com/TechieBySA/status/2000516727864480226?s=20)
+
+## 48. Pixelize Food
+
+<img width="500" height="500" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/8391afe8-6040-45ca-bd46-9f62cf0c91f2" />
+
+### Prompt
+
+>  Minimalist food photograph, [1080x1080] – a single {FOOD} rests on a light, matte surface and is captured mid-transformation into a 3D pixelized form: one half remains intact while the other organically fragments into large, floating cubes that drift outward, each cube revealing the object’s texture, ingredients, and colors. Studio lighting with soft, realistic shadows, shallow depth of field, tasteful perspective and composition, hyperrealistic detail, stylish geometric abstraction, subtle motion blur on the cubes, high resolution, cinematic close-up.
+
+from [@TechieBySA](https://x.com/TechieBySA/status/2001021119441330425?s=20)
+
+## 49. Cloud Formation!
+
+<img width="500" height="500" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/51467b7b-0731-496b-8fe9-e8507fbee48a" />
+
+### Prompt
+
+>  Create an ultra-realistic sky scene where soft, natural cloud formations organically assemble into the clear silhouette of a Carrack. The cloud shape appears high in a vibrant blue sky, naturally floating above a recognizable nature below.
+>
+> The composition is square (1080×1080), with the cloud formation occupying the upper portion of the frame while the landscape grounds the scene beneath it. Lighting is crisp and daylight-bright, with sunlit highlights on the clouds that enhance depth, softness, and realism.
+>
+> The overall mood should feel calm, optimistic, and visually striking, with rich color saturation and a clean, peaceful atmosphere.
+
+from [@TechieBySA](https://x.com/TechieBySA/status/2000671056780996891?s=20)
+
+## 50. Pencil Sketch
+
+<img width="500" height="264" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/e4ca347d-a5d7-4eeb-9195-b84119e43e8a" />
+
+### Prompt
+```json
+{
+  "prompt": "Reimagine the uploaded photo as an ultra-detailed 3D graphite pencil sketch drawn on textured white notebook paper. The subject is the same woman, identity preserved, appearing as a realistic hand-drawn graphite illustration. She is shown actively drawing, with her right hand holding a sharpened pencil as the sketch comes to life. The drawing captures fine facial features, flowing hair, denim jacket, and floral dress with precise graphite shading and cross-hatching. Emphasize crisp paper grain, visible paper fibers, subtle imperfections, and realistic surface texture. Include an eraser, metal pencil sharpener, and scattered pencil shavings resting on the notebook page. Add natural graphite smudges, soft dust residue, light hand-smear marks, and realistic shadows cast by the hand and tools. The notebook spiral binding is visible on the side. Lighting is soft and directional, enhancing depth, realism, and tactile hand-drawn quality. Ultra-realistic, photoreal graphite, high detail, cinematic macro texture.",
+  "negative_prompt": "color, ink, watercolor, digital painting, oil paint, smooth plastic texture, low detail, blurry, flat shading, cartoon, anime, CGI shine, unrealistic lighting, distorted hands, extra fingers, deformed anatomy, text, watermark, logo",
+  "style": "Ultra-realistic graphite pencil sketch, hyper-detailed, tactile, cinematic",
+  "medium": "Graphite pencil on textured notebook paper",
+  "lighting": "Soft directional natural light with realistic shadows",
+  "camera": "Macro close-up, shallow depth of field",
+  "quality": "8K, ultra-high resolution",
+  "identity_preservation": {
+    "keep_face": true,
+    "keep_facial_structure": true,
+    "same_person": true
+  },
+  "composition": {
+    "view": "Top-down angled view of notebook",
+    "focus": "Hand drawing the portrait",
+    "details": [
+      "paper grain",
+      "graphite dust",
+      "smudges",
+      "pencil shavings",
+      "eraser residue"
+    ]
+  }
+}
+```
