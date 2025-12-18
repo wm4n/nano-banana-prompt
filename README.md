@@ -1019,3 +1019,34 @@ from [@TechieBySA](https://x.com/TechieBySA/status/2000671056780996891?s=20)
 ```
 
 from [@ShreyaYadav___](https://x.com/ShreyaYadav___/status/2001009056396525687?s=20)
+
+## 51. Christmas Card
+
+<img width="400" height="214" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/6212b5f5-987b-4c55-b0fa-a41279a4b8ad" />
+<img width="500" height="264" alt="Gemini_Generated_Image_Christmas_Card" src="https://github.com/user-attachments/assets/e2b63963-cb35-4630-86b7-7af90ddeca99" />
+
+### Prompt
+
+> a faithfully illustrated Christmas card design featuring the character in Christmas hats of the uploaded photo, and the text "Happy Christmas 2025", it is friendly and traditional, with a classical design, in a winter wonderland.
+
+from [@NanoBanana](https://x.com/NanoBanana/status/2001234210409857077?s=20)
+
+## 52. Ink Drawing
+
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/3552ded3-a36f-4819-a49b-442a866ff169" />
+
+### Prompt
+
+> The {subject} is formed from liquid plumes swirling in milky water. Soft diffusion, abstract forms, rich ink blacks, and cloudy whites blending naturally, giving a dreamy, poetic impression.
+
+from [@azed_ai](https://x.com/azed_ai/status/2001246085042593973?s=20)
+
+## 53. Paper Cut
+
+<img width="500" height="670" alt="Gemini_Generated_Image_ils01nils01nils0" src="https://github.com/user-attachments/assets/4e829e6b-95f3-4ea0-851f-752620f87ac8" />
+
+### Prompt
+
+> Eye-level straight-on view, a hyper-vibrant 3D layered paper cut-out scene illustration, full bleed composition. Glowing China Red and Teal and Gold, extremely high saturation, maximalist composition, richly detailed festival scene with dragon dance and pagodas extending to the edges. Soft even studio lighting creates distinct, realistic drop shadows cast by each individual paper layer onto the layer beneath it, revealing tangible depth and physical thickness of the matte paper. Octane render, 8k, clean details --ar 3:4 --stylize 450 --no frame, border, box, sun rays, visible light beams
+
+[@0x00_Krypt](https://x.com/0x00_Krypt/status/2001102159245668858?s=20)
