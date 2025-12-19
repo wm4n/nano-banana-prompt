@@ -1050,3 +1050,35 @@ from [@azed_ai](https://x.com/azed_ai/status/2001246085042593973?s=20)
 > Eye-level straight-on view, a hyper-vibrant 3D layered paper cut-out scene illustration, full bleed composition. Glowing China Red and Teal and Gold, extremely high saturation, maximalist composition, richly detailed festival scene with dragon dance and pagodas extending to the edges. Soft even studio lighting creates distinct, realistic drop shadows cast by each individual paper layer onto the layer beneath it, revealing tangible depth and physical thickness of the matte paper. Octane render, 8k, clean details --ar 3:4 --stylize 450 --no frame, border, box, sun rays, visible light beams
 
 [@0x00_Krypt](https://x.com/0x00_Krypt/status/2001102159245668858?s=20)
+
+## 54. Mirror Reflection
+
+<img width="500" height="670" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/2761b73d-4366-43eb-a2e3-e2005eac8b85" />
+
+### Prompt
+
+> A photorealistic conceptual studio photograph. [REALITY SUBJECT] is placed on a grey concrete floor, facing away from the camera, looking into a large rectangular mirror standing on the floor.
+>
+> The Reflection (Physics Auto-Correction):
+> * **Subject:** In the mirror, [MIRROR REFLECTION SUBJECT] appears in the **EXACT SAME pose and position**.
+> * **Optical Rule:** The reflection is an **optically correct, laterally inverted image**. Gestures and limbs are perfectly symmetrical across the mirror plane (visual mirroring).
+> * **Environment Lock:** The background inside the mirror is the **EXACT SAME grey studio wall** (NOT outdoors, forest, or space).
+>
+> The Lighting Engine:
+> * **Single Light Source:** Soft studio light fixed from the **RIGHT**.
+> * **Shadows:** The reality subject casts a shadow to the **LEFT**. The reflection MUST cast a matching shadow to the **LEFT** on the virtual floor inside the mirror.
+> * **Grounding:** Dark, sharp contact shadows (ambient occlusion) right under the reflection's base to ensure weight. No floating.
+>
+> Details: 8k, Octane render, ray-tracing, physically based rendering, accurate mirror optics. --ar 3:4 --no forest, savanna, outer space, nature background, floating, diagonal symmetry, conflicting shadows
+
+from [@0x00_Krypt](https://x.com/0x00_Krypt/status/2001507709204729905?s=20)
+
+## 55. Embroidery Art
+
+<img width="500" height="279" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/b0fa4f7c-af1b-4fe0-97d3-b3dfbe5c2195" />
+
+### Prompt
+
+> A detailed embroidery piece depicting a peaceful pastoral landscape, free of any people. The scene features a rustic stone cottage with a thatched roof nestled among rolling green hills made of textured stitching. A winding dirt path leads towards the cottage, bordered by a dense field of large, stylized flowers in shades of pink, purple, and yellow in the foreground, similar to those in the examples. A small stream meanders through the fields. The sky above is filled with large, swirling, cloud-like formations made of coiled white yarn, creating a three-dimensional effect. The entire piece has a tactile, handcrafted feel, showing the direction of the thread.
+
+from [@0x00_Krypt](https://x.com/0x00_Krypt/status/2001613074688807160?s=20)
