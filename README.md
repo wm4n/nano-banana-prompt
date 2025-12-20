@@ -1,4 +1,4 @@
-# Nano Banana Prompt Pro Collection
+# Best Nano Banana Pro Prompt Collection
 
 ## 1. Isometric City Scene
 
