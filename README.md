@@ -1158,3 +1158,23 @@ from [@0x00_Krypt](https://x.com/0x00_Krypt/status/2002762402539171994?s=20)
 > A dynamic fashion advertisement for Nike showing a hyper-realistic model mid-twist jump, light trails following her limbs. Background: prism-shifting gradient (hot magenta to sapphire) with refracted lens flares. The model wears iridescent Nike runner tights and a cropped tech hoodie in holographic white. Bold serif "NIKE" and motion-glitched "LUMINA" in layered text behind. High-energy, futuristic aesthetic with fashion gloss. --ar 3:4 --raw --stylize 750
 
 from [@iamsofiaijaz](https://x.com/iamsofiaijaz/status/2002671783368142996?s=20)
+
+## 59. Wallpaper Illustration
+
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/f7770035-001d-44de-a023-0cffbcf7ffe7" />
+
+### Prompt
+
+> A cozy room where the wall looks like a giant paper illustration, flat ink lines and watercolor washes, yet a corner of the “paper wall” is peeled back, revealing a fully 3D forest behind it. The peeled edge curls outward like thick cardstock, casting a real shadow on the illustrated surface. The illusion: the 2D drawn objects (a drawn lamp, drawn shelf) cast realistic 3D shadows, while the 3D forest casts faint “ink” shadows as if it’s becoming a drawing. A cat sits half-in, half-out: front paws in 3D forest moss, back body in 2D sketch form, seamlessly blended. Soft morning light, gentle pastel palette, tactile paper fibers visible, high detail, whimsical but believable “mixed-dimension” realism.
+
+from [@umesh_ai(https://x.com/umesh_ai/status/2003059524681466121?s=20)
+
+## 60. System + Video
+
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/1a256655-5db7-43e0-9919-4fa8bcae4567" />
+
+### Prompt
+
+>  A high-quality 3D medical illustration of a {subject}
+
+Then use the generated photo for the 1st frame in a AI Video Tool.
