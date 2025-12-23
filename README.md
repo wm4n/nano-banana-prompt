@@ -1178,3 +1178,5 @@ from [@umesh_ai(https://x.com/umesh_ai/status/2003059524681466121?s=20)
 >  A high-quality 3D medical illustration of a {subject}
 
 Then use the generated photo for the 1st frame in a AI Video Tool.
+
+from [@dotey](https://x.com/dotey/status/2002823582414668218?s=20)
