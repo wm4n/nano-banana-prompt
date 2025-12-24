@@ -1268,3 +1268,13 @@ from [@dotey](https://x.com/dotey/status/2002823582414668218?s=20)
 ```
 
 from [@Ankit_patel211](https://x.com/Ankit_patel211/status/2003492885879226643?s=20)
+
+## 61. Search Topic Then Generate
+
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/96454040-a0c9-4b6b-b638-9d98c8f584e3" />
+
+### Prompt
+
+>  Use search to find {Topic}. Use this information to write a short article about it (with headings). Return a photo of the article as it appeared in a glossy magazine. Show the magazine cover ({Prefer Topic Heading}), and the two page spread of the article about {Topic}.
+
+from [@NanoBanana](https://x.com/NanoBanana/status/2001678061662531590?s=20)
