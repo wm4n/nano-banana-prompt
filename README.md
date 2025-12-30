@@ -249,7 +249,6 @@ from [@azed_ai](https://x.com/azed_ai/status/1995084424489422885?s=20)
 > Hermes (The Messenger): Playful and brave face, youthful look. Wearing a winged helmet (Petasos) and a flowing white tunic. Flying slightly off the ground with winged sandals, holding the Caduceus (staff with snakes). Surrounded by wind effects, energetic boy hero vibe.
 >
 > Style parameters: 3D render, blind box toy style, C4D, octane render, bright lighting, high quality, clean background, soft textures, vivid colors. --ar 16:9 
-```
 
 ## 12. Watercolor Drawing of "Journey to the West"
 
