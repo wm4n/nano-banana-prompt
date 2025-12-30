@@ -228,41 +228,27 @@ from [@azed_ai](https://x.com/azed_ai/status/1995084424489422885?s=20)
 
 ## 10. UI/UX analysis
 
-<img width="344" height="768" alt="Gemini_Generated_Image_pqtal6pqtal6pqta" src="https://github.com/user-attachments/assets/2190ff84-1428-4f4b-bb76-1d553fabaf9a" />
+<img width="400" alt="screen" src="https://github.com/user-attachments/assets/c616242c-192c-4b3b-95c7-0d62f8ed994d" />
 
-prompt
-```text
-Act as an expert UI/UX designer. Conduct an in-depth analysis of the attached screenshot
-and provide your critique. Annotate the image using a red pen to highlight areas requiring
-modification, improvement, or enhancement, and a green pen to highlight well-executed
-elements. Provide a candid, neutral evaluation based on the highest industry standards,
-embodying the persona of a world-class UI/UX professional master. 
-```
+### prompt
+
+> Act as an expert UI/UX designer. Conduct an in-depth analysis of the attached screenshot and provide your critique. Annotate the image using a red pen to highlight areas requiring modification, improvement, or enhancement, and a green pen to highlight well-executed elements. Provide a candid, neutral evaluation based on the highest industry standards, embodying the persona of a world-class UI/UX professional master. 
 
 ## 11. Cute Character Model
 
-<img width="688" height="384" alt="Gemini_Generated_Image_bp17r3bp17r3bp17" src="https://github.com/user-attachments/assets/c89ebd8b-4b2b-4199-8e62-3ac46816fcc3" />
+<img width="500" height="279" alt="cute_character_model" src="https://github.com/user-attachments/assets/361f0f57-1a4a-460c-848e-f4726666016b" />
 
-prompt
-```text
-Greek mythology character group illustration, featuring Ares, Heracles, and Hermes.
-Classic trio, Q-version, chibi cute style, dynamic and lively composition.
+### prompt
 
-Ares (The War God): Calm and steady expression, wearing a majestic golden helmet with
-a red plume, clad in intricate ancient Greek bronze armor, holding a spear and a shield.
-Accompanied by a cute, goofy-looking little wolf pup by his side.
-
-Heracles (The Hero): Confident and mischievous expression, wearing a cute Nemean Lion
-skin hood on his head and a lion-skin cape, muscular but chubby body, holding a heavy
-wooden club. Striking a classic pose looking into the distance, spirited and proud.
-
-Hermes (The Messenger): Playful and brave face, youthful look. Wearing a winged helmet
-(Petasos) and a flowing white tunic. Flying slightly off the ground with winged sandals,
-holding the Caduceus (staff with snakes). Surrounded by wind effects, energetic boy hero
-vibe.
-
-Style parameters: 3D render, blind box toy style, C4D, octane render, bright lighting,
-high quality, clean background, soft textures, vivid colors. --ar 16:9 
+> Greek mythology character group illustration, featuring Ares, Heracles, and Hermes. Classic trio, Q-version, chibi cute style, dynamic and lively composition.
+>
+> Ares (The War God): Calm and steady expression, wearing a majestic golden helmet with a red plume, clad in intricate ancient Greek bronze armor, holding a spear and a shield. Accompanied by a cute, goofy-looking little wolf pup by his side.
+> 
+> Heracles (The Hero): Confident and mischievous expression, wearing a cute Nemean Lion skin hood on his head and a lion-skin cape, muscular but chubby body, holding a heavy wooden club. Striking a classic pose looking into the distance, spirited and proud.
+>
+> Hermes (The Messenger): Playful and brave face, youthful look. Wearing a winged helmet (Petasos) and a flowing white tunic. Flying slightly off the ground with winged sandals, holding the Caduceus (staff with snakes). Surrounded by wind effects, energetic boy hero vibe.
+>
+> Style parameters: 3D render, blind box toy style, C4D, octane render, bright lighting, high quality, clean background, soft textures, vivid colors. --ar 16:9 
 ```
 
 ## 12. Watercolor Drawing of "Journey to the West"
@@ -1288,3 +1274,14 @@ from [@NanoBanana](https://x.com/NanoBanana/status/2001678061662531590?s=20)
 > Fireworks form the shape of {SUBJECT} in the night sky above a waterfront city. The design is inspired by the colors, proportions, and silhouette of {SUBJECT}, clearly readable and visually striking against the dark sky. Long-exposure, photorealistic fireworks photography with smoke trails, city skyline silhouette, and colorful reflections on the water. Cinematic composition, sharp detail, ultra-high-resolution 4K.
 
 from [@AllaAisling](https://x.com/AllaAisling/status/2005299702015918358?s=20)
+
+
+## 63. Concept Art
+
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/5f70e80b-25ee-46db-b46c-4f28f4b441e9" />
+
+### Prompt
+
+> A concept sheet for a [character], detailed with front, back, and side views, including close-up sketches of facial features and accessories, annotated with design notes and labeled components, drawn in blueprint style with glowing trim in [color1] and base structure in [color2], presented on a clean white background
+
+from [@azed_ai](https://x.com/azed_ai/status/2005232305175237003?s=20)
