@@ -1275,6 +1275,16 @@ from [@Ankit_patel211](https://x.com/Ankit_patel211/status/2003492885879226643?s
 
 ### Prompt
 
->  Use search to find {Topic}. Use this information to write a short article about it (with headings). Return a photo of the article as it appeared in a glossy magazine. Show the magazine cover ({Prefer Topic Heading}), and the two page spread of the article about {Topic}.
+> Use search to find {Topic}. Use this information to write a short article about it (with headings). Return a photo of the article as it appeared in a glossy magazine. Show the magazine cover ({Prefer Topic Heading}), and the two page spread of the article about {Topic}.
 
 from [@NanoBanana](https://x.com/NanoBanana/status/2001678061662531590?s=20)
+
+## 62. Firework 
+
+<img width="500" height="273" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/fb8cbdc8-69fe-45b4-b358-f9996745b5ff" />
+
+### Prompt
+
+> Fireworks form the shape of {SUBJECT} in the night sky above a waterfront city. The design is inspired by the colors, proportions, and silhouette of {SUBJECT}, clearly readable and visually striking against the dark sky. Long-exposure, photorealistic fireworks photography with smoke trails, city skyline silhouette, and colorful reflections on the water. Cinematic composition, sharp detail, ultra-high-resolution 4K.
+
+from [@AllaAisling](https://x.com/AllaAisling/status/2005299702015918358?s=20)
