@@ -1338,3 +1338,15 @@ from [@ZaraIrahh](https://x.com/ZaraIrahh/status/2005816508602278010?s=20)
 > Composition rules:
 > Brush tip ends cleanly at the upper right. All detail remains strictly inside the stroke.
 > Hyper-realistic, HDR, poster-grade, 8K look.
+
+from [@TechieBySA](https://x.com/TechieBySA/status/2006821478378123282?s=20)
+
+## 66. Angle Shot
+
+<img width="500" height="500" alt="Spongebob in different angles" src="https://github.com/user-attachments/assets/619bfae4-f6f3-44ef-a5f6-361ea84922db" />
+
+### Prompt
+
+> Transform the original photo into a dramatic, photorealistic, ultra-detailed set of 4 different styles, each a mid close up wide-angle shot with an extreme, dynamic camera angle (including more grid views from directly below or above), where one or more body parts are positioned right next to the lens and appear huge, the rest of the body recedes strongly in perspective, and the same person strikes a stylish, complex, powerful pose in a consistent, expanded version of the original environment, with cinematic lighting, high contrast, crisp textures, and precise color grading.
+
+from [@Ankit_patel211](https://x.com/Ankit_patel211/status/2006218325752438830?s=20)
