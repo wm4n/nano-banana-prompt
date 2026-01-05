@@ -1364,3 +1364,30 @@ Replace {the uploaded photo} with your subject and {watermark text}
 > perfect composition, impeccable attention to detail, highest quality, rich detail, sharp focus, 8K/4K resolution, clear edges, exquisite details, perfect composition, depth of field, cinematic lighting, vibrant colors, award-winning style, professional level, perfect depiction. Create an extremely detailed, hyper-realistic 3D graphite pencil sketch depicting the face of {the uploaded photo}, drawn on textured white notebook paper with clear paper quality, delicate details, and subtle imperfections. The facial sketch should be perfectly identical to the reference photo displayed on an iPhone placed next to the notebook. The iPhone screen clearly displays the artist's original portrait photograph with natural reflections and soft sunlight reflections on the glass. The watermark is mandatory and must not be omitted, modified, adjusted, rotated, hidden, stylized, or replaced under any circumstances. The generator must prioritize the readability and boldness of the "Watercolour" text over all other visual elements. The watermark is essential: the final image must contain the watermark in the lower left corner. This watermark must be a white square with a fixed size of 10x10 pixels. Within this square, the Gothic handwritten font {watermark text} must appear. The Gothic handwritten {watermark text} text must be: - Fully readable - Bold Arial font - Solid black (#000000) - Centered - Sharp, clean, and unadorned - No blurring, distortion, or pixelation. The white square must be: - Completely opaque - Clean and sharp edges - Unblurred, opaque, and textureless. This watermark is mandatory and cannot be omitted; it must not be modified, adjusted, rotated, hidden, stylized, or replaced under any circumstances. The generator must prioritize the readability and coarseness of the {watermark text} text over all other visual elements.
 
 from [@94vanAI](https://x.com/94vanAI/status/2007642418816876930?s=20)
+
+## 68. Pixar Style Illustration
+
+<img width="500" height="273" alt="Pixar Style Illustration" src="https://github.com/user-attachments/assets/2b8ee615-06a1-4a7a-ba78-bad68828ea95" />
+
+### Prompt
+
+> A stylized 3D animated young woman leaning against a textured abstract wall made of layered cracked paint panels in warm gradients of yellow, coral, pink, red, and muted purple.
+She has short wavy dark hair slightly tousled, closed eyes with a soft peaceful smile, a small hoop earring, and relaxed body language with her arms folded. She is wearing a loose dusty-rose long sleeve shirt, high-waisted blue jeans rolled at the cuffs, and worn brown boots.
+>
+> Soft cinematic lighting, warm pastel color palette, shallow depth of field, painterly textures, cozy and calm mood, whimsical Pixar-style 3D illustration, ultra detailed, high resolution, soft shadows, dreamy atmosphere.
+
+from [@iamsofiaijaz](https://x.com/iamsofiaijaz/status/2007267921425240077?s=20)
+
+## 69. Pixar Style Illustration from Photo
+
+<img width="500" height="670" alt="Pixar Style Illustration from Photo" src="https://github.com/user-attachments/assets/02f903dc-949d-4f9d-bfa6-1332d855a146" />
+
+### Prompt
+
+> A stylized 3D animated of {characters in the uploaded photo} standing in front of a rustic wooden door, surrounded by soft coral-pink and dusty red plants, with a layered pastel canyon wall in the background made of cracked textured stone in warm gradients of yellow, peach, pink, and muted purple.
+>
+> Cinematic soft lighting, warm color palette, shallow depth of field, painterly textures, cozy mood, whimsical Pixar-style 3D illustration, ultra-detailed, high resolution, soft shadows, pastel fantasy environment, peaceful atmosphere.
+
+from [@iamsofiaijaz](https://x.com/iamsofiaijaz/status/2007267921425240077?s=20)
+
+
