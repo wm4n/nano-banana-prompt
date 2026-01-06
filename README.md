@@ -236,7 +236,7 @@ from [@azed_ai](https://x.com/azed_ai/status/1995084424489422885?s=20)
 
 ## 11. Cute Character Model
 
-<img width="500" height="279" alt="cute_character_model" src="https://github.com/user-attachments/assets/361f0f57-1a4a-460c-848e-f4726666016b" />
+<img width="500" height="279" alt="Cute Character Model" src="https://github.com/user-attachments/assets/361f0f57-1a4a-460c-848e-f4726666016b" />
 
 ### prompt
 
@@ -252,49 +252,33 @@ from [@azed_ai](https://x.com/azed_ai/status/1995084424489422885?s=20)
 
 ## 12. Watercolor Drawing of "Journey to the West"
 
-<img width="688" height="384" alt="Gemini_Generated_Image_je56x7je56x7je56" src="https://github.com/user-attachments/assets/82623af8-b8dc-41cf-aa23-342623f0d2ff" />
+<img width="500" height="279" alt="Watercolor Drawing" src="https://github.com/user-attachments/assets/6fa59df2-c014-4770-844a-93429e25beb4" />
 
-prompt
-```text
-Chinese mythology character illustration, featuring Monkey King, Pigsy, and Sha Wujing.
-Classic trio, Q-version, chibi cute style, dynamic and lively composition.
-
-Monkey King: Naughty and confident expression, wearing a Phoenix-feather cap with two
-long pheasant tails, clad in intricate ancient golden glowing armor, holding a golden
-cudgel. Sitting cross-legged on a fluffy floating cloud, hovering slightly above the
-others.
-
-Pigsy: Arrogant and funny expression, wearing a loose black monk robe revealing a cute
-round belly, big pig ears and snout. Holding a Nine-toothed Rake. Striking a classic
-pose pretending to look into the distance, spirited and proud.
-
-Sha Wujing: Honest, silly, and diligent expression. Having a bushy beard and messy hair,
-wearing a purple robe and a necklace of large prayer beads. Holding a Crescent Moon
-Spade and carrying a heavy luggage pole on his shoulder.
-
-Style parameters: Chinese art render, ink wash painting style with vibrant colors,
-thick outlines, watercolor texture, bright lighting, high quality, simple and mystic
-mountain background, soft textures. --ar 16:9
-```
+### prompt
+> Chinese mythology character illustration, featuring Monkey King, Pigsy, and Sha Wujing. Classic trio, Q-version, chibi cute style, dynamic and lively composition.
+> 
+> Monkey King: Naughty and confident expression, wearing a Phoenix-feather cap with two long pheasant tails, clad in intricate ancient golden glowing armor, holding a golden cudgel. Sitting cross-legged on a fluffy floating cloud, hovering slightly above the others.
+> 
+> Pigsy: Arrogant and funny expression, wearing a loose black monk robe revealing a cute round belly, big pig ears and snout. Holding a Nine-toothed Rake. Striking a classic pose pretending to look into the distance, spirited and proud.
+>
+> Sha Wujing: Honest, silly, and diligent expression. Having a bushy beard and messy hair, wearing a purple robe and a necklace of large prayer beads. Holding a Crescent Moon Spade and carrying a heavy luggage pole on his shoulder.
+>
+> Style parameters: Chinese art render, ink wash painting style with vibrant colors, thick outlines, watercolor texture, bright lighting, high quality, simple and mystic mountain background, soft textures. --ar 16:9
 
 ## 13. Hand-Drawn Scribble Breakdown
 
-<img width="384" height="688" alt="Gemini_Generated_Image_v6j5giv6j5giv6j5" src="https://github.com/user-attachments/assets/08403232-6638-41bb-960a-6ff624d1ef2a" />
+<img width="500" height="896" alt=" Hand-Drawn Scribble Breakdown" src="https://github.com/user-attachments/assets/a680048e-ec10-4ba5-aecd-68a01a286854" />
 
-prompt
-```
-Breakdown the look into a fun OOTD Fashion Collage, 9:16. Paper scribble aesthetic
-with hand-drawn arrows, doodles, and handwritten labels pointing to each outfit
-piece. Notebook paper texture background with ink sketch style. 
-```
+### prompt
+> Breakdown the look into a fun OOTD Fashion Collage, 9:16. Paper scribble aesthetic with hand-drawn arrows, doodles, and handwritten labels pointing to each outfit piece. Notebook paper texture background with ink sketch style. 
 
 from [@ShreyaYadav___](https://x.com/ShreyaYadav___/status/1995482012124434547?s=20)
 
 ## 14. Split Effect
 
-<img width="704" height="384" alt="Gemini_Generated_Image_pfaip4pfaip4pfai" src="https://github.com/user-attachments/assets/d741e313-df88-4e61-be3d-0fb12902f23f" />
+<img width="500" height="273" alt="Split Effect" src="https://github.com/user-attachments/assets/d3113bef-9d66-4643-8b15-9fac2cfd9ada" />
 
-prompt
+### prompt
 ```json
 {
   "image_generation": {
@@ -393,7 +377,6 @@ prompt
     }
   }
 }
-
 ```
 
 from [@ZaraIrahh](https://x.com/ZaraIrahh/status/1995304550610407807?s=20)
@@ -1390,4 +1373,12 @@ from [@iamsofiaijaz](https://x.com/iamsofiaijaz/status/2007267921425240077?s=20)
 
 from [@iamsofiaijaz](https://x.com/iamsofiaijaz/status/2007267921425240077?s=20)
 
+## 70. Draw like a 6
 
+<img width="500" height="273" alt="Draw like a 6" src="https://github.com/user-attachments/assets/84bbc289-89d9-42e0-a6ad-fdfabe100b94" />
+
+### Prompt
+
+> Prompt on Nano Banana Pro  : Draw [VISUAL] as if created by a cheerful 6-year-old on white notebook paper. Use chunky wax-crayon strokes, wobbly outlines, and simple flat shapes. Colors should be bright, bold, and slightly outside the lines, with visible pressure marks and small smudges. Perspective is innocent: objects can float, and size is based on importance, not realism. Faces are dots with curved smiles; hands are mitten blobs; animals are round and friendly. Add playful extras like a sun in a corner, puffy clouds, stars, and hearts. Include uneven scribble shading, a few tiny doodles in the margins, and one or two hand-written labels in childlike spelling.
+
+from [@umesh_ai](https://x.com/umesh_ai/status/2008087921723847021?s=20)
