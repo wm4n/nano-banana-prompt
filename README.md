@@ -1382,3 +1382,33 @@ from [@iamsofiaijaz](https://x.com/iamsofiaijaz/status/2007267921425240077?s=20)
 > Prompt on Nano Banana Pro  : Draw [VISUAL] as if created by a cheerful 6-year-old on white notebook paper. Use chunky wax-crayon strokes, wobbly outlines, and simple flat shapes. Colors should be bright, bold, and slightly outside the lines, with visible pressure marks and small smudges. Perspective is innocent: objects can float, and size is based on importance, not realism. Faces are dots with curved smiles; hands are mitten blobs; animals are round and friendly. Add playful extras like a sun in a corner, puffy clouds, stars, and hearts. Include uneven scribble shading, a few tiny doodles in the margins, and one or two hand-written labels in childlike spelling.
 
 from [@umesh_ai](https://x.com/umesh_ai/status/2008087921723847021?s=20)
+
+## 71. Claymorphism City
+
+<img width="500" height="279" alt="Claymorphism City" src="https://github.com/user-attachments/assets/8443f54b-98d7-4f55-89c7-e6a86fd47314" />
+
+### Prompt
+
+> Isometric illustration, huge map of {TAIPEI}, wide angle aerial view, claymorphism style, toy-like miniature world. 
+>
+> CENTER: Iconic landmarks of {TAIPEI} rendered in exaggerated scale, positioned prominently to define the city center.
+>
+> GEOGRAPHY: The city's main geographic structure (such as a winding river, a coastline, or a major highway system) cutting through the composition to create visual flow.
+>
+> SURROUNDINGS: Extremely dense cityscape, hundreds of tiny colorful residential buildings, complex winding roads, busy traffic with tiny toy cars.
+>
+> ATMOSPHERE: Vibrant high saturation colors, cute, playful, rich details, crowded composition, soft smooth textures, ambient occlusion shadows, sunny daylight. 
+>
+> --ar 16:9 --stylize 400 
+
+from [@0x00_Krypt](https://x.com/0x00_Krypt/status/2008345655618793843?s=20)
+
+## 72. Architect's Survey Board
+
+<img width="500" height="273" alt="Architect's Survey Board" src="https://github.com/user-attachments/assets/3ff0e352-458c-4d71-9195-280846e6f782" />
+
+### Prompt
+
+> A preservation architect's survey board for [BUILDING / STRUCTURE] — [STYLE / ARCHITECT / PERIOD]. Left section: site plan and context, showing the structure in its urban or landscape setting with orientation, shadows, and neighboring relationships mapped. Center section: the building dissected, a cutaway axonometric revealing structural system, material layers, hidden infrastructure, with callouts identifying original versus modified elements. Right section: the building as experienced, photographed from the canonical viewpoint in ideal light, with human figures for scale and life, the architecture inhabited. Visual style transitions from technical survey blue-line through neutral analytical greys to golden-hour warmth. Title block reading "[BUILDING NAME] — [ARCHITECT], [CITY], [YEAR], HERITAGE SURVEY".
+
+from [@AllaAisling](https://x.com/AllaAisling/status/2008559432016286198?s=20)
