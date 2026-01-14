@@ -1412,3 +1412,23 @@ from [@0x00_Krypt](https://x.com/0x00_Krypt/status/2008345655618793843?s=20)
 > A preservation architect's survey board for [BUILDING / STRUCTURE] — [STYLE / ARCHITECT / PERIOD]. Left section: site plan and context, showing the structure in its urban or landscape setting with orientation, shadows, and neighboring relationships mapped. Center section: the building dissected, a cutaway axonometric revealing structural system, material layers, hidden infrastructure, with callouts identifying original versus modified elements. Right section: the building as experienced, photographed from the canonical viewpoint in ideal light, with human figures for scale and life, the architecture inhabited. Visual style transitions from technical survey blue-line through neutral analytical greys to golden-hour warmth. Title block reading "[BUILDING NAME] — [ARCHITECT], [CITY], [YEAR], HERITAGE SURVEY".
 
 from [@AllaAisling](https://x.com/AllaAisling/status/2008559432016286198?s=20)
+
+## 73. Mixture of Different Style Drawing
+
+<img width="500" height="273" alt="Mixture of Different Style Drawing" src="https://github.com/user-attachments/assets/90161753-a1db-4d86-a4c1-8fb64ef63372" />
+
+### Prompt
+
+> Create a minimalist mixed-media illustration that combines a simple black line drawing of a detailed human eye with eyelashes and eyebrow with a real-world object, a blue glass marble with swirling patterns, strategically placed to represent a key element in the artwork. The marble becomes the eye's vivid iris and pupil. The object should be seamlessly integrated and visually meaningful in a mesmerizing way. Use a clean, white or off-white background for contrast, and ensure the lines are clear and the object stands out naturally.
+
+from [@umesh_ai](https://x.com/umesh_ai/status/2010294639434310085?s=20)
+
+## 74. Chat Sticker
+
+<img width="500" height="670" alt="Gemini_Generated_Image_3ln8r13ln8r13ln8" src="https://github.com/user-attachments/assets/cd76eb1f-6c74-4f30-aefa-27e6487f4df6" />
+
+### Prompt
+
+> 3D character design, blind box style, Pop Mart aesthetic, C4D, Octane render, clay texture, matte finish, soft lighting,  sticker sheet layout, 3x3 grid view, 9 different expressions: happy making heart gesture, sad with tears, angry with steam, sleepy yawning, surprised with open mouth, shy blushing, cheering with fist, confused thinking, celebrating with confetti, each with cute text label in Chinese, white outline, die-cut, white background, high quality, 8k --ar 3:4
+
+from [@berryxia](https://x.com/berryxia/status/2011087906212085873?s=20)
