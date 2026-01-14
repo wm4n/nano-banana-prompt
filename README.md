@@ -1425,10 +1425,27 @@ from [@umesh_ai](https://x.com/umesh_ai/status/2010294639434310085?s=20)
 
 ## 74. Chat Sticker
 
-<img width="500" height="670" alt="Gemini_Generated_Image_3ln8r13ln8r13ln8" src="https://github.com/user-attachments/assets/cd76eb1f-6c74-4f30-aefa-27e6487f4df6" />
+<img width="500" height="670" alt="Chat Sticker" src="https://github.com/user-attachments/assets/cd76eb1f-6c74-4f30-aefa-27e6487f4df6" />
 
 ### Prompt
 
 > 3D character design, blind box style, Pop Mart aesthetic, C4D, Octane render, clay texture, matte finish, soft lighting,  sticker sheet layout, 3x3 grid view, 9 different expressions: happy making heart gesture, sad with tears, angry with steam, sleepy yawning, surprised with open mouth, shy blushing, cheering with fist, confused thinking, celebrating with confetti, each with cute text label in Chinese, white outline, die-cut, white background, high quality, 8k --ar 3:4
 
 from [@berryxia](https://x.com/berryxia/status/2011087906212085873?s=20)
+
+## 75. Themed Icon Generation
+
+<img width="500" height="500" alt="Themed Icon Generation" src="https://github.com/user-attachments/assets/37f650b2-8aab-439d-aea7-b61c03e1b340" />
+
+### Prompt
+
+> Create a collection of icons representing {theme}, they belong together as a single theme. Put them in a 3x3 grid. The background is white. Make the icons in a colorful and tactile 3D style. No text.
+
+### Theme Example
+- dogs with different emotions
+- bananas
+- January
+- the same cat in different emotions
+- New Year
+
+from [@NanoBanana](https://x.com/NanoBanana/status/2009660363227152653?s=20)
