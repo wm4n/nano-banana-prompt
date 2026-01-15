@@ -1449,3 +1449,13 @@ from [@berryxia](https://x.com/berryxia/status/2011087906212085873?s=20)
 - New Year
 
 from [@NanoBanana](https://x.com/NanoBanana/status/2009660363227152653?s=20)
+
+### 76. 3D Miniature of {Character}
+
+<img width="500" height="670" alt="3D Miniature" src="https://github.com/user-attachments/assets/74dfa020-c440-4a2e-b60d-3d37d8af8066" />
+
+### Prompt
+
+> Miniature, full-body, isometric, ultra-realistic figurine of {Character}, wearing their most iconic outfit and colors, in a signature pose or action, instantly recognizable silhouette and expression, clean white studio background, minimal composition, soft realistic shadows, cinematic lighting, hyper-detailed textures, 4K quality. -ar 3:4
+
+from [@TechieBySA](https://x.com/TechieBySA/status/2011074822315413930)
