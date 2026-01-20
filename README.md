@@ -1468,7 +1468,7 @@ from [@TechieBySA](https://x.com/TechieBySA/status/2011074822315413930)
 
 Paste the prompt into NotebookLM slide generation prompt
 
-<img width="1006" height="619" alt="NotebookLM slide generation prompt" src="https://github.com/user-attachments/assets/70b19201-e319-47bb-a362-797122912ea7" />
+<img width="500" height="308" alt="NotebookLM slide generation prompt" src="https://github.com/user-attachments/assets/0f6f3741-b555-45bd-9afb-3bcf77f8faec" />
 
 ### Prompt
 
