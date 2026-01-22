@@ -1558,3 +1558,43 @@ from [@aleenaamiir](https://x.com/aleenaamiir/status/2013103212057043110?s=20)
 > Ultra-clean modern recipe infographic. Showcase {Cuisine} in a visually appealing finished form—sliced, plated, or portioned—floating slightly in perspective or angled view. Arrange ingredients, steps, and tips around the dish in a dynamic editorial layout, not restricted to top-down. Ingredients Section: Include icons or mini illustrations for each ingredient with quantities. Arrange them in clusters, lists, or circular flows connected visually to the dish. Steps Section: Show preparation steps with numbered panels, arrows, or lines, forming a logical flow around the main dish. Include small cooking icons (knife, pan, oven, timer) where helpful. Additional Info (optional): Total calories, prep/cook time, servings, spice level—displayed as clean bubbles or badges near the dish. Visual Style: Editorial infographic meets lifestyle food photography. Vibrant, natural food colors, subtle drop shadows, clean vector icons, modern typography, soft gradients or glassmorphism for step panels. Accent colors can highlight key info (calories, prep time). Composition Guidelines: Finished meal as hero visual (perspective or angled) Ingredients and steps flow dynamically around the dish Clear visual hierarchy: dish > steps > ingredients > optional stats Enough negative space to keep design airy and readable Lighting & Background: Soft, natural studio lighting, minimal textured or gradient background for premium editorial feel. Output: 1080×1080, ultra-crisp, social-feed optimized, no watermark.
 
 from [@Strength04_X](https://x.com/Strength04_X/status/2013186574390046844?s=20)
+
+## 81. Fruit Snapshot
+
+<img width="500" height="500" alt="Fruit Snapshot" src="https://github.com/user-attachments/assets/5ace0c6a-62f9-4c81-ad4e-ab4cd2665104" />
+
+### Prompt
+
+```json
+"subject": {
+    "primary": "Vibrant pineapple slices",
+    "action": "Falling through the air toward rising milk",
+    "secondary": "Thick, glossy white milk splash forming arcs and crown-like curves",
+    "details": "Milk droplets frozen mid-air with creamy texture"
+  },
+  "environment": {
+    "background": "Clean blue studio backdrop",
+    "lighting": "Cinematic soft studio lighting with dramatic highlights and shadows"
+  },
+  "visual_style": {
+    "genre": "Ultra-realistic commercial splash photography",
+    "textures": "High-detail creamy milk and fresh citrus pulp",
+    "motion": "Frozen action, high-speed capture",
+    "depth_of_field": "Shallow depth of field"
+  },
+  "camera": {
+    "lens": "85mm macro",
+    "framing": "Wide composition",
+    "focus": "Sharp focus on splash and fruit"
+  },
+  "composition": {
+    "aspect_ratio": "1:1",
+    "color_palette": ["Vibrant pineapple", "Pure White", "Clean Blue"]
+  },
+  "quality": {
+    "detail_level": "Ultra-high detail",
+    "rendering": "Photorealistic"
+  },
+  "profile": "9ewnbdc"
+}
+```
