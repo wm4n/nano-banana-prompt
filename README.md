@@ -1640,3 +1640,23 @@ from [@Strength04_X](https://x.com/Strength04_X/status/2013186574390046844?s=20)
 > 文案內容為：{The future is adaptive: Changes to orientation and resizability APIs in Android 16}
 
 from [@op7418](https://x.com/op7418/status/2013920609038893233?s=20)
+
+## 82. 3D Character Sticker
+
+<img width="500" height="373" alt="3D Character Sticker" src="https://github.com/user-attachments/assets/a2856a5e-f5e7-4546-a4fb-c146ca52edc3" />
+
+### Prompt
+
+> A cute 3D chibi-style cartoon sticker set, featuring the same character in multiple emotions and poses. Big expressive glossy eyes, soft rounded face, slightly oversized head, small body proportions. Light brown/blonde messy bun hairstyle with loose strands. Wearing a red leather jacket over a white top. Each pose shows different expressions: surprised, sad, confused, happy, thinking, winking, peace sign, shrugging. Pixar/Disney-inspired 3D render, smooth plastic-like texture, soft lighting, pastel beige background. Sticker-style white outline around each character, clean and minimal aesthetic, high detail, ultra cute, emoji-like expressions, high resolution, studio quality.
+
+from [@Noor_ul_ain43](https://x.com/Noor_ul_ain43/status/2015783528752111653?s=20)
+
+## 83. Watercolor Style Stack
+
+<img width="500" height="273" alt="Watercolor Style Stack" src="https://github.com/user-attachments/assets/2efcaf8c-5f36-431c-8441-dfa0ae72f857" />
+
+### Prompt
+
+> a young blonde woman in a blue coat, carrying a brown bag, stands within the silhouette of an old woman. yellow flames flicker on the ground, and handwritten text surrounds her. the artwork is in a watercolor style, with soft pastel colors. the background is adorned with handwritten notes and sketches, creating a dreamy atmosphere.
+
+from [@BeanieBlossom](https://x.com/BeanieBlossom/status/2015710564484628823?s=20)
