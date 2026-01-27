@@ -1660,3 +1660,13 @@ from [@Noor_ul_ain43](https://x.com/Noor_ul_ain43/status/2015783528752111653?s=2
 > a young blonde woman in a blue coat, carrying a brown bag, stands within the silhouette of an old woman. yellow flames flicker on the ground, and handwritten text surrounds her. the artwork is in a watercolor style, with soft pastel colors. the background is adorned with handwritten notes and sketches, creating a dreamy atmosphere.
 
 from [@BeanieBlossom](https://x.com/BeanieBlossom/status/2015710564484628823?s=20)
+
+## 84. Cinematic Photo (Raining)
+
+<img width="500" height="1011" alt="Cinematic Photo (Raining)" src="https://github.com/user-attachments/assets/8ebae147-8d61-4a20-a862-77cc08de95b0" />
+
+### Prompt
+
+> A cinematic, moody photograph of a young woman sitting inside a café at night, seen through a rain-covered window. Raindrops and condensation blur the glass, creating a dreamy, nostalgic atmosphere. She has soft features, dark hair with bangs, and is holding a small white ceramic mug close to her face, sipping a warm drink. Warm interior light contrasts with cool teal and blue city lights outside. Shallow depth of field, soft focus, film grain, muted colors, melancholic mood, intimate composition, reflective glass, bokeh lights in the background, realistic photography, 35mm film look, low light, cinematic color grading.
+
+from [@oggii_0](https://x.com/oggii_0/status/2015378809508503595?s=20)
