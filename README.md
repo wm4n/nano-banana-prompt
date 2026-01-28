@@ -1670,3 +1670,66 @@ from [@BeanieBlossom](https://x.com/BeanieBlossom/status/2015710564484628823?s=2
 > A cinematic, moody photograph of a young woman sitting inside a café at night, seen through a rain-covered window. Raindrops and condensation blur the glass, creating a dreamy, nostalgic atmosphere. She has soft features, dark hair with bangs, and is holding a small white ceramic mug close to her face, sipping a warm drink. Warm interior light contrasts with cool teal and blue city lights outside. Shallow depth of field, soft focus, film grain, muted colors, melancholic mood, intimate composition, reflective glass, bokeh lights in the background, realistic photography, 35mm film look, low light, cinematic color grading.
 
 from [@oggii_0](https://x.com/oggii_0/status/2015378809508503595?s=20)
+
+## 85. X Profile Card
+
+<img width="500" height="593" alt="X Profile Card" src="https://github.com/user-attachments/assets/1523155c-7d55-45ca-adb6-4ae86f7834ae" />
+
+### Prompt
+
+> A cute ultra-detailed 3D cartoon boy in Pixar/Disney style sitting naturally on the lower edge of an X (Twitter) profile card, emerging out of the profile frame.
+> Use attached photo for the character attributes and outfit.
+> The X profile UI clearly displays:
+> Name: William 🫠 (blue verified badge)
+> Username: 
+> @vvilliamchao
+> 
+> Clean modern X (Twitter) interface, rounded white profile card, subtle icons, profile photo visible.
+> A human hand holding the social media card from the bottom corner.
+> Soft pastel beige background, warm studio lighting, realistic depth and shadows, cinematic composition, ultra-HD, 4K, professional 3D illustration, viral social media aesthetic.
+
+from [@Noor_ul_ain43](https://x.com/Noor_ul_ain43/status/2016046624167137460?s=20)
+
+## 86. Infographic with Technical Annotation
+
+<img width="500" height="500" alt="Infographic with Technical Annotation" src="https://github.com/user-attachments/assets/3a4cb385-6896-43c7-841c-69719bc15e33" />
+
+### Prompt
+
+> Create an infographic image of Drone/UAV, combining a realistic photograph or photorealistic render of the object with technical annotation overlays placed directly on top.
+> 
+> Use black ink–style line drawings and text (technical pen / architectural sketch look) on a pure white studio background.
+> 
+> Include:
+> •Key component labels
+> •Internal cutaway or exploded-view outlines (where relevant)
+> •Measurements, dimensions, and scale markers
+> •Material callouts and quantities
+> •Arrows indicating function, force, or flow (air, sound, power, pressure, movement)
+> •Simple schematic or sectional diagrams where applicable
+> 
+> Place the title Drone/UAV inside a hand-drawn technical annotation box in one corner.
+> 
+> Style & layout rules:
+> •The real object remains clearly visible beneath the annotations
+> •Annotations look hand-sketched, technical, and architectural
+> •Clean composition with balanced negative space
+> •Educational, museum-exhibit / engineering-manual vibe
+> 
+> Visual style:
+> Minimal technical illustration aesthetic.
+> Black linework layered over realistic imagery.
+> Precise but slightly hand-drawn feel.
+> 
+> Color palette:
+> Pure white background.
+> Black annotation lines and text only.
+> No colors.
+> 
+> Output:
+> 1080 × 1080 resolution
+> Ultra-crisp
+> Social-feed optimized
+> No watermark
+
+from [@Sheldon056](https://x.com/Sheldon056/status/2015982694228975977?s=20)
