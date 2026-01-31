@@ -1773,3 +1773,13 @@ from [@Sheldon056](https://x.com/Sheldon056/status/2015982694228975977?s=20)
 > - 不要包含答案的直接文字
 
 from [@yyyole](https://x.com/yyyole/status/2016067037966348725)
+
+## 88. Single-Pose Character Illustrations
+
+<img width="500" height="500" alt="Single-Pose Character Illustrations" src="https://github.com/user-attachments/assets/0d1691db-09ad-4191-a510-3860fcbdc949" />
+
+### Prompt
+
+> Illustrate [SUBJECT] in one clear, static pose. Reduce clothing and anatomy to basic forms. Use soft lighting and restrained color palette. The figure should feel modern and design-led.
+
+from [@aleenaamiir](https://x.com/aleenaamiir/status/2017179397967827138?s=20)
