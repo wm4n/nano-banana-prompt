@@ -1803,3 +1803,14 @@ from [@BeanieBlossom](https://x.com/BeanieBlossom/status/2017884640145793078?s=2
 > Editorial portrait from the attached reference photo, photorealistic. Use uploaded selfie as ONLY face reference. Identity lock: exact likeness, facial geometry/proportions, natural skin texture. No beautification. Keep clothing style, color, material, and fit identical to the reference. Medium close-up (face and shoulders), low angle looking up (heroic/dominant perspective), sharp focus on face/eyes.Serious, intense, focused expression, gaze directed upward and away from camera (beyond the frame). Dramatic saturated studio lighting, high-contrast chiaroscuro with deep shadows, vibrant oranges and deep reds palette, strong rim light creating a halo separation. Solid studio backdrop, rich orange-red smooth gradient, pattern-free, hot radiant atmosphere. High skin texture fidelity (pores visible), 8k, portrait aspect ratio, cinematic lighting, 4:5.
 
 from [@harboriis](https://x.com/harboriis/status/2017479603921600730?s=20)
+
+## 91. Tilt 3D Model Diorama
+
+<img width="500" height="500" alt="Tilt 3D Model Diorama" src="https://github.com/user-attachments/assets/5e46efae-8bb5-423e-9ee8-e4ad9f23aee7" />
+
+
+### Prompt
+
+> Tilt-shift 3D model diorama in 4:5 aspect ratio, highlighting Tokyo Tower and the Shibuya Crossing at sunset. Tiny pedestrians and cyclists navigate the bustling streets, while cherry blossoms drift gently from nearby trees. Neon signs and LED billboards glow softly in the background.
+
+from [@oggii_0](https://x.com/oggii_0/status/2018186632730685723?s=20)
