@@ -1783,3 +1783,23 @@ from [@yyyole](https://x.com/yyyole/status/2016067037966348725)
 > Illustrate [SUBJECT] in one clear, static pose. Reduce clothing and anatomy to basic forms. Use soft lighting and restrained color palette. The figure should feel modern and design-led.
 
 from [@aleenaamiir](https://x.com/aleenaamiir/status/2017179397967827138?s=20)
+
+## 89. Mechanical Bird
+
+<img width="500" height="500" alt="Mechanical Bird" src="https://github.com/user-attachments/assets/fd0b7a40-cad3-47f4-9e79-f67f38c29912" />
+
+### Prompt
+
+> A graceful mechanical hummingbird with intricate brass gears visible through transparent wings, hovering delicately while drinking nectar from a glowing crystal flower, in an enchanted greenhouse filled with bioluminescent plants and floating glass orbs, steampunk fantasy digital art with photorealistic rendering, warm amber and copper tones with ethereal blue-green bioluminescent accents, wonder and mystical serenity, high detail, clean composition
+
+from [@BeanieBlossom](https://x.com/BeanieBlossom/status/2017884640145793078?s=20)
+
+## 90. Editorial Portrait
+
+<img width="500" height="261" alt="Editorial Portrait" src="https://github.com/user-attachments/assets/e9b9d95f-07be-4ed3-8e77-d01213c03511" />
+
+### Prompt
+
+> Editorial portrait from the attached reference photo, photorealistic. Use uploaded selfie as ONLY face reference. Identity lock: exact likeness, facial geometry/proportions, natural skin texture. No beautification. Keep clothing style, color, material, and fit identical to the reference. Medium close-up (face and shoulders), low angle looking up (heroic/dominant perspective), sharp focus on face/eyes.Serious, intense, focused expression, gaze directed upward and away from camera (beyond the frame). Dramatic saturated studio lighting, high-contrast chiaroscuro with deep shadows, vibrant oranges and deep reds palette, strong rim light creating a halo separation. Solid studio backdrop, rich orange-red smooth gradient, pattern-free, hot radiant atmosphere. High skin texture fidelity (pores visible), 8k, portrait aspect ratio, cinematic lighting, 4:5.
+
+from [@harboriis](https://x.com/harboriis/status/2017479603921600730?s=20)
