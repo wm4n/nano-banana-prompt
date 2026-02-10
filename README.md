@@ -1814,3 +1814,13 @@ from [@harboriis](https://x.com/harboriis/status/2017479603921600730?s=20)
 > Tilt-shift 3D model diorama in 4:5 aspect ratio, highlighting Tokyo Tower and the Shibuya Crossing at sunset. Tiny pedestrians and cyclists navigate the bustling streets, while cherry blossoms drift gently from nearby trees. Neon signs and LED billboards glow softly in the background.
 
 from [@oggii_0](https://x.com/oggii_0/status/2018186632730685723?s=20)
+
+## 92. Motion Blur Background
+
+<img width="500" height="621" alt="Gemini_Generated_Image_3oec8j3oec8j3oec" src="https://github.com/user-attachments/assets/0735b221-b1c5-42ef-a6ee-f06ccfdf8028" />
+
+### Prompt
+
+> A high fashion magazine pictorial of an Alpine-looking woman in her early 20s who stands still, looking at the camera, turning her head in the center, surrounded by a blurry silhouette of people passing by. She has a calm, stoic look on her face and is wearing a black minimalist outfit. The background is clean, bright and slightly abstract, and emphasizes the contrast between motion blur and static appearance. Editing style, film composition, pure art photography, soft magazine texture, high resolution. --ar 4:5
+
+from [@ChillaiKalan__](https://x.com/ChillaiKalan__/status/2020715808939549011?s=20)
