@@ -1824,3 +1824,44 @@ from [@oggii_0](https://x.com/oggii_0/status/2018186632730685723?s=20)
 > A high fashion magazine pictorial of an Alpine-looking woman in her early 20s who stands still, looking at the camera, turning her head in the center, surrounded by a blurry silhouette of people passing by. She has a calm, stoic look on her face and is wearing a black minimalist outfit. The background is clean, bright and slightly abstract, and emphasizes the contrast between motion blur and static appearance. Editing style, film composition, pure art photography, soft magazine texture, high resolution. --ar 4:5
 
 from [@ChillaiKalan__](https://x.com/ChillaiKalan__/status/2020715808939549011?s=20)
+
+## 93. Emerge from Subject
+
+<img width="500" height="500" alt="Emerge from Subject" src="https://github.com/user-attachments/assets/87f2b057-dd4f-4a6f-aa79-7c8cf9121306" />
+
+### Prompt
+
+> A creative 3D optical illusion artwork on a wooden desk. A piece of lined notebook paper appears to be torn open in the center. Emerging from the dark void inside the paper is a beautiful 3D Pixar-style girl with large, expressive brown eyes and brunette hair tied in a bun. She is wearing a white ribbed sleeveless turtleneck and light-colored pants. One of her hands rests on the edge of the torn paper, making her look like she is stepping out of the drawing into the real world. In the foreground, a realistic human hand is shown holding a wooden pencil, as if finishing the drawing. Soft, natural lighting, high detail, cinematic 3D render.
+
+Key Elements to Tweak
+
+If you want to change the vibe, here are the keywords to adjust:
+
+- Art Style: Swap "Pixar-style" for "Anime-style," "Hyper-realistic," or "Charcoal sketch" to change how the girl looks.
+- The Tear: You can describe the void as "glowing blue light" or "a colorful galaxy" instead of just a dark hole.
+- Interaction: Change the hand's action to "a hand erasing the edge of her arm" or "a hand reaching out to touch her fingers."
+
+from [@Noor_ul_ain43](https://x.com/Noor_ul_ain43/status/2021476608373305749?s=20)
+
+## 94. Middle Eastern Food
+
+<img width="500" height="500" alt="Middle Eastern Food" src="https://github.com/user-attachments/assets/8618de84-eea3-4855-9d52-af8836484198" />
+
+### Prompt
+
+```
+Evolution of food in the middle east --> <LAYOUT>
+A single chunky block (like a museum cutaway) sliced to reveal 4 stacked floors/strata.
+Each level represents an era/stage/version inferred from INPUT.
+Right side: a vertical legend bar with dates/period labels inferred by the model.
+</LAYOUT>
+<INFER_AND_RENDER>
+Infer 4 major phases and depict each with representative artifacts, tools, and environments.
+Keep transitions educational: show what changed between levels (materials, scale, method).
+</INFER_AND_RENDER>
+<STYLE_NOTES>
+Architectural section realism: visible thickness, rebar/fasteners if applicable, realistic debris at cut edge.
+</STYLE_NOTES>
+```
+
+from [@Gdgtify](https://x.com/Gdgtify/status/2021505737600766375?s=20)
