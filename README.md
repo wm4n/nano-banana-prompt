@@ -1914,3 +1914,13 @@ from [@Arminn_Ai](https://x.com/Arminn_Ai/status/2026005537968558304?s=20)
 > Frame 9: She rides her bicycle back toward home during golden hour sunset, peaceful and relaxed mood, cinematic street scene, storytelling conclusion.
 
 from [@AIwithSynthia](https://x.com/AIwithSynthia/status/2025964782642499742?s=20)
+
+## 97. 3D Hand Paint Miniature
+
+<img width="500" height="500" alt="3D Hand Paint Miniature" src="https://github.com/user-attachments/assets/fbe32f44-8a0a-4c72-b6b7-9f223b7745a0" />
+
+### Prompt
+
+> photorealistic isometric photography of a highly detailed hand-painted miniature of [what it is], masterful professional paint job with smooth color blending, crisp edge highlights, realistic shading and intricate fine details, standing on a small round display base, clean professional studio lighting with soft highlights and gentle shadows, sharp focus, neutral background, ultra detailed collector miniature photography 
+
+from [@ToshiArte](https://x.com/ToshiArte/status/2025994068317098181?s=20)
