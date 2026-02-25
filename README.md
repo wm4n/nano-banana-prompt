@@ -1924,3 +1924,13 @@ from [@AIwithSynthia](https://x.com/AIwithSynthia/status/2025964782642499742?s=2
 > photorealistic isometric photography of a highly detailed hand-painted miniature of [what it is], masterful professional paint job with smooth color blending, crisp edge highlights, realistic shading and intricate fine details, standing on a small round display base, clean professional studio lighting with soft highlights and gentle shadows, sharp focus, neutral background, ultra detailed collector miniature photography 
 
 from [@ToshiArte](https://x.com/ToshiArte/status/2025994068317098181?s=20)
+
+## 97. 3D Character from Different Angle View
+
+<img width="500" height="273" alt="Gemini_Generated_Image_ocs5z9ocs5z9ocs5" src="https://github.com/user-attachments/assets/253b25a7-6bdf-4b3a-815f-626c31eee88f" />
+
+### Prompt
+
+> A cute anthropomorphic [subject] in triple view: front-left, front, and back. Standing upright with a plump body, expressive face, and wearing [clothing/style]. Cartoon mascot in 3D Pixar style, highly detailed with soft shadows and a clean background
+
+from [@azed_ai](https://x.com/azed_ai/status/2026250522404307398?s=20)
