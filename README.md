@@ -1961,9 +1961,9 @@ from [@0x00_Krypt](https://x.com/0x00_Krypt/status/2027578487390015918?s=20)
 
 ## 101. Peeking Through Forest
 
-### Prompt
-
 <img width="500" height="621" alt="Peeking Through Forest" src="https://github.com/user-attachments/assets/921cb4ee-eb33-417e-b17c-cc53d912308b" />
+
+### Prompt
 
 > Subject: A deer (or elf) drinking water at a forest stream.
 >
