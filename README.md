@@ -1958,3 +1958,33 @@ from [@0x00_Krypt](https://x.com/0x00_Krypt/status/2026568040922624090?s=20)
 > A highly detailed 3D bas-relief poster design representing [CITY_NAME]. A dense collage composition featuring the most iconic landmarks and skyline of [CITY_NAME]. Foreground filled with local transportation systems, busy highway networks with miniature cars, and native vegetation. At the top, features prominent, large, embossed English text in capital letters spelling out the name of the location. Pure white monochromatic clay render, embossed paper texture, soft studio lighting, high visual density, clean commercial illustration style. --ar 1:2
 
 from [@0x00_Krypt](https://x.com/0x00_Krypt/status/2027578487390015918?s=20)
+
+## 101. Peeking Through Forest
+
+### Prompt
+
+<img width="500" height="621" alt="Peeking Through Forest" src="https://github.com/user-attachments/assets/921cb4ee-eb33-417e-b17c-cc53d912308b" />
+
+> Subject: A deer (or elf) drinking water at a forest stream.
+>
+> Foreground/Obstruction: Heavily blurred **green fern leaves** and **branches** in the immediate foreground, creating a natural frame.
+> 
+> Vibe: National Geographic style, secret discovery, lush detail, sunlight filtering through leaves.
+> --ar 4:5
+
+from [@VoxcatAI](https://x.com/VoxcatAI/status/2014900937295593949?s=20)
+
+## 102. Looking Through Bookshelves
+
+<img width="500" height="670" alt="Looking Through Bookshelves" src="https://github.com/user-attachments/assets/864ed2a8-d648-444d-845f-b7545e94b274" />
+
+### Prompt
+
+>  Subject: A girl reading a book in the library, unaware of the camera.
+>
+> Foreground/Obstruction: Looking through gaps in **bookshelves**, blurred books in the foreground framing her face.
+> 
+> Vibe: Voyeuristic but innocent, soft lighting, school romance anime style, shallow depth of field.
+> --ar 3:4 
+
+from [@VoxcatAI](https://x.com/VoxcatAI/status/2014900937295593949?s=20)
