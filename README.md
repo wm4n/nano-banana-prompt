@@ -1,5 +1,15 @@
 # Best Nano Banana Pro Prompt Collection
 
+## 107. Animal Crossing Street
+
+<img width="500" height="273" alt="Gemini_Generated_Image_lhgrurlhgrurlhgr" src="https://github.com/user-attachments/assets/5f86f078-3920-46b2-bfdd-e9a15e529b83" />
+
+### Prompt
+
+> Animal Crossing New Horizons art style, 3D render, isometric diorama view, [LOCATION] street scene, cute rounded chibi buildings, [SEASON ELEMENTS], soft warm light, pastel color palette, cozy atmosphere, subsurface scattering, soft shadows, miniature world, Nintendo aesthetic, blender render, no text
+
+from [@0x00_Krypt](https://x.com/0x00_Krypt/status/2031301997039858084?s=20)
+
 ## 106. Womon in Sapphire-Blue Dress
 
 <img width="500" alt="Womon in Sapphire-Blue Dress" src="https://github.com/user-attachments/assets/91b670ce-0f3b-4ac9-9495-f02a15b61108" />
