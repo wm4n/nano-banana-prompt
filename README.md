@@ -1,5 +1,15 @@
 # Best Nano Banana Pro Prompt Collection
 
+## 110. Botanical Diagram
+
+<img width="750" height="409" alt="Botanical Diagram" src="https://github.com/user-attachments/assets/cad67768-3fa7-4a31-82ba-1e2e9247a9dc" />
+
+### Prompt
+
+> A botanical diagram of a [subject], illustrated in the style of vintage scientific journals. Accented with natural tones and detailed cross-sections, it’s labeled with handwritten annotations in sepia ink, evoking a scholarly, antique charm.
+
+from [@azed_ai](https://x.com/azed_ai/status/2031685598487158940?s=20)
+
 ## 109. Taking Photo Under Cherry Blossom
 
 <img width="500" height="670" alt="Taking Photo Under Cherry Blossom" src="https://github.com/user-attachments/assets/747ec1a1-9642-4b6e-bdce-50cc7acfe4d2" />
