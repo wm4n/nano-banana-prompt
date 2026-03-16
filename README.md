@@ -1,5 +1,15 @@
 # Best Nano Banana Pro Prompt Collection
 
+## 112. Jap Ink Painting
+
+<img width="750" height="409" alt="Jap Ink Painting" src="https://github.com/user-attachments/assets/258c9dc7-bdf5-46c0-9bf7-6546bef6cec4" />
+
+### Prompt
+
+> A traditional Japanese ink wash painting of a [subject], created in expressive sumi-e style with flowing black ink lines and delicate [color1] and [color2] watercolor tints. The pigments softly bleed into textured rice paper, evoking a sense of serenity and timeless beauty.
+
+from [@azed_ai](https://x.com/azed_ai/status/2033498646571028610?s=20)
+
 ## 111. Cartoon Character Sticker
 
 <img width="750" height="1000" alt="Cartoon Character Sticker" src="https://github.com/user-attachments/assets/4a76824e-19f3-4bbd-8076-5525716baa7c" />
