@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="tags-page">
+  <h1>All Tags</h1>
+  <div class="tags-grid">
+    {{ range .Data.Terms.ByCount }}
+    <a class="tags-grid-item" href="{{ .Page.RelPermalink }}">
+      {{ .Page.Title }}
+      <span class="count">({{ .Count }})</span>
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

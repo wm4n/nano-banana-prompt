@@ -1,0 +1,37 @@
+{{ define "main" }}
+<div class="tag-page">
+  <div class="tag-hero">
+    <h1>{{ .Title }}</h1>
+    <p>{{ len .Pages }} prompt{{ if gt (len .Pages) 1 }}s{{ end }} tagged with "{{ .Title }}"</p>
+  </div>
+
+  <div class="gallery-wrap">
+    <div class="gallery">
+      {{ range sort .Pages "Params.num" "desc" }}
+      <div class="card"
+        data-tags="{{ delimit .Params.tags "," }}"
+        data-title="{{ .Title }}">
+        <a class="card-link" href="{{ .RelPermalink }}">
+          <div class="card-img{{ if not .Params.cover }} card-no-img{{ end }}">
+            {{ if .Params.cover }}
+              <img src="{{ .Params.cover }}" alt="{{ .Title }}" loading="lazy">
+            {{ else }}
+              🖼️
+            {{ end }}
+            <span class="card-num">#{{ .Params.num }}</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">{{ .Title }}</h3>
+            <div class="card-tags">
+              {{ range .Params.tags }}
+                <span class="card-tag">{{ . }}</span>
+              {{ end }}
+            </div>
+          </div>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,24 @@
+{{ define "card" }}
+<div class="card"
+  data-tags="{{ delimit .Params.tags "," }}"
+  data-title="{{ .Title }}">
+  <a class="card-link" href="{{ .RelPermalink }}">
+    <div class="card-img{{ if not .Params.cover }} card-no-img{{ end }}">
+      {{ if .Params.cover }}
+        <img src="{{ .Params.cover }}" alt="{{ .Title }}" loading="lazy">
+      {{ else }}
+        🖼️
+      {{ end }}
+      <span class="card-num">#{{ .Params.num }}</span>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">{{ .Title }}</h3>
+      <div class="card-tags">
+        {{ range .Params.tags }}
+          <span class="card-tag">{{ . }}</span>
+        {{ end }}
+      </div>
+    </div>
+  </a>
+</div>
+{{ end }}

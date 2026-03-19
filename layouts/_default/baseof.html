@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.description }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  {{ with .Params.cover }}<meta property="og:image" content="{{ . }}">{{ end }}
+  {{ $css := resources.Get "css/main.css" | resources.Minify }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-logo" href="{{ "/" | relURL }}">🍌 <span>Nano Banana</span> Prompts</a>
+  <span class="header-count">{{ len site.RegularPages }} prompts</span>
+  <div class="header-right">
+    <input class="header-search" type="search" placeholder="Search prompts…" id="search-input">
+  </div>
+</header>
+
+{{ block "main" . }}{{ end }}
+
+<footer class="site-footer">
+  <p>Prompts collected from the AI community · Powered by <a href="https://gohugo.io" target="_blank">Hugo</a></p>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <span class="lightbox-close" id="lightbox-close" aria-label="Close">✕</span>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+// ── Lightbox ──
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lightbox-img');
+document.getElementById('lightbox-close').onclick = () => lb.classList.remove('open');
+lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+window.openLightbox = (src, alt) => { lbImg.src = src; lbImg.alt = alt || ''; lb.classList.add('open'); };
+
+// ── Image lightbox on prompt pages ──
+document.querySelectorAll('.prompt-content img').forEach(img => {
+  img.addEventListener('click', () => openLightbox(img.src, img.alt));
+});
+
+// ── Gallery search + tag filter ──
+const cards = document.querySelectorAll('.card');
+const filterBtns = document.querySelectorAll('.tag-btn');
+const searchInput = document.getElementById('search-input');
+let activeTag = 'all';
+
+function applyFilters() {
+  const q = (searchInput?.value || '').toLowerCase().trim();
+  let visible = 0;
+  cards.forEach(card => {
+    const tags = (card.dataset.tags || '').toLowerCase();
+    const title = (card.dataset.title || '').toLowerCase();
+    const tagMatch = activeTag === 'all' || tags.includes(activeTag.toLowerCase());
+    const searchMatch = !q || title.includes(q) || tags.includes(q);
+    const show = tagMatch && searchMatch;
+    card.hidden = !show;
+    if (show) visible++;
+  });
+  const empty = document.getElementById('gallery-empty');
+  if (empty) empty.hidden = visible > 0;
+}
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeTag = btn.dataset.tag;
+    applyFilters();
+  });
+});
+if (searchInput) searchInput.addEventListener('input', applyFilters);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+{{ define "main" }}
+<article class="prompt-page">
+
+  <a class="prompt-back" href="{{ "/" | relURL }}">← All prompts</a>
+
+  <header class="prompt-header">
+    <div class="prompt-num-badge">Prompt #{{ .Params.num }}</div>
+    <h1 class="prompt-title">{{ .Title }}</h1>
+    <div class="prompt-meta">
+      <div class="prompt-tags">
+        {{ range .Params.tags }}
+        <a class="prompt-tag-link" href="{{ "/tags/" | relURL }}{{ . | urlize }}/">{{ . }}</a>
+        {{ end }}
+      </div>
+      {{ if .Params.source }}
+      <span class="prompt-source">
+        via <a href="{{ .Params.sourceUrl }}" target="_blank" rel="noopener">{{ .Params.source }}</a>
+      </span>
+      {{ end }}
+    </div>
+  </header>
+
+  <div class="prompt-content">
+    {{ .Content }}
+  </div>
+
+  {{ $pages := where site.RegularPages "Section" .Section }}
+  {{ $sorted := sort $pages "Params.num" "asc" }}
+  {{ $prev := "" }}
+  {{ $next := "" }}
+  {{ range $i, $p := $sorted }}
+    {{ if eq $p.RelPermalink $.RelPermalink }}
+      {{ if gt $i 0 }}{{ $prev = index $sorted (sub $i 1) }}{{ end }}
+      {{ if lt $i (sub (len $sorted) 1) }}{{ $next = index $sorted (add $i 1) }}{{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ if or $prev $next }}
+  <nav class="prompt-nav">
+    {{ if $prev }}
+    <a href="{{ $prev.RelPermalink }}">
+      <span class="nav-label">← Previous</span>
+      <span class="nav-title">{{ $prev.Title }}</span>
+    </a>
+    {{ end }}
+    {{ if $next }}
+    <a class="next" href="{{ $next.RelPermalink }}">
+      <span class="nav-label">Next →</span>
+      <span class="nav-title">{{ $next.Title }}</span>
+    </a>
+    {{ end }}
+  </nav>
+  {{ end }}
+
+</article>
+{{ end }}

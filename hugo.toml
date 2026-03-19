@@ -1,0 +1,17 @@
+baseURL = "https://wm4n.github.io/nano-banana-prompt/"
+languageCode = "en-us"
+title = "Nano Banana Prompts"
+
+[taxonomies]
+  tag = "tags"
+
+[params]
+  description = "Best AI image generation prompts for Nano Banana"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[pagination]
+  pagerSize = 200
