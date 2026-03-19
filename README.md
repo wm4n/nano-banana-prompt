@@ -2,7 +2,9 @@
 
 ## 113. Emerging from Architectural Blueprint
 
-<img width="500" height="745" alt="Gemini_Generated_Image_jjyz0njjyz0njjyz" src="https://github.com/user-attachments/assets/f5cba796-c4a0-49f1-afb5-12de513f679d" />
+<img width="500" height="745" alt="Taipei 101 Emerging from Architectural Blueprint" src="https://github.com/user-attachments/assets/f5cba796-c4a0-49f1-afb5-12de513f679d" />
+
+<img width="500" height="745" alt="Pyramid Emerging from Architectural Blueprint" src="https://github.com/user-attachments/assets/9ea222a2-854b-4613-8cd3-20acea919934" />
 
 ### Prompt
 
