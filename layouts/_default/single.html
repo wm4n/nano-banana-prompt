@@ -112,10 +112,11 @@
     let pretty = raw;
     try {
       pretty = JSON.stringify(JSON.parse(raw), null, 2);
+      codeEl.innerHTML = highlightJSON(pretty);
     } catch (_) {
-      // malformed JSON: fall back to raw text, no highlighting
+      // malformed JSON: display raw text safely, skip highlighting
+      codeEl.textContent = raw;
     }
-    codeEl.innerHTML = highlightJSON(pretty);
     const wrapper = wrapInBlock(pre);
     wrapper.classList.add('prompt-json');
     wrapper.appendChild(makeCopyBtn(() => pretty));
