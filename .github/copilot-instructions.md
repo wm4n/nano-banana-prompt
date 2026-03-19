@@ -7,10 +7,12 @@ A **Hugo-based static gallery website** displaying 115+ AI image generation prom
 - **Stack**: Hugo (static site generator), HTML/CSS, Markdown
 - **Hosting**: GitHub Pages (https://wm4n.github.io/nano-banana-prompt/)
 - **CI/CD**: GitHub Actions workflow on push to `main`
+- **MUST**: You MUST respond in Traditional Chinese (zh-tw). You MUST NOT respond in any other language. However, you can include English technical terms as needed.
 
 ## Build & Deployment
 
 ### Local Development
+
 ```bash
 brew install hugo                    # Install Hugo (macOS)
 hugo server                          # Start dev server at http://localhost:1313/nano-banana-prompt/
@@ -19,6 +21,7 @@ hugo --minify                        # Production build (creates ./public/)
 ```
 
 ### Automated Deployment
+
 - GitHub Actions (`.github/workflows/deploy.yml`) automatically builds and deploys on every push to `main`
 - Uses Hugo v0.158.0 extended version
 - Builds with `hugo --minify` and deploys to GitHub Pages
@@ -26,11 +29,13 @@ hugo --minify                        # Production build (creates ./public/)
 ## Content Structure
 
 ### Adding New Prompts
+
 1. Create a new `.md` file in `content/prompts/` named with the pattern: `{number}-{slug}.md`
 2. Use the frontmatter format below
 3. Push to `main` — site rebuilds automatically
 
 ### Prompt Frontmatter Template
+
 ```yaml
 ---
 title: "Prompt Title"
@@ -53,7 +58,9 @@ from [@handle](https://x.com/...)
 ```
 
 ### Existing Categories (Tags)
+
 Pick from these when adding tags:
+
 - Art Styles
 - Character & Portrait
 - City & Architecture
@@ -68,6 +75,7 @@ Pick from these when adding tags:
 ## Key Configuration Files
 
 ### `hugo.toml`
+
 - **baseURL**: Set to GitHub Pages URL (`https://wm4n.github.io/nano-banana-prompt/`)
 - **Taxonomies**: Configured with `tag` taxonomy for categorization
 - **Pagination**: Set to 200 items per page
@@ -76,6 +84,7 @@ Pick from these when adding tags:
 ## Layout & Templating
 
 ### Template Structure
+
 - `layouts/_default/baseof.html` — Base HTML template with head/body structure
 - `layouts/_default/single.html` — Individual prompt page layout
 - `layouts/_default/list.html` — Category/tag listing page
@@ -85,6 +94,7 @@ Pick from these when adding tags:
 - `layouts/index.html` — Custom homepage
 
 ### Templating Notes
+
 - All page templates use Hugo's `{{ }}` syntax
 - The site uses `{{ range }}` loops for displaying prompt collections
 - Unsafe HTML rendering enabled in frontmatter allows embedding `<img>` tags directly in prompt content
@@ -105,15 +115,19 @@ Pick from these when adding tags:
 ## Common Tasks
 
 ### Add a new prompt
+
 Create file in `content/prompts/` with frontmatter following the template above and push to `main`.
 
 ### Update the homepage
+
 Edit `layouts/index.html` to customize the gallery overview page.
 
 ### Modify tags/categories
+
 Edit the `tags:` array in frontmatter of existing prompts. Add new tag names as needed — Hugo automatically generates tag listing pages.
 
 ### Adjust styling
+
 CSS files are in `static/` directory. Changes are reflected on rebuild.
 
 ## Deployment Notes

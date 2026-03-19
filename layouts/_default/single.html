@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article class="prompt-page">
 
-  <a class="prompt-back" href="{{ "/" | relURL }}">← All prompts</a>
+  <a class="prompt-back" href="{{ site.Home.RelPermalink }}">← All prompts</a>
 
   <header class="prompt-header">
     <div class="prompt-num-badge">Prompt #{{ .Params.num }}</div>
@@ -9,7 +9,7 @@
     <div class="prompt-meta">
       <div class="prompt-tags">
         {{ range .Params.tags }}
-        <a class="prompt-tag-link" href="{{ "/tags/" | relURL }}{{ . | urlize }}/">{{ . }}</a>
+        <a class="prompt-tag-link" href="{{ site.Home.RelPermalink }}tags/{{ . | urlize }}/">{{ . }}</a>
         {{ end }}
       </div>
       {{ if .Params.source }}

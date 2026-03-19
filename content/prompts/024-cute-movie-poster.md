@@ -3,7 +3,7 @@ title: "Cute Movie Poster"
 num: 24
 tags:
   - "Poster & Nature"
-cover: "https://github.com/user-attachments/assets/afa5e46b-451b-4632-873a-c48966377abb"
+cover: "https://github.com/user-attachments/assets/215aa7c9-b5ae-4a4d-90e4-24fbc2a4c273"
 source: "@"
 sourceUrl: ""
 date: 2026-03-19
@@ -17,6 +17,8 @@ date: 2026-03-19
 Paste the prompt below into your AI tool and ask them to change every "Laputa: Castle in the Sky" and related text to your selected movie title.
 
 ### Prompt
+
+
 ```json
 {
   "style_name": "3D Q-Version Healing Toy Movie Poster - Laputa: Castle in the Sky (Optimized)",
