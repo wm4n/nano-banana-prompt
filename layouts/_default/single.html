@@ -61,6 +61,7 @@
     btn.className = 'copy-btn';
     btn.textContent = 'Copy Prompt';
     btn.addEventListener('click', () => {
+      if (!navigator.clipboard) return;
       navigator.clipboard.writeText(getText()).then(() => {
         btn.textContent = '✓ Copied!';
         btn.classList.add('copied');
@@ -87,6 +88,37 @@
     wrapper.classList.add('prompt-text');
     const text = bq.innerText.trim();
     wrapper.appendChild(makeCopyBtn(() => text));
+  });
+
+  // JSON syntax highlighter (no external deps)
+  function highlightJSON(str) {
+    str = str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return str.replace(
+      /("(?:\\.|[^"\\])*")(\s*:)?|(-?\d+\.?\d*(?:[eE][+-]?\d+)?)|(\btrue\b|\bfalse\b|\bnull\b)/g,
+      (match, strVal, colon, num, kw) => {
+        if (strVal && colon) return `<span class="json-key">${strVal}</span>${colon}`;
+        if (strVal)          return `<span class="json-string">${strVal}</span>`;
+        if (num !== undefined) return `<span class="json-number">${num}</span>`;
+        if (kw)              return `<span class="json-keyword">${kw}</span>`;
+        return match;
+      }
+    );
+  }
+
+  // JSON prompts: pre > code.language-json
+  document.querySelectorAll('.prompt-content pre > code.language-json').forEach(codeEl => {
+    const pre = codeEl.parentElement;
+    const raw = codeEl.textContent.trim();
+    let pretty = raw;
+    try {
+      pretty = JSON.stringify(JSON.parse(raw), null, 2);
+    } catch (_) {
+      // malformed JSON: fall back to raw text, no highlighting
+    }
+    codeEl.innerHTML = highlightJSON(pretty);
+    const wrapper = wrapInBlock(pre);
+    wrapper.classList.add('prompt-json');
+    wrapper.appendChild(makeCopyBtn(() => pretty));
   });
 })();
 </script>
