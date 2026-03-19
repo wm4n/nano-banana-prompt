@@ -410,10 +410,10 @@ img { display: block; max-width: 100%; }
   font-size: 14px;
   line-height: 1.8;
   color: #ccc;
-  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', Menlo, Consolas, monospace;
 }
 .prompt-block.prompt-json {
-  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', Menlo, Consolas, monospace;
   font-size: 13px;
   line-height: 1.6;
   white-space: pre-wrap;
@@ -439,6 +439,10 @@ img { display: block; max-width: 100%; }
 .copy-btn:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+.copy-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 .copy-btn.copied {
   border-color: #4caf50;

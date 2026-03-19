@@ -69,7 +69,10 @@
           btn.textContent = 'Copy Prompt';
           btn.classList.remove('copied');
         }, 2000);
-      }).catch(() => {});
+      }).catch(() => {
+        btn.textContent = '⚠ Failed';
+        setTimeout(() => { btn.textContent = 'Copy Prompt'; }, 2000);
+      });
     });
     return btn;
   }
@@ -86,7 +89,7 @@
   document.querySelectorAll('.prompt-content > blockquote').forEach(bq => {
     const wrapper = wrapInBlock(bq);
     wrapper.classList.add('prompt-text');
-    const text = bq.innerText.trim();
+    const text = bq.textContent.trim();
     wrapper.appendChild(makeCopyBtn(() => text));
   });
 
