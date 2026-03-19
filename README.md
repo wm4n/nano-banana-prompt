@@ -1,6 +1,6 @@
 # 🍌 Nano Banana Prompt Collection
 
-A curated gallery of **115+ AI image generation prompts** for [Nano Banana](https://chatgpt.com/g/g-6833NanoBanana) — organized by category, searchable, with example images.
+A curated gallery of **115+ AI image generation prompts** for [Nano Banana](https://gemini.google/overview/image-generation/) — organized by category, searchable, with example images.
 
 ## 🌐 Browse the Gallery
 
