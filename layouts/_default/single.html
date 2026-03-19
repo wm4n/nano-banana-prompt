@@ -53,4 +53,42 @@
   {{ end }}
 
 </article>
+
+<script>
+(function () {
+  function makeCopyBtn(getText) {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy Prompt';
+    btn.addEventListener('click', () => {
+      navigator.clipboard.writeText(getText()).then(() => {
+        btn.textContent = '✓ Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Copy Prompt';
+          btn.classList.remove('copied');
+        }, 2000);
+      }).catch(() => {});
+    });
+    return btn;
+  }
+
+  function wrapInBlock(el) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'prompt-block';
+    el.parentNode.insertBefore(wrapper, el);
+    wrapper.appendChild(el);
+    return wrapper;
+  }
+
+  // Plain-text prompts: blockquotes
+  document.querySelectorAll('.prompt-content > blockquote').forEach(bq => {
+    const wrapper = wrapInBlock(bq);
+    wrapper.classList.add('prompt-text');
+    const text = bq.innerText.trim();
+    wrapper.appendChild(makeCopyBtn(() => text));
+  });
+})();
+</script>
+
 {{ end }}
