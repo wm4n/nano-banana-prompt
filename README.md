@@ -1,5 +1,15 @@
 # Best Nano Banana Pro Prompt Collection
 
+## 113. Emerging from Architectural Blueprint
+
+<img width="500" height="745" alt="Gemini_Generated_Image_jjyz0njjyz0njjyz" src="https://github.com/user-attachments/assets/f5cba796-c4a0-49f1-afb5-12de513f679d" />
+
+### Prompt
+
+> An architectural blueprint of {BUILDING_NAME} placed on a {SURFACE}, with a photorealistic miniature under-construction version of {BUILDING_NAME} emerging from it — {STRUCTURAL_ELEMENT_1}, {STRUCTURAL_ELEMENT_2}, {STRUCTURAL_ELEMENT_3}, {CONSTRUCTION_DETAIL}, {WORKER_SCENE}, {MATERIAL_ELEMENT}, and {EXTRA_DETAIL}. All elements grow from the blueprint like a 3D architectural diorama, steel beams rising from the drawn lines, scaffolding threading through the paper. Studio soft lighting, cinematic depth, 2:3
+
+from [@0x00_Krypt](https://x.com/0x00_Krypt/status/2027644159285465175?s=20)
+
 ## 112. Jap Ink Painting
 
 <img width="750" height="409" alt="Jap Ink Painting" src="https://github.com/user-attachments/assets/258c9dc7-bdf5-46c0-9bf7-6546bef6cec4" />
