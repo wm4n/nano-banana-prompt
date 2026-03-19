@@ -398,8 +398,8 @@ img { display: block; max-width: 100%; }
   padding: 16px 20px;
   overflow-x: auto;
 }
-.prompt-block > blockquote,
-.prompt-block > pre {
+.prompt-content .prompt-block > blockquote,
+.prompt-content .prompt-block > pre {
   margin: 0;
   background: none;
   border: none;
