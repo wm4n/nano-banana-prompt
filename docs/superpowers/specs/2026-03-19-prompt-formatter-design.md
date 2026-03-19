@@ -55,7 +55,7 @@ Both prompt types are wrapped in a `<div class="prompt-block">` that provides:
 
 ### Plain Text Prompts
 
-**Detection:** `blockquote` elements inside `.content`
+**Detection:** All `blockquote` elements that are direct children of `.content` (not nested inside other elements). If a `blockquote` is not the prompt itself but a citation, it will still be wrapped — acceptable for the current content corpus where all blockquotes in prompt pages are prompts.
 
 **Behaviour:**
 - Wrapped in `.prompt-block.prompt-text`
@@ -68,7 +68,7 @@ Both prompt types are wrapped in a `<div class="prompt-block">` that provides:
 
 **Behaviour:**
 - Wrapped in `.prompt-block.prompt-json`
-- JSON is parsed and re-serialized with 2-space indentation (pretty-print)
+- JSON is parsed and re-serialized with 2-space indentation (pretty-print). If `JSON.parse()` throws (malformed JSON), fall back to displaying the raw code block text without syntax highlighting, but still show the copy button.
 - Lightweight CSS-class syntax highlighting applied via regex:
   - String values → `.json-string` (green)
   - Numbers → `.json-number` (cyan)
@@ -85,7 +85,7 @@ Both prompt types are wrapped in a `<div class="prompt-block">` that provides:
 Add an inline `<script>` block before `</body>` that:
 1. Queries all `blockquote` elements within `.content` → wraps as plain text prompt blocks
 2. Queries all `pre > code.language-json` elements within `.content` → wraps as JSON prompt blocks
-3. For each: injects `.copy-btn`, wires `click` event to clipboard API with "Copied!" feedback
+3. For each: injects `.copy-btn`, wires `click` event to `navigator.clipboard.writeText()` (async, HTTPS-only — GitHub Pages satisfies this). On clipboard API rejection, silently fail (no visible error, button does not change state).
 
 ### `assets/css/main.css`
 
