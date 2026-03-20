@@ -37,14 +37,16 @@ cd /path/to/nano-banana-prompt
 ### Interactive Flow
 
 ```
-1. Image path    → validate file, copy to static/images/prompts/
+1. Image path    → validate file exists (retry on failure), copy to static/images/prompts/
 2. Title         → derive slug, auto-calculate next num
 3. Tags          → keyword-infer from title, show numbered list, user confirms/edits
 4. Source URL    → extract @handle via regex
 5. Prompt text   → multiline input, type END on its own line to finish
-6. Preview       → show generated .md frontmatter, user confirms
-7. Commit        → git add + git commit + git push
+6. Preview       → show generated .md frontmatter + body, user confirms
+7. Commit        → git add + git commit + git push (print warning if push fails)
 ```
+
+**Image validation:** if the given path does not exist or is not a regular file, print an error and re-prompt. Do not proceed until a valid file is provided.
 
 ---
 
@@ -69,21 +71,32 @@ cd /path/to/nano-banana-prompt
 
 The script scans all `content/prompts/*.md` files, extracts the `num:` frontmatter field, takes the maximum value, and adds 1. This is the canonical next number.
 
+## Slug Generation
+
+The title is converted to a slug using these rules (applied in order):
+1. Lowercase all characters
+2. Replace `&` with `and`
+3. Remove all characters that are not alphanumeric, space, or hyphen
+4. Replace one or more spaces with a single hyphen
+5. Strip leading/trailing hyphens
+
+Example: `"Icons & Stickers 3D"` → `"icons-and-stickers-3d"`
+
 ---
 
 ## Tags Inference
 
-Rules ported from `scripts/parse_readme.py` into a bash associative array. The title is lowercased and checked against keyword lists for each tag category:
+Rules ported from `scripts/parse_readme.py` (`TAG_RULES` list) into a bash associative array. The title is lowercased and checked against keyword lists for each tag category. **The complete and authoritative keyword list is the `TAG_RULES` variable in `scripts/parse_readme.py`** — the implementation must replicate it exactly, not the abbreviated table below (shown for orientation only):
 
-| Tag | Sample Keywords |
-|-----|----------------|
-| Art Styles | watercolor, ink, sketch, botanical, embroidery, crayon |
-| Character & Portrait | character, caricature, portrait, sticker, cartoon, pixar |
-| City & Architecture | city, urban, isometric, architectural |
-| 3D & Miniature | miniature, diorama, hologram, glass marble, chibi |
-| Infographic & UI | hud, infographic, report, ui/ux, boarding pass |
-| Effects & Composite | composite, double exposure, holographic |
-| Photo & Cinematic | photo, cinematic, motion blur |
+| Tag | Sample Keywords (partial) |
+|-----|--------------------------|
+| Art Styles | watercolor, ink painting, sketch, botanical, embroidery, crayon, step by step drawing |
+| Character & Portrait | character, caricature, portrait, sticker, cartoon, pixar, idol, soft toy |
+| City & Architecture | city, urban, isometric, architectural blueprint, souvenir magnet |
+| 3D & Miniature | miniature, diorama, hologram, glass marble, chibi, tilt 3d, cube diorama |
+| Infographic & UI | hud, infographic, report, ui/ux, boarding pass, profile card |
+| Effects & Composite | neon effect, blending, double exposure, firework, season blend |
+| Photo & Cinematic | photo, cinematic, motion blur, cherry blossom, lat & lon |
 | Food & Commercial | food, product, commercial |
 | Poster & Nature | poster, nature, landscape |
 | Icons & Stickers | icon, sticker, emoji |
@@ -138,6 +151,7 @@ date: {YYYY-MM-DD}
 
 <img width="750" alt="{Title}" src="/nano-banana-prompt/images/prompts/{num}-{slug}.{ext}" />
 
+
 ### Prompt
 
 > {prompt text}
@@ -157,7 +171,19 @@ git commit -m "feat: add prompt #{num} - {Title}"
 git push
 ```
 
+If `git push` fails, the script prints the error output and displays:
+```
+⚠ Push failed. Files are committed locally. Run `git push` manually when ready.
+```
+The script exits with a non-zero code but does NOT roll back the commit or file copies.
+
 ---
+
+## Notes
+
+- **`source` format:** always stored with `@` prefix, e.g. `source: "@azed_ai"`. This normalises inconsistency in older files.
+- **`cover` path change:** new prompts use local paths (`/nano-banana-prompt/images/prompts/...`) instead of GitHub CDN URLs. Existing prompts are unchanged — the mixed state is intentional and both formats work fine in Hugo.
+- **`<img>` height attribute:** omitted in the generated template. Hugo/browsers infer height from the image; omitting it is consistent with most recent prompt files.
 
 ## Out of Scope
 
@@ -165,6 +191,7 @@ git push
 - Mobile / browser-based UI
 - Batch import from Twitter bookmarks
 - Tag editing UI beyond numbered toggle list
+- Multiple images per prompt (single image only)
 
 ---
 
