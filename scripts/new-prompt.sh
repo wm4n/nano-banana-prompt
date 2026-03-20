@@ -31,7 +31,6 @@ TAG_DEFS=(
   "icons-stickers|Icons & Stickers|icon generation|themed icon|different style icon"
 )
 
-# Parse TAG_DEFS into parallel arrays
 ALL_SLUGS=()
 ALL_LABELS=()
 ALL_KEYWORDS=()   # pipe-separated keyword string per tag
@@ -64,7 +63,8 @@ next_num() {
   echo $((max + 1))
 }
 
-infer_tags() {
+# Keyword-based fallback (used when AI inference fails)
+keyword_infer_tags() {
   local title_lower i slug kw matched=()
   title_lower=$(echo "$1" | tr '[:upper:]' '[:lower:]')
   for i in "${!ALL_SLUGS[@]}"; do
@@ -82,6 +82,26 @@ infer_tags() {
   else
     echo "${matched[*]}"
   fi
+}
+
+# AI-based tag inference using copilot CLI + claude-haiku-4.5
+# Returns space-separated slugs, or exits with non-zero on failure
+ai_infer_tags() {
+  local prompt_text="$1"
+  local tag_list="city-architecture, 3d-miniature, art-styles, character-portrait, photo-cinematic, infographic-ui, effects-composite, food-commercial, poster-nature, icons-stickers"
+  local result
+  result=$(copilot --model claude-haiku-4.5 --no-ask-user -s \
+    -p "You are a classifier for AI image generation prompts.
+Given the prompt below, pick which tags apply from the list.
+Return ONLY the matching tag slugs as a comma-separated list, nothing else.
+You may return one or multiple tags. Use only slugs from the list.
+
+Tags: ${tag_list}
+
+Prompt: ${prompt_text}" 2>/dev/null) || return 1
+
+  # Normalize: comma/space separated → space separated, trim whitespace
+  echo "$result" | tr ',' ' ' | tr -s ' ' | sed 's/^ //;s/ $//'
 }
 
 extract_handle() {
@@ -103,7 +123,6 @@ IMAGE_SRC=""
 while true; do
   printf "Image file path (drag & drop OK): "
   IFS= read -r IMAGE_SRC
-  # Clean up common paste artifacts
   IMAGE_SRC="${IMAGE_SRC//\\ / }"
   IMAGE_SRC="${IMAGE_SRC%$'\r'}"
   IMAGE_SRC="${IMAGE_SRC#\'}" ; IMAGE_SRC="${IMAGE_SRC%\'}"
@@ -136,14 +155,48 @@ info "  num  : #${NUM}"
 info "  slug : ${FILENAME}"
 info "  image: ${IMG_DEST_REL}"
 
-# ── Step 3: Tags ──────────────────────────────────────────────────────────────
+# ── Step 3: Source URL ────────────────────────────────────────────────────────
+echo ""
+printf "Source URL (Twitter/X link, or press Enter to skip): "
+IFS= read -r SOURCE_URL
+SOURCE_URL="${SOURCE_URL# }"; SOURCE_URL="${SOURCE_URL% }"
+
+HANDLE=""
+[[ -n "$SOURCE_URL" ]] && HANDLE=$(extract_handle "$SOURCE_URL")
+SOURCEVAL="${HANDLE:+@${HANDLE}}"
+
+# ── Step 4: Prompt text ───────────────────────────────────────────────────────
+echo ""
+info "--- Prompt text ---"
+echo "(Type or paste the prompt. Enter END on its own line to finish.)"
+PROMPT_TEXT=""
+while IFS= read -r line; do
+  [[ "$line" == "END" ]] && break
+  if [[ -z "$PROMPT_TEXT" ]]; then
+    PROMPT_TEXT="$line"
+  else
+    PROMPT_TEXT="${PROMPT_TEXT}
+${line}"
+  fi
+done
+
+# ── Step 5: Tags (AI inference from prompt text, fallback to keywords) ────────
 echo ""
 info "--- Tags ---"
 
+echo -n "  Classifying tags with Copilot (claude-haiku-4.5)…"
+inferred_str=""
+if inferred_str=$(ai_infer_tags "$PROMPT_TEXT") && [[ -n "$inferred_str" ]]; then
+  echo " ✓"
+  info "  (AI inference)"
+else
+  echo " failed, falling back to keyword matching"
+  inferred_str=$(keyword_infer_tags "$TITLE")
+  warn "  (keyword fallback)"
+fi
+
 # SELECTED_ARR is a parallel array to ALL_SLUGS (0 or 1)
 SELECTED_ARR=()
-inferred_str=$(infer_tags "$TITLE")
-
 for i in "${!ALL_SLUGS[@]}"; do
   slug="${ALL_SLUGS[$i]}"
   if echo "$inferred_str" | grep -qw "$slug"; then
@@ -187,31 +240,6 @@ if [[ ${#CHOSEN_LABELS[@]} -eq 0 ]]; then
   warn "No tags selected — defaulting to Art Styles"
   CHOSEN_LABELS=("Art Styles")
 fi
-
-# ── Step 4: Source URL ────────────────────────────────────────────────────────
-echo ""
-printf "Source URL (Twitter/X link, or press Enter to skip): "
-IFS= read -r SOURCE_URL
-SOURCE_URL="${SOURCE_URL# }"; SOURCE_URL="${SOURCE_URL% }"
-
-HANDLE=""
-[[ -n "$SOURCE_URL" ]] && HANDLE=$(extract_handle "$SOURCE_URL")
-SOURCEVAL="${HANDLE:+@${HANDLE}}"
-
-# ── Step 5: Prompt text ───────────────────────────────────────────────────────
-echo ""
-info "--- Prompt text ---"
-echo "(Type or paste the prompt. Enter END on its own line to finish.)"
-PROMPT_TEXT=""
-while IFS= read -r line; do
-  [[ "$line" == "END" ]] && break
-  if [[ -z "$PROMPT_TEXT" ]]; then
-    PROMPT_TEXT="$line"
-  else
-    PROMPT_TEXT="${PROMPT_TEXT}
-${line}"
-  fi
-done
 
 # ── Build markdown content ────────────────────────────────────────────────────
 TAG_YAML=""
