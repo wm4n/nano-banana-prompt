@@ -57,25 +57,43 @@ Any script that needs tag data adds at the top:
 source "$(dirname "$0")/tags.sh"
 ```
 
-### 2. Updates to `new-prompt.sh`
+### 2. `scripts/lib.sh` — Shared Tag Functions
+
+`ai_infer_tags()` and `keyword_infer_tags()` are currently defined in `new-prompt.sh`. Both `new-prompt.sh` and the new `migrate-tags.sh` need them. Rather than duplicating or sourcing the full interactive script, they are extracted to a shared library.
+
+```bash
+# scripts/lib.sh — sourced by new-prompt.sh and migrate-tags.sh
+source "$(dirname "$0")/tags.sh"   # loads TAG_DEFS → ALL_SLUGS, ALL_LABELS, ALL_KEYWORDS
+
+ai_infer_tags()       { ... }  # calls Copilot CLI; returns space-separated slugs
+keyword_infer_tags()  { ... }  # keyword fallback; returns space-separated slugs
+```
+
+Any script that needs tag inference adds:
+
+```bash
+source "$(dirname "$0")/lib.sh"
+```
+
+### 3. Updates to `new-prompt.sh`
 
 Two changes:
 
-1. **Remove inline `TAG_DEFS`** — replace with `source "$(dirname "$0")/tags.sh"`
-2. **Fix `ai_infer_tags()`** — build the slug list dynamically from `ALL_SLUGS` instead of hardcoding it:
+1. **Remove inline `TAG_DEFS` and tag functions** — replace with `source "$(dirname "$0")/lib.sh"` (which in turn sources `tags.sh`)
+2. **Fix `ai_infer_tags()` slug list in `lib.sh`** — build dynamically from `ALL_SLUGS` instead of hardcoding:
 
 ```bash
-# Before (hardcoded):
+# Before (hardcoded in new-prompt.sh):
 local tag_list="city-architecture, 3d-miniature, art-styles, ..."
 
-# After (dynamic):
+# After (dynamic in lib.sh):
 local tag_list
 tag_list=$(IFS=', '; echo "${ALL_SLUGS[*]}")
 ```
 
 This ensures the AI always receives the current tag list without manual updates.
 
-### 3. `scripts/migrate-tags.sh` — Retag Tool
+### 4. `scripts/migrate-tags.sh` — Retag Tool
 
 A standalone script for retagging existing prompts after taxonomy changes.
 
@@ -94,11 +112,15 @@ A standalone script for retagging existing prompts after taxonomy changes.
 
 #### Per-File Flow
 
-1. Extract prompt text from `### Prompt` block in the `.md` file
-2. Run `ai_infer_tags()` with the current `TAG_DEFS` (sourced from `tags.sh`)
-3. Display current tags vs AI-suggested tags
-4. Prompt user to accept, toggle, or skip (same toggle UI as `new-prompt.sh`)
-5. Rewrite only the `tags:` block in frontmatter, leaving all other content untouched
+1. Extract prompt text from `### Prompt` block — read lines after `### Prompt`, strip `> ` blockquote prefix via `sed 's/^> //'`, stop at the next `^###`, `^---`, or EOF
+2. Call `ai_infer_tags()` (from `lib.sh`) with the extracted prompt text
+3. Map returned slugs to Human Labels using `ALL_LABELS[]` before displaying
+4. Display current tags vs AI-suggested tags
+5. Prompt user to accept, toggle, or skip:
+   - **Enter** — accept displayed selection and rewrite `tags:` in frontmatter
+   - **Number(s)** — toggle tag on/off (same UI as `new-prompt.sh`)
+   - **`s` + Enter** — skip this file; leave frontmatter unchanged
+6. Convert final selected slugs to Human Labels via `ALL_LABELS[]`, then rewrite `tags:` block
 
 **Example output:**
 
@@ -112,16 +134,36 @@ A standalone script for retagging existing prompts after taxonomy changes.
   3) Effects & Composite  ✓
   ...
 
-Toggle tag number(s), or press Enter to accept:
+Toggle tag number(s), s to skip, or press Enter to accept:
 ```
+
+#### AI Failure Handling
+
+`keyword_infer_tags()` always returns at least one slug (defaults to `art-styles` when no keyword matches), so there is no "both fail" scenario.
+
+If `ai_infer_tags()` fails (non-zero exit or empty output):
+
+| Mode | Behavior |
+|---|---|
+| Interactive | Fall back to `keyword_infer_tags()`, display result, prompt user normally |
+| `--auto` | Fall back to `keyword_infer_tags()`, auto-accept result |
+
+`keyword_infer_tags()` in `lib.sh` retains the existing `art-styles` no-match fallback from `new-prompt.sh`. This behavior is intentional and unchanged.
 
 #### Frontmatter Rewriting
 
-The script rewrites only the `tags:` block between `tags:` and the next frontmatter key. It does **not** regenerate cover, source, sourceUrl, or date. All other content (prompt body, images) is untouched.
+Before writing, convert each selected slug to its Human Label using `ALL_LABELS[]`. Then use `awk` to rewrite only the `tags:` block:
+
+- Enter replacement mode on the line matching `^tags:`
+- While in replacement mode, skip lines matching `^  - ` (existing YAML list items)
+- Exit replacement mode (and emit new `  - "Label"` lines) when a line matches `^[a-z]` (next frontmatter key) or `^---` (end of frontmatter)
+- All other lines are passed through unchanged
+
+This requires only `awk`, consistent with the no-new-dependencies constraint.
 
 #### Extensibility
 
-The "fields to update" list is confined to a `RETAG_FIELDS` variable at the top of the script. Future AI-analyzed fields (e.g., `style`, `subject`) can be added without restructuring the script.
+For future AI-analyzed fields beyond `tags`, add a handler block in `migrate-tags.sh` following the same pattern: infer → confirm → convert to frontmatter format → rewrite with `awk`. No shared variable is needed — each field is a self-contained block.
 
 ---
 
@@ -155,8 +197,9 @@ The "fields to update" list is confined to a `RETAG_FIELDS` variable at the top 
 
 | File | Change |
 |---|---|
-| `scripts/tags.sh` | New file — single source of truth |
-| `scripts/new-prompt.sh` | Source `tags.sh`, fix dynamic slug list in `ai_infer_tags()` |
+| `scripts/tags.sh` | New file — single source of truth for TAG_DEFS |
+| `scripts/lib.sh` | New file — shared `ai_infer_tags()` and `keyword_infer_tags()` functions |
+| `scripts/new-prompt.sh` | Replace inline TAG_DEFS + functions with `source lib.sh` |
 | `scripts/migrate-tags.sh` | New file — retag tool |
 | `README.md` | Add tag management workflow section |
 
