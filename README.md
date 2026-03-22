@@ -31,8 +31,13 @@ Browse prompts by category:
 
 ## ➕ Adding New Prompts
 
-1. Add a new `.md` file in `content/prompts/` following the format below
-2. Push to `main` — GitHub Actions automatically rebuilds the site
+Use the interactive CLI script (recommended):
+
+```bash
+./scripts/new-prompt.sh
+```
+
+Or manually add a new `.md` file in `content/prompts/` following the format below, then push to `main` — GitHub Actions automatically rebuilds the site.
 
 ```yaml
 ---
@@ -53,6 +58,34 @@ date: 2026-03-19
 > Your prompt text here...
 
 from [@handle](https://x.com/...)
+```
+
+## 🏷️ Managing Tags
+
+Tag definitions are centrally managed in `scripts/tags.sh`.
+
+### Adding a new tag
+
+1. Edit `scripts/tags.sh` — add one line to `TAG_DEFS` with format `"slug|Human Label|kw1|kw2|..."`
+2. (Optional) Run `./scripts/migrate-tags.sh` to retag existing prompts with the new taxonomy
+
+### Splitting or renaming a tag
+
+1. Edit `scripts/tags.sh` — update or replace the relevant `TAG_DEFS` entry
+2. Run `./scripts/migrate-tags.sh` to let AI reclassify affected prompts
+3. Hugo automatically removes tag pages that no prompts reference
+
+### Retagging prompts
+
+```bash
+# Retag a single prompt
+./scripts/migrate-tags.sh content/prompts/115-black-and-white-photograph.md
+
+# Retag all prompts (interactive, confirms each file)
+./scripts/migrate-tags.sh
+
+# Retag all prompts non-interactively (auto-accept AI suggestions)
+./scripts/migrate-tags.sh --auto
 ```
 
 ## 🛠️ Local Development
