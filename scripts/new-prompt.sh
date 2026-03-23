@@ -16,31 +16,8 @@ success() { echo -e "${GREEN}✓ $*${RESET}"; }
 warn()    { echo -e "${YELLOW}⚠ $*${RESET}"; }
 err()     { echo -e "${RED}✗ $*${RESET}" >&2; }
 
-# ── Tag definitions (ported from scripts/parse_readme.py TAG_RULES) ───────────
-# Each entry: "slug|Human Label|kw1|kw2|..."
-TAG_DEFS=(
-  "city-architecture|City & Architecture|city|urban|isometric|animal crossing|simcity|claymorphism|white clay|3d led|architectural blueprint|souvenir magnet|city brush|city scene"
-  "3d-miniature|3D & Miniature|miniature|diorama|hologram|glass marble|cube diorama|chibi|tilt 3d|3d relief|hand paint miniature|3d hand|3d story|3d newspaper|concept store|different angle|survey board"
-  "art-styles|Art Styles|watercolor|ink painting|ink drawing|pencil|crayon|sketch|embroidery|paper cut|folded paper|botanical|scribble|claymation|painterly|step by step drawing|draw like|style drawing|watercolor style|blueprint schematic"
-  "character-portrait|Character & Portrait|character|caricature|portrait|sticker|hair style|pose|pixar|cartoon|idol|dress|editorial portrait|cute character|chat sticker|soft toy|mechanical bird"
-  "photo-cinematic|Photo & Cinematic|photo|cinematic|angle shot|motion blur|upscale|restore|cherry blossom|raining|lat lon|taking photo"
-  "infographic-ui|Infographic & UI|hud|infographic|report|ui/ux|heatmap|species migration|boarding pass|profile card|notebooklm|tech evolution|status report|architect|real-time"
-  "effects-composite|Effects & Composite|neon effect|blending|season blend|mirror reflection|firework|emerge from|split effect|combine different|imagine events|surreal|era"
-  "food-commercial|Food & Commercial|food|cuisine|fruit|dish|pixelize food|advertising food|recipe"
-  "poster-nature|Poster & Nature|poster|magazine cover|wallpaper|gta|brand poster|cloud formation|sea of clouds|mountain|forest|bookshelves|story telling|concept art|looking through|peeking through"
-  "icons-stickers|Icons & Stickers|icon generation|themed icon|different style icon"
-)
-
-ALL_SLUGS=()
-ALL_LABELS=()
-ALL_KEYWORDS=()   # pipe-separated keyword string per tag
-
-for _def in "${TAG_DEFS[@]}"; do
-  IFS='|' read -r _slug _label _kw_rest <<< "$_def"
-  ALL_SLUGS+=("$_slug")
-  ALL_LABELS+=("$_label")
-  ALL_KEYWORDS+=("$_kw_rest")
-done
+# ── Tag definitions and inference functions ───────────────────────────────────
+source "$(dirname "${BASH_SOURCE[0]}")/lib.sh"
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 slugify() {
@@ -61,47 +38,6 @@ next_num() {
     [[ -n "$n" && "$n" -gt "$max" ]] && max=$n
   done < <(find "$PROMPTS_DIR" -name "*.md")
   echo $((max + 1))
-}
-
-# Keyword-based fallback (used when AI inference fails)
-keyword_infer_tags() {
-  local title_lower i slug kw matched=()
-  title_lower=$(echo "$1" | tr '[:upper:]' '[:lower:]')
-  for i in "${!ALL_SLUGS[@]}"; do
-    slug="${ALL_SLUGS[$i]}"
-    IFS='|' read -ra kws <<< "${ALL_KEYWORDS[$i]}"
-    for kw in "${kws[@]}"; do
-      if [[ "$title_lower" == *"$kw"* ]]; then
-        matched+=("$slug")
-        break
-      fi
-    done
-  done
-  if [[ ${#matched[@]} -eq 0 ]]; then
-    echo "art-styles"
-  else
-    echo "${matched[*]}"
-  fi
-}
-
-# AI-based tag inference using copilot CLI + claude-haiku-4.5
-# Returns space-separated slugs, or exits with non-zero on failure
-ai_infer_tags() {
-  local prompt_text="$1"
-  local tag_list="city-architecture, 3d-miniature, art-styles, character-portrait, photo-cinematic, infographic-ui, effects-composite, food-commercial, poster-nature, icons-stickers"
-  local result
-  result=$(copilot --model claude-haiku-4.5 --no-ask-user -s \
-    -p "You are a classifier for AI image generation prompts.
-Given the prompt below, pick which tags apply from the list.
-Return ONLY the matching tag slugs as a comma-separated list, nothing else.
-You may return one or multiple tags. Use only slugs from the list.
-
-Tags: ${tag_list}
-
-Prompt: ${prompt_text}" 2>/dev/null) || return 1
-
-  # Normalize: comma/space separated → space separated, trim whitespace
-  echo "$result" | tr ',' ' ' | tr -s ' ' | sed 's/^ //;s/ $//'
 }
 
 extract_handle() {
