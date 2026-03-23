@@ -50,29 +50,9 @@ lowercase_ext() {
   echo "$1" | tr '[:upper:]' '[:lower:]'
 }
 
-# ── Step 1: Image ─────────────────────────────────────────────────────────────
+# ── Title → slug, num ────────────────────────────────────────────────────────
 echo ""
 info "=== New Prompt =========================="
-echo ""
-
-IMAGE_SRC=""
-while true; do
-  printf "Image file path (drag & drop OK): "
-  IFS= read -r IMAGE_SRC
-  IMAGE_SRC="${IMAGE_SRC//\\ / }"
-  IMAGE_SRC="${IMAGE_SRC%$'\r'}"
-  IMAGE_SRC="${IMAGE_SRC#\'}" ; IMAGE_SRC="${IMAGE_SRC%\'}"
-  IMAGE_SRC="${IMAGE_SRC#\"}" ; IMAGE_SRC="${IMAGE_SRC%\"}"
-  IMAGE_SRC="${IMAGE_SRC# }"  ; IMAGE_SRC="${IMAGE_SRC% }"
-  if [[ -f "$IMAGE_SRC" ]]; then
-    break
-  fi
-  err "File not found: $IMAGE_SRC — please try again."
-done
-
-IMG_EXT=$(lowercase_ext "${IMAGE_SRC##*.}")
-
-# ── Step 2: Title → slug, num ─────────────────────────────────────────────────
 echo ""
 printf "Prompt title: "
 IFS= read -r TITLE
@@ -81,17 +61,13 @@ SLUG=$(slugify "$TITLE")
 NUM=$(next_num)
 PADDED=$(printf "%03d" "$NUM")
 FILENAME="${PADDED}-${SLUG}"
-IMG_DEST_REL="images/prompts/${FILENAME}.${IMG_EXT}"
-IMG_DEST_ABS="$IMAGES_DIR/${FILENAME}.${IMG_EXT}"
 MD_DEST="$PROMPTS_DIR/${FILENAME}.md"
-IMG_URL="${BASE_URL}/${IMG_DEST_REL}"
 
 echo ""
 info "  num  : #${NUM}"
 info "  slug : ${FILENAME}"
-info "  image: ${IMG_DEST_REL}"
 
-# ── Step 3: Source URL ────────────────────────────────────────────────────────
+# ── Source URL ────────────────────────────────────────────────────────────────
 echo ""
 printf "Source URL (Twitter/X link, or press Enter to skip): "
 IFS= read -r SOURCE_URL
@@ -101,30 +77,93 @@ HANDLE=""
 [[ -n "$SOURCE_URL" ]] && HANDLE=$(extract_handle "$SOURCE_URL")
 SOURCEVAL="${HANDLE:+@${HANDLE}}"
 
-# ── Step 4: Prompt text ───────────────────────────────────────────────────────
-echo ""
-info "--- Prompt text ---"
-echo "(Type or paste the prompt. Enter END on its own line to finish.)"
-PROMPT_TEXT=""
-while IFS= read -r line; do
-  [[ "$line" == "END" ]] && break
-  if [[ -z "$PROMPT_TEXT" ]]; then
-    PROMPT_TEXT="$line"
-  else
-    PROMPT_TEXT="${PROMPT_TEXT}
-${line}"
-  fi
+# ── Step loop ─────────────────────────────────────────────────────────────────
+STEP_TITLES=()
+STEP_IMAGE_SRCS=()
+STEP_PROMPTS=()
+STEP_IMAGE_URLS=()
+STEP_IMAGE_DESTS=()
+STEP_NUM=0
+
+while true; do
+  STEP_NUM=$((STEP_NUM + 1))
+  echo ""
+  info "=== Step ${STEP_NUM} =============================="
+
+  printf "Step title [Prompt]: "
+  IFS= read -r step_title
+  step_title="${step_title:-Prompt}"
+  STEP_TITLES+=("$step_title")
+
+  step_img_src=""
+  while true; do
+    printf "Image (drag & drop, or Enter to skip): "
+    IFS= read -r step_img_src
+    step_img_src="${step_img_src//\\ / }"
+    step_img_src="${step_img_src%$'\r'}"
+    step_img_src="${step_img_src#\'}"; step_img_src="${step_img_src%\'}"
+    step_img_src="${step_img_src#\"}"; step_img_src="${step_img_src%\"}"
+    step_img_src="${step_img_src# }";  step_img_src="${step_img_src% }"
+    if [[ -z "$step_img_src" ]]; then
+      break
+    elif [[ -f "$step_img_src" ]]; then
+      break
+    else
+      err "File not found: $step_img_src — try again, or press Enter to skip."
+    fi
+  done
+  STEP_IMAGE_SRCS+=("$step_img_src")
+
+  echo ""
+  info "--- Prompt text ---"
+  echo "(Type or paste the prompt. Enter END on its own line to finish.)"
+  step_prompt=""
+  while IFS= read -r line; do
+    [[ "$line" == "END" ]] && break
+    if [[ -z "$step_prompt" ]]; then
+      step_prompt="$line"
+    else
+      step_prompt="${step_prompt}"$'\n'"${line}"
+    fi
+  done
+  STEP_PROMPTS+=("$step_prompt")
+
+  success "Step ${STEP_NUM} added."
+
+  printf "Add another step? [y/N]: "
+  IFS= read -r more
+  [[ "$more" != "y" && "$more" != "Y" ]] && break
 done
 
-# ── Step 5: Tags (AI inference from prompt text, fallback to keywords) ────────
+# ── Build image URL and dest arrays ───────────────────────────────────────────
+COVER_URL=""
+for i in "${!STEP_IMAGE_SRCS[@]}"; do
+  src="${STEP_IMAGE_SRCS[$i]}"
+  if [[ -z "$src" ]]; then
+    STEP_IMAGE_URLS[$i]=""
+    STEP_IMAGE_DESTS[$i]=""
+    continue
+  fi
+  IMG_EXT=$(lowercase_ext "${src##*.}")
+  step_idx=$((i + 1))
+  STEP_IMAGE_URLS[$i]="${BASE_URL}/images/prompts/${FILENAME}-${step_idx}.${IMG_EXT}"
+  STEP_IMAGE_DESTS[$i]="$IMAGES_DIR/${FILENAME}-${step_idx}.${IMG_EXT}"
+  [[ -z "$COVER_URL" ]] && COVER_URL="${STEP_IMAGE_URLS[$i]}"
+done
+
+# ── Tags (AI inference from all step prompts combined, fallback to keywords) ──
+ALL_PROMPTS=""
+for i in "${!STEP_PROMPTS[@]}"; do
+  ALL_PROMPTS="${ALL_PROMPTS}${STEP_PROMPTS[$i]}"$'\n'
+done
+
 echo ""
 info "--- Tags ---"
-
 echo -n "  Classifying tags with Copilot (claude-haiku-4.5)…"
 inferred_str=""
-if inferred_str=$(ai_infer_tags "$PROMPT_TEXT") && [[ -n "$inferred_str" ]]; then
+if inferred_str=$(ai_infer_tags "$ALL_PROMPTS") && [[ -n "$inferred_str" ]]; then
   echo " ✓"
-  info "  (AI inference)"
+  info "  (AI inference from ${STEP_NUM} prompt(s) combined)"
 else
   echo " failed, falling back to keyword matching"
   inferred_str=$(keyword_infer_tags "$TITLE")
@@ -180,8 +219,7 @@ fi
 # ── Build markdown content ────────────────────────────────────────────────────
 TAG_YAML=""
 for label in "${CHOSEN_LABELS[@]}"; do
-  TAG_YAML="${TAG_YAML}  - \"${label}\"
-"
+  TAG_YAML="${TAG_YAML}  - \"${label}\""$'\n'
 done
 
 ATTRIBUTION=""
@@ -191,22 +229,33 @@ fi
 
 TODAY=$(date +%Y-%m-%d)
 
+CONTENT_BODY=""
+for i in "${!STEP_TITLES[@]}"; do
+  step_title="${STEP_TITLES[$i]}"
+  img_url="${STEP_IMAGE_URLS[$i]:-}"
+  step_prompt="${STEP_PROMPTS[$i]}"
+
+  CONTENT_BODY="${CONTENT_BODY}"$'\n'"### ${step_title}"$'\n'
+  if [[ -n "$img_url" ]]; then
+    CONTENT_BODY="${CONTENT_BODY}"$'\n'"<img width=\"750\" alt=\"${TITLE}\" src=\"${img_url}\" />"$'\n'
+  fi
+  formatted_prompt=""
+  while IFS= read -r pline; do
+    formatted_prompt="${formatted_prompt}> ${pline}"$'\n'
+  done <<< "$step_prompt"
+  CONTENT_BODY="${CONTENT_BODY}"$'\n'"${formatted_prompt}"
+done
+
 CONTENT="---
 title: \"${TITLE}\"
 num: ${NUM}
 tags:
-${TAG_YAML}cover: \"${IMG_URL}\"
+${TAG_YAML}cover: \"${COVER_URL}\"
 source: \"${SOURCEVAL}\"
 sourceUrl: \"${SOURCE_URL}\"
 date: ${TODAY}
 ---
-
-<img width=\"750\" alt=\"${TITLE}\" src=\"${IMG_URL}\" />
-
-### Prompt
-
-> ${PROMPT_TEXT}
-"
+${CONTENT_BODY}"
 [[ -n "$ATTRIBUTION" ]] && CONTENT="${CONTENT}
 ${ATTRIBUTION}
 "
@@ -225,19 +274,29 @@ if [[ "$CONFIRM" != "Y" && "$CONFIRM" != "y" ]]; then
   exit 0
 fi
 
-# ── Step 7: Write files ───────────────────────────────────────────────────────
+# ── Write files ───────────────────────────────────────────────────────────────
 mkdir -p "$IMAGES_DIR"
-cp "$IMAGE_SRC" "$IMG_DEST_ABS"
-success "Image → static/${IMG_DEST_REL}"
+for i in "${!STEP_IMAGE_DESTS[@]}"; do
+  dest="${STEP_IMAGE_DESTS[$i]}"
+  [[ -z "$dest" ]] && continue
+  cp "${STEP_IMAGE_SRCS[$i]}" "$dest"
+  step_idx=$((i + 1))
+  success "Image → static/images/prompts/${FILENAME}-${step_idx}.${STEP_IMAGE_DESTS[$i]##*.}"
+done
 
 printf '%s' "$CONTENT" > "$MD_DEST"
 success "Markdown → content/prompts/${FILENAME}.md"
 
-# ── Step 8: Git commit + push ─────────────────────────────────────────────────
+# ── Git commit + push ─────────────────────────────────────────────────────────
 echo ""
 info "--- Committing ---"
 cd "$REPO_ROOT"
-git add "static/${IMG_DEST_REL}" "$MD_DEST"
+for i in "${!STEP_IMAGE_DESTS[@]}"; do
+  dest="${STEP_IMAGE_DESTS[$i]}"
+  [[ -z "$dest" ]] && continue
+  git add "${dest#$REPO_ROOT/}"
+done
+git add "$MD_DEST"
 git commit -m "feat: add prompt #${NUM} - ${TITLE}
 
 Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
@@ -250,4 +309,4 @@ else
 fi
 
 echo ""
-success "Done! Prompt #${NUM} '${TITLE}' added."
+success "Done! Prompt #${NUM} '${TITLE}' added (${STEP_NUM} step(s))."
