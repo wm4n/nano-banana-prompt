@@ -296,7 +296,7 @@ for i in "${!STEP_IMAGE_DESTS[@]}"; do
   [[ -z "$dest" ]] && continue
   git add "${dest#$REPO_ROOT/}"
 done
-git add "$MD_DEST"
+git add "${MD_DEST#$REPO_ROOT/}"
 git commit -m "feat: add prompt #${NUM} - ${TITLE}
 
 Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"

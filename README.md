@@ -37,6 +37,12 @@ Use the interactive CLI script (recommended):
 ./scripts/new-prompt.sh
 ```
 
+The script walks you through:
+1. **Post title** + **source URL**
+2. **Step loop** — for each step: step title (Enter = default `Prompt`), optional image, prompt text, then "Add another step?"
+3. **Tags** — AI-inferred from all step prompts combined, with interactive toggle
+4. **Preview** → **commit + push**
+
 Or manually add a new `.md` file in `content/prompts/` following the format below, then push to `main` — GitHub Actions automatically rebuilds the site.
 
 ### Single-prompt post
