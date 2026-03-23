@@ -2,7 +2,8 @@
 title: "Lost at Sea"
 num: 118
 tags:
-  - "Infographic & UI"
+  - "Gamification & Education"
+  - "Storytelling & Scenario"
 cover: "/nano-banana-prompt/images/prompts/118-lost-at-sea-1.png"
 source: ""
 sourceUrl: ""
