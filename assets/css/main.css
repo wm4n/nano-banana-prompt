@@ -242,6 +242,9 @@ img { display: block; max-width: 100%; }
   padding-bottom: 6px;
   border-bottom: 1px solid var(--border);
 }
+.prompt-content h3:first-of-type {
+  margin-top: 0;
+}
 .prompt-content p { margin: 12px 0; color: var(--muted); font-size: 14px; }
 .prompt-content blockquote {
   margin: 16px 0;

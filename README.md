@@ -39,6 +39,8 @@ Use the interactive CLI script (recommended):
 
 Or manually add a new `.md` file in `content/prompts/` following the format below, then push to `main` — GitHub Actions automatically rebuilds the site.
 
+### Single-prompt post
+
 ```yaml
 ---
 title: "Your Prompt Title"
@@ -59,6 +61,47 @@ date: 2026-03-19
 
 from [@handle](https://x.com/...)
 ```
+
+### Multi-prompt post (multiple steps)
+
+Use `### Step N — Title` headings to separate each step. Each step can have its own image, description, and prompt — all with individual Copy buttons.
+
+```markdown
+---
+title: "Activity Slide Deck"
+num: 116
+tags:
+  - "Infographic & UI"
+cover: "https://..."       # use first step's image for the card
+source: "@handle"
+sourceUrl: "https://x.com/..."
+date: 2026-03-23
+---
+
+### Step 1 — Activity Overview
+
+<img src="..." alt="..." />
+
+*Optional description of what this prompt produces.*
+
+> Generate an activity overview slide for a team workshop...
+
+### Step 2 — Step Instructions
+
+<img src="..." alt="..." />
+
+*Optional description.*
+
+> Generate step-by-step instruction slides...
+
+from [@handle](https://x.com/...)
+```
+
+**Rules:**
+- Each step starts with any `h3` heading (`### ...`)
+- Image and description are optional per step
+- Prompt text is a `> blockquote` — each gets its own Copy button automatically
+- `cover` in frontmatter is still required for the gallery card (use the first step's image)
 
 ## 🏷️ Managing Tags
 
