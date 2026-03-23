@@ -12,7 +12,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/tags.sh"
 # Keyword-based tag inference. Always returns at least one slug.
 # Returns space-separated slugs on stdout.
 keyword_infer_tags() {
-  local title_lower i slug kw matched=()
+  local title_lower i slug kw kws matched=()
   title_lower=$(echo "$1" | tr '[:upper:]' '[:lower:]')
   for i in "${!ALL_SLUGS[@]}"; do
     slug="${ALL_SLUGS[$i]}"
@@ -36,7 +36,7 @@ keyword_infer_tags() {
 ai_infer_tags() {
   local prompt_text="$1"
   local tag_list
-  tag_list=$(printf '%s\n' "${ALL_SLUGS[@]}" | paste -sd', ')
+  tag_list=$(printf '%s\n' "${ALL_SLUGS[@]}" | paste -sd',' - | sed 's/,/, /g')
   local result
   result=$(copilot --model claude-haiku-4.5 --no-ask-user -s \
     -p "You are a classifier for AI image generation prompts.
@@ -47,6 +47,7 @@ You may return one or multiple tags. Use only slugs from the list.
 Tags: ${tag_list}
 
 Prompt: ${prompt_text}" 2>/dev/null) || return 1
+  [[ -z "$result" ]] && return 1
 
   echo "$result" | tr ',' ' ' | tr -s ' ' | sed 's/^ //;s/ $//'
 }
