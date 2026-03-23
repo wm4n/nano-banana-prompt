@@ -2,6 +2,12 @@
 # scripts/tags.sh — Single source of truth for tag definitions.
 # Source this file; do not execute directly.
 # Each entry: "slug|Human Label|kw1|kw2|..."
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  echo "Error: tags.sh is a library — source it, do not execute it." >&2
+  exit 1
+fi
+
 TAG_DEFS=(
   "city-architecture|City & Architecture|city|urban|isometric|animal crossing|simcity|claymorphism|white clay|3d led|architectural blueprint|souvenir magnet|city brush|city scene"
   "3d-miniature|3D & Miniature|miniature|diorama|hologram|glass marble|cube diorama|chibi|tilt 3d|3d relief|hand paint miniature|3d hand|3d story|3d newspaper|concept store|different angle|survey board"
@@ -25,3 +31,5 @@ for _def in "${TAG_DEFS[@]}"; do
   ALL_LABELS+=("$_label")
   ALL_KEYWORDS+=("$_kw_rest")
 done
+
+unset _def _slug _label _kw_rest
