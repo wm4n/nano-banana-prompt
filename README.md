@@ -2,9 +2,9 @@
 
 A curated gallery of **115+ AI image generation prompts** for [Nano Banana](https://gemini.google/overview/image-generation/) — organized by category, searchable, with example images.
 
-## 🌐 Browse the Gallery
+## 🌐 Browse the Gallery & Prompt
 
-**→ [wm4n.github.io/nano-banana-prompt](https://wm4n.github.io/nano-banana-prompt/)**
+**👉👉 [wm4n.github.io/nano-banana-prompt](https://wm4n.github.io/nano-banana-prompt/) 👈👈**
 
 Browse prompts by category:
 
