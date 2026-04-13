@@ -8,6 +8,14 @@
   {{ with .Params.cover }}<meta property="og:image" content="{{ . }}">{{ end }}
   {{ $css := resources.Get "css/main.css" | resources.Minify }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M95KDJ85H8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M95KDJ85H8');
+  </script>
 </head>
 <body>
 
