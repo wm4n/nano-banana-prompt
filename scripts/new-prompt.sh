@@ -16,6 +16,74 @@ success() { echo -e "${GREEN}✓ $*${RESET}"; }
 warn()    { echo -e "${YELLOW}⚠ $*${RESET}"; }
 err()     { echo -e "${RED}✗ $*${RESET}" >&2; }
 
+# ── Prompt text input (clipboard → nano → END loop) ──────────────────────────
+_STEP_PROMPT_RESULT=""
+
+read_prompt_text() {
+  _STEP_PROMPT_RESULT=""
+  local clipboard_content use_clipboard tmpfile _old_exit_trap
+
+  # Path 1: pbpaste (macOS clipboard)
+  if command -v pbpaste &>/dev/null; then
+    clipboard_content=$(pbpaste)
+    if [[ -n "$clipboard_content" ]]; then
+      echo ""
+      info "--- Clipboard content ---"
+      echo "$clipboard_content"
+      echo ""
+      printf "Use clipboard content? [Y/n]: "
+      IFS= read -r use_clipboard || true
+      use_clipboard="${use_clipboard:-Y}"
+      if [[ "$use_clipboard" == "Y" || "$use_clipboard" == "y" ]]; then
+        _STEP_PROMPT_RESULT="$clipboard_content"
+        return 0
+      fi
+    else
+      warn "Clipboard is empty."
+    fi
+  fi
+
+  # Path 2: nano editor
+  if command -v nano &>/dev/null; then
+    tmpfile=$(mktemp /tmp/nbp-prompt-XXXXX)
+    # Save any pre-existing EXIT trap and restore it after cleanup
+    _old_exit_trap=$(trap -p EXIT)
+    # Double-quote so $tmpfile path is captured immediately (not at EXIT time)
+    # shellcheck disable=SC2064
+    trap "rm -f '$tmpfile'" EXIT
+    info "Opening nano — paste or type your prompt, then Ctrl+X → Y to save and exit."
+    nano "$tmpfile"
+    # Note: $(...) strips trailing newlines — acceptable for prompt text
+    _STEP_PROMPT_RESULT=$(cat "$tmpfile")
+    rm -f "$tmpfile"
+    eval "${_old_exit_trap:-trap - EXIT}"
+    if [[ -z "$_STEP_PROMPT_RESULT" ]]; then
+      warn "Prompt is empty. Re-opening nano — press Ctrl+X to accept empty."
+      tmpfile=$(mktemp /tmp/nbp-prompt-XXXXX)
+      _old_exit_trap=$(trap -p EXIT)
+      # shellcheck disable=SC2064
+      trap "rm -f '$tmpfile'" EXIT
+      nano "$tmpfile"
+      _STEP_PROMPT_RESULT=$(cat "$tmpfile")
+      rm -f "$tmpfile"
+      eval "${_old_exit_trap:-trap - EXIT}"
+    fi
+    return 0
+  fi
+
+  # Path 3: fallback — original END-sentinel loop
+  info "(Type or paste the prompt. Enter END on its own line to finish.)"
+  local line
+  while IFS= read -r line; do
+    [[ "$line" == "END" ]] && break
+    if [[ -z "$_STEP_PROMPT_RESULT" ]]; then
+      _STEP_PROMPT_RESULT="$line"
+    else
+      _STEP_PROMPT_RESULT="${_STEP_PROMPT_RESULT}"$'\n'"${line}"
+    fi
+  done
+}
+
 # ── Tag definitions and inference functions ───────────────────────────────────
 source "$(dirname "${BASH_SOURCE[0]}")/lib.sh"
 
@@ -116,17 +184,8 @@ while true; do
 
   echo ""
   info "--- Prompt text ---"
-  echo "(Type or paste the prompt. Enter END on its own line to finish.)"
-  step_prompt=""
-  while IFS= read -r line; do
-    [[ "$line" == "END" ]] && break
-    if [[ -z "$step_prompt" ]]; then
-      step_prompt="$line"
-    else
-      step_prompt="${step_prompt}"$'\n'"${line}"
-    fi
-  done
-  STEP_PROMPTS+=("$step_prompt")
+  read_prompt_text
+  STEP_PROMPTS+=("$_STEP_PROMPT_RESULT")
 
   success "Step ${STEP_NUM} added."
 
