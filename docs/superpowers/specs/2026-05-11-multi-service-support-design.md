@@ -42,8 +42,8 @@ Two new optional fields are added. All existing fields remain unchanged.
 ```yaml
 # New fields
 services:
-  - "Nano Banana"
-  - "GPT Image"
+  - "nano-banana"
+  - "gpt-image"
 
 service_images:
   nano-banana: "https://..."
@@ -60,10 +60,21 @@ sourceUrl: "https://..."
 date: 2026-05-11
 ```
 
-**`services`** — array of service names this prompt supports. Drives the filter bar and card badges.  
-**`service_images`** — map of service slug → image URL. When present, the detail page renders a side-by-side comparison block above the markdown content.
+**`services`** — array of service slugs this prompt supports. Drives the filter bar and card badges.  
+**`service_images`** — map of service slug → image URL. When two or more entries are present, the detail page renders a side-by-side comparison block above the markdown content. When exactly one entry is present, the detail page renders a single-column image block with a service label (no comparison framing). When absent, the page renders exactly as today.
 
-**Backward compatibility:** Prompts without a `services` field are treated as `["Nano Banana"]` via a template default. No existing files need to be modified.
+**Backward compatibility:** Prompts without a `services` field are treated as `["nano-banana"]` via a template default. No existing files need to be modified.
+
+### Service Model
+
+All service references use slugs as the canonical key. Display names and colors are defined once in the site config or a CSS/data file, never hardcoded in content.
+
+| Slug | Display Name | Badge Color |
+|---|---|---|
+| `nano-banana` | Nano Banana | `#f5a623` |
+| `gpt-image` | GPT Image | `#10b981` |
+
+Future services follow the same pattern: add a new row to this table and the rest of the system picks it up automatically via the slug key.
 
 ### 3. Homepage Filter Bars (`layouts/index.html`)
 
@@ -79,13 +90,8 @@ Card filtering uses `data-services` and `data-tags` HTML attributes, driven by J
 ### 4. Prompt Card (`layouts/index.html`, `layouts/partials/card.html`)
 
 Cards gain:
-- `data-services="{{ delimit (.Params.services | default (slice "Nano Banana")) "," }}"` attribute
-- Service badges in the card tag row, rendered before category tags, with distinct colors
-
-Service badge colors:
-- Nano Banana: `#f5a623` (orange)
-- GPT Image: `#10b981` (green)
-- Future services: additional colors defined in CSS
+- `data-services="{{ delimit (.Params.services | default (slice "nano-banana")) "," }}"` attribute
+- Service badges in the card tag row, rendered before category tags, with distinct colors per the service model table above
 
 ### 5. Detail Page (`layouts/_default/single.html`)
 
@@ -129,17 +135,24 @@ Frontmatter (services, service_images)
 
 ### Service default fallback (index.html / card.html)
 ```go-html-template
-{{ $services := .Params.services | default (slice "Nano Banana") }}
+{{ $services := .Params.services | default (slice "nano-banana") }}
 ```
 
 ### Side-by-side comparison (single.html)
+
+Rendering rules based on number of entries in `service_images`:
+- **0 entries / absent** — no comparison block; page renders exactly as today
+- **1 entry** — single-column image block with service label (no comparison framing)
+- **2+ entries** — two-column side-by-side comparison grid
+
 ```go-html-template
-{{ if gt (len .Params.service_images) 1 }}
-  <div class="service-comparison">
-    {{ range $service, $img := .Params.service_images }}
+{{ $images := .Params.service_images }}
+{{ if $images }}
+  <div class="service-comparison service-comparison--{{ if gt (len $images) 1 }}multi{{ else }}single{{ end }}">
+    {{ range $slug, $img := $images }}
       <div class="service-col">
-        <span class="service-badge service-{{ $service }}">{{ $service }}</span>
-        <img src="{{ $img }}" alt="{{ $service }} result" loading="lazy">
+        <span class="service-badge service-{{ $slug }}">{{ $slug }}</span>
+        <img src="{{ $img }}" alt="{{ $slug }} result" loading="lazy">
       </div>
     {{ end }}
   </div>
