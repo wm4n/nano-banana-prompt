@@ -151,21 +151,29 @@ This partial sets `$services` in the calling template's scope via `{{ $services 
     Returns a slice of service slugs for the given page.
     Resolution order:
       1. .Params.services if set
-      2. Derived from .Params.service_images keys, sorted by data/services.yaml order
+      2. Derived from .Params.service_images keys:
+         - Known slugs first, in data/services.yaml order
+         - Unknown slugs appended in alphabetical order
       3. Default: ["nano-banana"]
   */}}
   {{ $services := .Params.services }}
   {{ if and (not $services) .Params.service_images }}
     {{ $services = slice }}
+    {{/* Step A: known slugs in services.yaml order */}}
     {{ range site.Data.services }}
       {{ if index $.Params.service_images .slug }}
         {{ $services = $services | append .slug }}
       {{ end }}
     {{ end }}
+    {{/* Step B: unknown slugs collected first, then sorted alphabetically */}}
+    {{ $unknown := slice }}
     {{ range $slug, $_ := .Params.service_images }}
       {{ if not (in $services $slug) }}
-        {{ $services = $services | append $slug }}
+        {{ $unknown = $unknown | append $slug }}
       {{ end }}
+    {{ end }}
+    {{ range sort $unknown }}
+      {{ $services = $services | append . }}
     {{ end }}
   {{ end }}
   {{ $services = $services | default (slice "nano-banana") }}
@@ -796,7 +804,41 @@ Three changes:
   ```
   Expected: cards have `data-services="nano-banana"` (or other slugs).
 
-- [ ] **Step 9.5: Push and confirm GitHub Pages deployment**
+- [ ] **Step 9.5: Verify service_images-only resolution (fallback path)**
+
+  Write a test prompt with `service_images` but no explicit `services`, then verify:
+  ```bash
+  cat > content/prompts/998-test-svcimages-only.md << 'TESTEOF'
+  ---
+  title: "Test Service Images Only"
+  num: 9998
+  tags:
+    - "Art Styles"
+  cover: "https://picsum.photos/400/300"
+  service_images:
+    nano-banana: "https://picsum.photos/400/301"
+    gpt-image: "https://picsum.photos/400/302"
+  date: 2026-05-11
+  ---
+  ### Prompt
+  > Fallback resolution test.
+  TESTEOF
+  hugo --minify 2>&1 | tail -5
+  # Should resolve to ["nano-banana","gpt-image"] (services.yaml order)
+  grep 'data-services="nano-banana,gpt-image"' public/index.html | head -1
+  # Comparison block should render in detail page
+  grep -c "service-comparison" public/prompts/998-test-svcimages-only/index.html
+  ```
+  Expected: grep finds a card with `data-services="nano-banana,gpt-image"` and comparison block count is `1`.
+
+- [ ] **Step 9.6: Remove test file**
+
+  ```bash
+  rm content/prompts/998-test-svcimages-only.md
+  rm -rf public/prompts/998-test-svcimages-only/
+  ```
+
+- [ ] **Step 9.7: Push and confirm GitHub Pages deployment**
 
   ```bash
   git push
