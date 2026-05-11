@@ -728,10 +728,10 @@ Three changes:
   done
 
   # Build service_images frontmatter section (empty string if no images)
+  # Use $'\n' explicitly to avoid ambiguity with literal newlines in strings
   SVC_IMAGES_FM=""
   if [[ -n "$SERVICE_IMAGES_YAML_BLOCK" ]]; then
-    SVC_IMAGES_FM="service_images:
-  ${SERVICE_IMAGES_YAML_BLOCK}"
+    SVC_IMAGES_FM="service_images:"$'\n'"${SERVICE_IMAGES_YAML_BLOCK}"
   fi
 
   CONTENT="---
@@ -776,11 +776,11 @@ Three changes:
 
 - [ ] **Step 9.2: Verify backward compatibility**
 
-  Check that an existing prompt without `services` renders with default service badge:
+  Check that cards on the homepage default to `nano-banana` when no `services` frontmatter is set:
   ```bash
-  grep -l "nano-banana" public/prompts/001-*/index.html 2>/dev/null | head -3
+  grep -c 'data-services="nano-banana"' public/index.html
   ```
-  Expected: at least one file listed (existing prompts default to nano-banana badge).
+  Expected: a number greater than 100 (all 141 existing prompts without `services` should resolve to `nano-banana`).
 
 - [ ] **Step 9.3: Verify service filter bar exists on homepage**
 
