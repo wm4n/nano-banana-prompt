@@ -1,7 +1,20 @@
 {{ define "main" }}
 {{ $allTags := site.Taxonomies.tags }}
 
-<nav class="filter-bar" role="navigation" aria-label="Filter by tag">
+{{/* ── Service filter bar (top row) ── */}}
+<nav class="filter-bar service-filter-bar" role="navigation" aria-label="Filter by service">
+  <button class="tag-btn service-btn active" data-service="all">
+    All Services
+  </button>
+  {{ range site.Data.services }}
+  <button class="tag-btn service-btn" data-service="{{ .slug }}">
+    {{ .name }}
+  </button>
+  {{ end }}
+</nav>
+
+{{/* ── Tag filter bar (bottom row) ── */}}
+<nav class="filter-bar tag-filter-bar" role="navigation" aria-label="Filter by tag">
   <button class="tag-btn active" data-tag="all">
     All ({{ len site.RegularPages }})
   </button>
@@ -15,28 +28,7 @@
 <div class="gallery-wrap">
   <div class="gallery" id="gallery">
     {{ range sort site.RegularPages "Params.num" "desc" }}
-    <div class="card"
-      data-tags="{{ delimit .Params.tags "," }}"
-      data-title="{{ .Title }}">
-      <a class="card-link" href="{{ .RelPermalink }}">
-        <div class="card-img{{ if not .Params.cover }} card-no-img{{ end }}">
-          {{ if .Params.cover }}
-            <img src="{{ .Params.cover }}" alt="{{ .Title }}" loading="lazy">
-          {{ else }}
-            🖼️
-          {{ end }}
-          <span class="card-num">#{{ .Params.num }}</span>
-        </div>
-        <div class="card-body">
-          <h3 class="card-title">{{ .Title }}</h3>
-          <div class="card-tags">
-            {{ range .Params.tags }}
-              <span class="card-tag">{{ . }}</span>
-            {{ end }}
-          </div>
-        </div>
-      </a>
-    </div>
+      {{ template "card" . }}
     {{ end }}
   </div>
   <p class="gallery-empty" id="gallery-empty" hidden>No prompts found.</p>
