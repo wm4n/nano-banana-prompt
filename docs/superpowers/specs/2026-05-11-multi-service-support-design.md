@@ -64,22 +64,47 @@ date: 2026-05-11
 **`service_images`** — map of service slug → image URL. Keys must be a subset of (or equal to) the `services` array.
 
 **Relationship between `services` and `service_images`:**
-- If `services` is absent but `service_images` is set, `services` is inferred from the keys of `service_images` for badge/filter rendering.
-- If both are set and keys differ, `services` takes precedence for filter/badge; `service_images` only renders images for slugs present in its own map.
-- Best practice: always set `services` explicitly to avoid ambiguity.
+- `services` is the canonical source for filter/badge. Resolution order (first match wins):
+  1. Use `services` if explicitly set in frontmatter
+  2. If `services` is absent but `service_images` is set, derive `services` from the keys of `service_images`
+  3. If neither is set, default to `["nano-banana"]`
+- `service_images` keys must be a subset of (or equal to) the resolved `services` list.
+- Best practice: always set `services` explicitly.
 
-**Backward compatibility:** Prompts without a `services` field (and without `service_images`) are treated as `["nano-banana"]` via a template default. No existing files need to be modified.
+**Template resolution logic:**
+```go-html-template
+{{ $services := .Params.services }}
+{{ if and (not $services) .Params.service_images }}
+  {{ $services = slice }}
+  {{ range $slug, $_ := .Params.service_images }}
+    {{ $services = $services | append $slug }}
+  {{ end }}
+{{ end }}
+{{ $services = $services | default (slice "nano-banana") }}
+```
+
+**Backward compatibility:** Prompts without `services` or `service_images` resolve to `["nano-banana"]` via step 3 above. No existing files need to be modified.
 
 ### Service Model
 
-All service references use slugs as the canonical key. Display names and colors are defined once in the site config or a CSS/data file, never hardcoded in content.
+All service references use slugs as the canonical key. The single source of truth for display names and colors is **`data/services.yaml`** — templates access it via `site.Data.services`, and CSS badge colors are defined as custom properties in `static/` referencing the same values.
+
+```yaml
+# data/services.yaml
+nano-banana:
+  name: "Nano Banana"
+  color: "#f5a623"
+gpt-image:
+  name: "GPT Image"
+  color: "#10b981"
+```
+
+Adding a new service: add one entry to `data/services.yaml`. No template or JS changes required.
 
 | Slug | Display Name | Badge Color |
 |---|---|---|
 | `nano-banana` | Nano Banana | `#f5a623` |
 | `gpt-image` | GPT Image | `#10b981` |
-
-Future services follow the same pattern: add a new row to this table and the rest of the system picks it up automatically via the slug key.
 
 ### 3. Homepage Filter Bars (`layouts/index.html`)
 
@@ -116,11 +141,12 @@ When `service_images` is set and has more than one entry, a comparison block is 
 | Component | Change |
 |---|---|
 | `hugo.toml` | Update `title` and `description` |
+| `data/services.yaml` | New file — canonical service model (slug, display name, color) |
 | `content/prompts/*.md` | No changes required for existing prompts |
-| `layouts/index.html` | Add service filter bar; add `data-services` to cards; add service badges to card tag row |
-| `layouts/partials/card.html` | Add `data-services` attribute; add service badges |
+| `layouts/index.html` | Add service filter bar; refactor card markup to use `partials/card.html` |
+| `layouts/partials/card.html` | Add `data-services` attribute; add service badges; read display names from `site.Data.services` |
 | `layouts/_default/single.html` | Add conditional side-by-side comparison block |
-| `static/` CSS | Add service badge color variables |
+| `static/` CSS | Add service badge CSS custom properties matching `data/services.yaml` |
 
 ---
 
@@ -142,7 +168,14 @@ Frontmatter (services, service_images)
 
 ### Service default fallback (index.html / card.html)
 ```go-html-template
-{{ $services := .Params.services | default (slice "nano-banana") }}
+{{ $services := .Params.services }}
+{{ if and (not $services) .Params.service_images }}
+  {{ $services = slice }}
+  {{ range $slug, $_ := .Params.service_images }}
+    {{ $services = $services | append $slug }}
+  {{ end }}
+{{ end }}
+{{ $services = $services | default (slice "nano-banana") }}
 ```
 
 ### Side-by-side comparison (single.html)
