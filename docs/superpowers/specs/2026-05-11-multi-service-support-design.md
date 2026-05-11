@@ -145,10 +145,10 @@ Cards gain:
 
 When `service_images` is set, a comparison block is rendered at the top of the detail page (before the markdown content). The card thumbnail always uses the `cover` field regardless of whether `service_images` is present — `cover` and `service_images` are independent.
 
-- Two-column grid when two or more entries are present
+- Layout uses a CSS `auto-fit` grid (`grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))`): 1 image = full-width, 2 images = side-by-side, 3+ = wrapping rows. No separate layout logic per count.
 - Each column: service badge label + image
-- Falls back gracefully when only one service image is present (single column, no comparison header)
 - When `service_images` is absent, the page renders exactly as today
+- Comparison block images participate in the lightbox. Since the existing lightbox JS (`baseof.html`) only binds to `.prompt-content img`, the binding must be extended to also cover `.service-comparison img`.
 
 ---
 
@@ -168,7 +168,7 @@ The script is updated to support service selection and per-service image collect
 **New step — Service images** (inserted after the step loop, only when `${#SELECTED_SERVICES[@]} > 1`):
 
 - For each selected service, prompt: `Service image URL for <display-name> (or press Enter to skip):`
-- Stores results in associative array `SERVICE_IMAGES` (slug → URL)
+- Stores results in two parallel indexed arrays: `SERVICE_IMAGE_SLUGS` and `SERVICE_IMAGE_URLS` (index-aligned with `SELECTED_SERVICES`), to maintain bash 3.2+ compatibility (no associative arrays)
 - If a URL is provided, it is written to `service_images` in the frontmatter
 - No image file copy is performed for service images (URLs only, consistent with how `cover` works for GitHub-hosted images)
 
@@ -182,9 +182,11 @@ for slug in "${SELECTED_SERVICES[@]}"; do
 done
 
 # service_images block (only written if any URL was provided)
+# Uses parallel arrays (bash 3.2 compatible — no associative arrays)
 SERVICE_IMAGES_YAML=""
-for slug in "${SELECTED_SERVICES[@]}"; do
-  url="${SERVICE_IMAGES[$slug]:-}"
+for i in "${!SERVICE_IMAGE_SLUGS[@]}"; do
+  slug="${SERVICE_IMAGE_SLUGS[$i]}"
+  url="${SERVICE_IMAGE_URLS[$i]}"
   [[ -n "$url" ]] && SERVICE_IMAGES_YAML="${SERVICE_IMAGES_YAML}  ${slug}: \"${url}\""$'\n'
 done
 ```
@@ -196,7 +198,7 @@ The generated frontmatter includes `services:` always, and `service_images:` onl
 | Component | Change |
 |---|---|
 | `hugo.toml` | Update `title` and `description` |
-| `layouts/_default/baseof.html` | Update hardcoded brand name in site logo; extend JS filter to handle `data-services` attribute and service filter bar buttons |
+| `layouts/_default/baseof.html` | Update hardcoded brand name in site logo; extend JS filter to handle `data-services` attribute and service filter bar buttons; extend lightbox binding to include `.service-comparison img` |
 | `data/services.yaml` | New file — slug → display name mapping (canonical); colors are in `assets/css/main.css` |
 | `content/prompts/*.md` | No changes required for existing prompts |
 | `layouts/index.html` | Add service filter bar (enumerate from `site.Data.services`); refactor card markup to use `partials/card.html` |
@@ -239,16 +241,14 @@ Frontmatter (services, service_images)
 
 Rendering rules based on number of entries in `service_images`:
 - **0 entries / absent** — no comparison block; page renders exactly as today
-- **1 entry** — single-column image block with service label (no comparison framing)
-- **2 entries** — two-column side-by-side comparison grid (current maximum scope: Nano Banana + GPT Image)
-- **3+ entries** — CSS `auto-fit` grid (`repeat(auto-fit, minmax(220px, 1fr))`), columns wrap to new rows automatically; no special layout change needed
+- **1+ entries** — comparison block rendered using CSS `auto-fit` grid (`repeat(auto-fit, minmax(220px, 1fr))`). 1 image = full-width; 2 = side-by-side; 3+ = wrapping rows. No separate layout logic per count.
 
 **Image display order** follows the `services` array (not map iteration order). The template iterates over the resolved `$services` slice and looks up each slug in `service_images`:
 
 ```go-html-template
 {{ $images := .Params.service_images }}
 {{ if $images }}
-  <div class="service-comparison service-comparison--{{ if gt (len $images) 1 }}multi{{ else }}single{{ end }}">
+  <div class="service-comparison">
     {{ range $slug := $services }}
       {{ $img := index $images $slug }}
       {{ if $img }}
@@ -264,7 +264,7 @@ Rendering rules based on number of entries in `service_images`:
 {{ end }}
 ```
 
-Comparison block images participate in the existing lightbox (defined in `baseof.html`) — no additional wiring needed as the lightbox JS already binds to all `img` elements on the page.
+Lightbox: the existing lightbox JS in `baseof.html` binds only to `.prompt-content img`. The binding must be extended to `.service-comparison img` as well (see `baseof.html` changes in Component Summary).
 
 ### JS filter (homepage)
 Both filters use the same pattern. Active service and active tag are tracked independently; a card is visible only when it matches both.
