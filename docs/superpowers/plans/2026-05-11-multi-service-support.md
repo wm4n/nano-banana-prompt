@@ -20,6 +20,7 @@
 | Create | `layouts/partials/service-resolve.html` | Shared service resolution logic (DRY) |
 | Modify | `layouts/partials/card.html` | `data-services` attr + service badges in tag row |
 | Modify | `layouts/index.html` | Service filter bar; refactor inline card markup to use card partial |
+| Modify | `layouts/_default/list.html` | Refactor inline card markup to use card partial (tag pages) |
 | Modify | `layouts/_default/baseof.html` | Logo text; extend filter JS for services; extend lightbox to `.service-comparison img` |
 | Modify | `layouts/_default/single.html` | Conditional `service-comparison` block |
 | Modify | `scripts/new-prompt.sh` | Service multi-select step; `service_images` collection; updated frontmatter |
@@ -333,6 +334,55 @@ Current `layouts/index.html` has inline card markup (39 lines) and a single tag 
   ```bash
   git add layouts/index.html
   git commit -m "feat: add service filter bar and refactor homepage to use card partial
+
+  Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
+  ```
+
+---
+
+## Task 5.5: Tag Page — Refactor list.html to Use Card Partial
+
+**Files:**
+- Modify: `layouts/_default/list.html`
+
+Current `layouts/_default/list.html` (28 lines) has its own inline card markup identical to the old index.html style. After Task 4, the card partial has service badges; list.html must also delegate to it so tag pages stay in sync.
+
+- [ ] **Step 5.5.1: Update layouts/_default/list.html**
+
+  Replace the full content with:
+
+  ```go-html-template
+  {{ define "main" }}
+  <div class="tag-page">
+    <div class="tag-hero">
+      <h1>{{ .Title }}</h1>
+      <p>{{ len .Pages }} prompts</p>
+    </div>
+    <div class="gallery-wrap">
+      <div class="gallery">
+        {{ range sort .Pages "Params.num" "desc" }}
+        {{ if .Params.num }}
+        {{ template "card" . }}
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  {{ end }}
+  ```
+
+- [ ] **Step 5.5.2: Verify Hugo builds**
+
+  ```bash
+  hugo --minify 2>&1 | tail -5
+  ```
+  Expected: no errors.
+
+- [ ] **Step 5.5.3: Commit**
+
+  ```bash
+  git add layouts/_default/list.html
+  git commit -m "feat: refactor tag page list.html to use card partial
 
   Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
   ```
@@ -848,6 +898,16 @@ Three changes:
   grep -c "service-btn" public/index.html
   ```
   Expected: `3` or more (All Services + 2 service buttons).
+
+- [ ] **Step 9.3.5: Verify tag page cards have service badges**
+
+  Pick any tag page that was generated (e.g., Art Styles):
+  ```bash
+  TAG_PAGE=$(find public/tags -name "index.html" | head -1)
+  echo "Checking: $TAG_PAGE"
+  grep -c 'service-badge' "$TAG_PAGE"
+  ```
+  Expected: a number greater than 0 (tag page cards render service badges via card partial).
 
 - [ ] **Step 9.4: Verify card data-services attribute**
 
