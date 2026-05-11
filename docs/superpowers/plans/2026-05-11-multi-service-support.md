@@ -97,6 +97,13 @@
   .service-nano-banana { background: #f5a623; color: #000; }
   .service-gpt-image   { background: #10b981; color: #fff; }
 
+  /* ── Two-row filter bar sticky stacking ── */
+  /* Service filter bar sticks below site header (56px) */
+  .service-filter-bar { top: 56px; }
+  /* Tag filter bar sticks below service filter bar.
+     Service bar height: 14px top-pad + ~30px button + 14px bot-pad + 1px border = ~59px */
+  .tag-filter-bar { top: calc(56px + 59px); }
+
   /* ── Service Comparison Block (detail page) ── */
   .service-comparison {
     display: grid;
@@ -292,7 +299,7 @@ Current `layouts/index.html` has inline card markup (39 lines) and a single tag 
   </nav>
 
   {{/* ── Tag filter bar (bottom row) ── */}}
-  <nav class="filter-bar" role="navigation" aria-label="Filter by tag">
+  <nav class="filter-bar tag-filter-bar" role="navigation" aria-label="Filter by tag">
     <button class="tag-btn active" data-tag="all">
       All ({{ len site.RegularPages }})
     </button>
@@ -760,6 +767,51 @@ Three changes:
   bash -n scripts/new-prompt.sh
   ```
   Expected: no output (syntax OK).
+
+- [ ] **Step 8.6: Verify frontmatter YAML output**
+
+  Run an inline bash snippet that exercises the YAML-building logic from Step 8.4 and checks the output format is correct YAML:
+
+  ```bash
+  bash << 'FMTEST'
+  set -euo pipefail
+  SELECTED_SERVICES=("nano-banana" "gpt-image")
+  SERVICE_IMAGE_SLUGS=("nano-banana" "gpt-image")
+  SERVICE_IMAGE_URLS=("https://example.com/a.jpg" "https://example.com/b.jpg")
+
+  SERVICES_YAML_BLOCK=""
+  for slug in "${SELECTED_SERVICES[@]}"; do
+    SERVICES_YAML_BLOCK="${SERVICES_YAML_BLOCK}  - \"${slug}\""$'\n'
+  done
+
+  SERVICE_IMAGES_YAML_BLOCK=""
+  for i in "${!SERVICE_IMAGE_SLUGS[@]}"; do
+    slug="${SERVICE_IMAGE_SLUGS[$i]}"
+    url="${SERVICE_IMAGE_URLS[$i]}"
+    [[ -n "$url" ]] && SERVICE_IMAGES_YAML_BLOCK="${SERVICE_IMAGES_YAML_BLOCK}  ${slug}: \"${url}\""$'\n'
+  done
+
+  SVC_IMAGES_FM=""
+  if [[ -n "$SERVICE_IMAGES_YAML_BLOCK" ]]; then
+    SVC_IMAGES_FM="service_images:"$'\n'"${SERVICE_IMAGES_YAML_BLOCK}"
+  fi
+
+  echo "services:"
+  printf '%s' "${SERVICES_YAML_BLOCK}"
+  printf '%s' "${SVC_IMAGES_FM}"
+  FMTEST
+  ```
+
+  Expected output (exact):
+  ```
+  services:
+    - "nano-banana"
+    - "gpt-image"
+  service_images:
+    nano-banana: "https://example.com/a.jpg"
+    gpt-image: "https://example.com/b.jpg"
+  ```
+  Verify there is no extra indentation on any line and no blank lines within the blocks.
 
 - [ ] **Step 8.6: Commit**
 
