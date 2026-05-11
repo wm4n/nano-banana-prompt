@@ -87,30 +87,44 @@ date: 2026-05-11
 
 ### Service Model
 
-All service references use slugs as the canonical key. The single source of truth for display names and colors is **`data/services.yaml`** — templates access it via `site.Data.services`, and CSS badge colors are defined as custom properties in `static/` referencing the same values.
+All service references use slugs as the canonical key. Responsibilities are split to avoid duplication:
+
+- **`data/services.yaml`** — canonical source for slug → display name only. Templates read display names via `site.Data.services`. The service filter bar enumerates all services from this file (not derived from content).
+- **`static/` CSS** — canonical source for badge colors, via per-slug CSS classes (`.service-nano-banana`, `.service-gpt-image`, etc.). CSS owns colors; no color duplication in the data file.
 
 ```yaml
 # data/services.yaml
 nano-banana:
   name: "Nano Banana"
-  color: "#f5a623"
 gpt-image:
   name: "GPT Image"
-  color: "#10b981"
 ```
 
-Adding a new service: add one entry to `data/services.yaml`. No template or JS changes required.
+```css
+/* static/css — badge colors */
+.service-nano-banana { background: #f5a623; color: #fff; }
+.service-gpt-image   { background: #10b981; color: #fff; }
+```
 
-| Slug | Display Name | Badge Color |
+Templates apply the CSS class by slug and read display name from `site.Data.services`:
+```go-html-template
+{{ $svcData := index site.Data.services $slug }}
+{{ $displayName := cond (and $svcData $svcData.name) $svcData.name $slug }}
+<span class="service-badge service-{{ $slug }}">{{ $displayName }}</span>
+```
+
+Adding a new service: add one entry to `data/services.yaml` and one CSS rule to `static/`. No template or JS changes required.
+
+| Slug | Display Name | Badge CSS Class |
 |---|---|---|
-| `nano-banana` | Nano Banana | `#f5a623` |
-| `gpt-image` | GPT Image | `#10b981` |
+| `nano-banana` | Nano Banana | `.service-nano-banana` |
+| `gpt-image` | GPT Image | `.service-gpt-image` |
 
 ### 3. Homepage Filter Bars (`layouts/index.html`)
 
 Two stacked filter bars replace the current single tag filter:
 
-1. **Service filter bar** (top row) — "All Services" + one button per service, colored badges
+1. **Service filter bar** (top row) — "All Services" + one button per service. Buttons are enumerated from `data/services.yaml` (all defined services, regardless of whether any current content uses them). Display name shown on button; slug used as the filter value.
 2. **Tag filter bar** (bottom row) — unchanged from current implementation
 
 Both filters are applied simultaneously (AND logic): a card must match the active service AND the active tag to be visible. Selecting "All Services" or "All Tags" removes that filter dimension.
@@ -122,8 +136,8 @@ Card filtering uses `data-services` and `data-tags` HTML attributes, driven by J
 > **Note:** The homepage (`layouts/index.html`) currently has its own inline card markup and does **not** use `layouts/partials/card.html`. Both files contain card markup and both must be updated. The partial is the authoritative card definition; as part of this change, `layouts/index.html` should be refactored to use `{{ template "card" . }}` instead of duplicating the markup.
 
 Cards gain:
-- `data-services="{{ delimit (.Params.services | default (slice "nano-banana")) "," }}"` attribute
-- Service badges in the card tag row, rendered before category tags, with distinct colors per the service model table above
+- `data-services` attribute populated using the full service resolution logic from the **Template Logic** section below — not a simple `default`. This ensures `service_images`-only prompts are also filterable.
+- Service badges in the card tag row, rendered before category tags. Each badge shows the display name from `site.Data.services` and applies the `.service-{slug}` CSS class for coloring.
 
 ### 5. Detail Page (`layouts/_default/single.html`)
 
@@ -141,12 +155,12 @@ When `service_images` is set and has more than one entry, a comparison block is 
 | Component | Change |
 |---|---|
 | `hugo.toml` | Update `title` and `description` |
-| `data/services.yaml` | New file — canonical service model (slug, display name, color) |
+| `data/services.yaml` | New file — slug → display name mapping (canonical); colors are in CSS |
 | `content/prompts/*.md` | No changes required for existing prompts |
-| `layouts/index.html` | Add service filter bar; refactor card markup to use `partials/card.html` |
-| `layouts/partials/card.html` | Add `data-services` attribute; add service badges; read display names from `site.Data.services` |
-| `layouts/_default/single.html` | Add conditional side-by-side comparison block |
-| `static/` CSS | Add service badge CSS custom properties matching `data/services.yaml` |
+| `layouts/index.html` | Add service filter bar (enumerate from `site.Data.services`); refactor card markup to use `partials/card.html` |
+| `layouts/partials/card.html` | Add `data-services` attribute (full resolution logic); add service badges with display names and `.service-{slug}` CSS classes |
+| `layouts/_default/single.html` | Add conditional side-by-side comparison block; badge shows display name |
+| `static/` CSS | Add `.service-{slug}` badge color classes |
 
 ---
 
@@ -191,9 +205,11 @@ Rendering rules based on number of entries in `service_images`:
 {{ if $images }}
   <div class="service-comparison service-comparison--{{ if gt (len $images) 1 }}multi{{ else }}single{{ end }}">
     {{ range $slug, $img := $images }}
+      {{ $svcData := index site.Data.services $slug }}
+      {{ $displayName := cond (and $svcData $svcData.name) $svcData.name $slug }}
       <div class="service-col">
-        <span class="service-badge service-{{ $slug }}">{{ $slug }}</span>
-        <img src="{{ $img }}" alt="{{ $slug }} result" loading="lazy">
+        <span class="service-badge service-{{ $slug }}">{{ $displayName }}</span>
+        <img src="{{ $img }}" alt="{{ $displayName }} result" loading="lazy">
       </div>
     {{ end }}
   </div>
