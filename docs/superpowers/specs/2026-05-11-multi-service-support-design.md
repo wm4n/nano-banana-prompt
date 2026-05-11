@@ -60,10 +60,15 @@ sourceUrl: "https://..."
 date: 2026-05-11
 ```
 
-**`services`** — array of service slugs this prompt supports. Drives the filter bar and card badges.  
-**`service_images`** — map of service slug → image URL. When two or more entries are present, the detail page renders a side-by-side comparison block above the markdown content. When exactly one entry is present, the detail page renders a single-column image block with a service label (no comparison framing). When absent, the page renders exactly as today.
+**`services`** — array of service slugs this prompt supports. Drives the filter bar and card badges. This is the canonical source for which services a prompt belongs to.  
+**`service_images`** — map of service slug → image URL. Keys must be a subset of (or equal to) the `services` array.
 
-**Backward compatibility:** Prompts without a `services` field are treated as `["nano-banana"]` via a template default. No existing files need to be modified.
+**Relationship between `services` and `service_images`:**
+- If `services` is absent but `service_images` is set, `services` is inferred from the keys of `service_images` for badge/filter rendering.
+- If both are set and keys differ, `services` takes precedence for filter/badge; `service_images` only renders images for slugs present in its own map.
+- Best practice: always set `services` explicitly to avoid ambiguity.
+
+**Backward compatibility:** Prompts without a `services` field (and without `service_images`) are treated as `["nano-banana"]` via a template default. No existing files need to be modified.
 
 ### Service Model
 
@@ -88,6 +93,8 @@ Both filters are applied simultaneously (AND logic): a card must match the activ
 Card filtering uses `data-services` and `data-tags` HTML attributes, driven by JavaScript — consistent with the existing tag filter implementation.
 
 ### 4. Prompt Card (`layouts/index.html`, `layouts/partials/card.html`)
+
+> **Note:** The homepage (`layouts/index.html`) currently has its own inline card markup and does **not** use `layouts/partials/card.html`. Both files contain card markup and both must be updated. The partial is the authoritative card definition; as part of this change, `layouts/index.html` should be refactored to use `{{ template "card" . }}` instead of duplicating the markup.
 
 Cards gain:
 - `data-services="{{ delimit (.Params.services | default (slice "nano-banana")) "," }}"` attribute
@@ -143,7 +150,8 @@ Frontmatter (services, service_images)
 Rendering rules based on number of entries in `service_images`:
 - **0 entries / absent** — no comparison block; page renders exactly as today
 - **1 entry** — single-column image block with service label (no comparison framing)
-- **2+ entries** — two-column side-by-side comparison grid
+- **2 entries** — two-column side-by-side comparison grid (current maximum scope: Nano Banana + GPT Image)
+- **3+ entries** — CSS `auto-fit` grid (`repeat(auto-fit, minmax(220px, 1fr))`), columns wrap to new rows automatically; no special layout change needed
 
 ```go-html-template
 {{ $images := .Params.service_images }}
