@@ -1,6 +1,8 @@
 {{ define "card" }}
+{{ $services := partial "service-resolve.html" . }}
 <div class="card"
   data-tags="{{ delimit .Params.tags "," }}"
+  data-services="{{ delimit $services "," }}"
   data-title="{{ .Title }}">
   <a class="card-link" href="{{ .RelPermalink }}">
     <div class="card-img{{ if not .Params.cover }} card-no-img{{ end }}">
@@ -14,6 +16,14 @@
     <div class="card-body">
       <h3 class="card-title">{{ .Title }}</h3>
       <div class="card-tags">
+        {{/* Service badges first, then category tags */}}
+        {{ range $slug := $services }}
+          {{ $displayName := $slug }}
+          {{ range site.Data.services }}
+            {{ if eq .slug $slug }}{{ $displayName = .name }}{{ end }}
+          {{ end }}
+          <span class="service-badge service-{{ $slug }}">{{ $displayName }}</span>
+        {{ end }}
         {{ range .Params.tags }}
           <span class="card-tag">{{ . }}</span>
         {{ end }}
