@@ -90,7 +90,7 @@ date: 2026-05-11
 All service references use slugs as the canonical key. Responsibilities are split to avoid duplication:
 
 - **`data/services.yaml`** — canonical source for slug → display name only. Templates read display names via `site.Data.services`. The service filter bar enumerates all services from this file (not derived from content).
-- **`static/` CSS** — canonical source for badge colors, via per-slug CSS classes (`.service-nano-banana`, `.service-gpt-image`, etc.). CSS owns colors; no color duplication in the data file.
+- **`assets/css/main.css`** — canonical source for badge colors, via per-slug CSS classes (`.service-nano-banana`, `.service-gpt-image`, etc.). CSS owns colors; no color duplication in the data file.
 
 ```yaml
 # data/services.yaml
@@ -101,7 +101,7 @@ gpt-image:
 ```
 
 ```css
-/* static/css — badge colors */
+/* assets/css/main.css — badge colors */
 .service-nano-banana { background: #f5a623; color: #fff; }
 .service-gpt-image   { background: #10b981; color: #fff; }
 ```
@@ -113,7 +113,7 @@ Templates apply the CSS class by slug and read display name from `site.Data.serv
 <span class="service-badge service-{{ $slug }}">{{ $displayName }}</span>
 ```
 
-Adding a new service: add one entry to `data/services.yaml` and one CSS rule to `static/`. No template or JS changes required.
+Adding a new service: add one entry to `data/services.yaml` and one CSS rule to `assets/css/main.css`. No template or JS changes required.
 
 > **Important:** If a prompt's frontmatter uses a `services` slug not present in `data/services.yaml`, the card badge will fall back to showing the raw slug and the homepage filter bar will have **no button** for that service. Always add new slugs to `data/services.yaml` before (or at the same time as) using them in content.
 
@@ -196,12 +196,14 @@ The generated frontmatter includes `services:` always, and `service_images:` onl
 | Component | Change |
 |---|---|
 | `hugo.toml` | Update `title` and `description` |
-| `data/services.yaml` | New file — slug → display name mapping (canonical); colors are in CSS |
+| `layouts/_default/baseof.html` | Update hardcoded brand name in site logo; extend JS filter to handle `data-services` attribute and service filter bar buttons |
+| `data/services.yaml` | New file — slug → display name mapping (canonical); colors are in `assets/css/main.css` |
 | `content/prompts/*.md` | No changes required for existing prompts |
 | `layouts/index.html` | Add service filter bar (enumerate from `site.Data.services`); refactor card markup to use `partials/card.html` |
 | `layouts/partials/card.html` | Add `data-services` attribute (full resolution logic); add service badges with display names and `.service-{slug}` CSS classes |
+| `layouts/_default/single.html` | Add conditional side-by-side comparison block; badge shows display name; comparison images participate in existing lightbox |
+| `assets/css/main.css` | Add `.service-{slug}` badge color classes; add `.service-comparison` grid styles |
 | `scripts/new-prompt.sh` | Add service multi-select step; add service_images URL collection; update frontmatter generation; update header comment |
-| `static/` CSS | Add `.service-{slug}` badge color classes |
 
 ---
 
@@ -241,21 +243,28 @@ Rendering rules based on number of entries in `service_images`:
 - **2 entries** — two-column side-by-side comparison grid (current maximum scope: Nano Banana + GPT Image)
 - **3+ entries** — CSS `auto-fit` grid (`repeat(auto-fit, minmax(220px, 1fr))`), columns wrap to new rows automatically; no special layout change needed
 
+**Image display order** follows the `services` array (not map iteration order). The template iterates over the resolved `$services` slice and looks up each slug in `service_images`:
+
 ```go-html-template
 {{ $images := .Params.service_images }}
 {{ if $images }}
   <div class="service-comparison service-comparison--{{ if gt (len $images) 1 }}multi{{ else }}single{{ end }}">
-    {{ range $slug, $img := $images }}
-      {{ $svcData := index site.Data.services $slug }}
-      {{ $displayName := cond (and $svcData $svcData.name) $svcData.name $slug }}
-      <div class="service-col">
-        <span class="service-badge service-{{ $slug }}">{{ $displayName }}</span>
-        <img src="{{ $img }}" alt="{{ $displayName }} result" loading="lazy">
-      </div>
+    {{ range $slug := $services }}
+      {{ $img := index $images $slug }}
+      {{ if $img }}
+        {{ $svcData := index site.Data.services $slug }}
+        {{ $displayName := cond (and $svcData $svcData.name) $svcData.name $slug }}
+        <div class="service-col">
+          <span class="service-badge service-{{ $slug }}">{{ $displayName }}</span>
+          <img src="{{ $img }}" alt="{{ $displayName }} result" loading="lazy">
+        </div>
+      {{ end }}
     {{ end }}
   </div>
 {{ end }}
 ```
+
+Comparison block images participate in the existing lightbox (defined in `baseof.html`) — no additional wiring needed as the lightbox JS already binds to all `img` elements on the page.
 
 ### JS filter (homepage)
 Both filters use the same pattern. Active service and active tag are tracked independently; a card is visible only when it matches both.
