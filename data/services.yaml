@@ -1,0 +1,6 @@
+# data/services.yaml — list format; order determines display order everywhere.
+# To add a service: append entry here AND add a .service-{slug} CSS rule in assets/css/main.css.
+- slug: "nano-banana"
+  name: "Nano Banana"
+- slug: "gpt-image"
+  name: "GPT Image"
