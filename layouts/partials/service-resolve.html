@@ -1,0 +1,33 @@
+{{/*
+  service-resolve.html
+  Usage: {{ $services := partial "service-resolve.html" . }}
+  Returns a slice of service slugs for the given page.
+  Resolution order:
+    1. .Params.services if set
+    2. Derived from .Params.service_images keys:
+       - Known slugs first, in data/services.yaml order
+       - Unknown slugs appended in alphabetical order
+    3. Default: ["nano-banana"]
+*/}}
+{{ $services := .Params.services }}
+{{ if and (not $services) .Params.service_images }}
+  {{ $services = slice }}
+  {{/* Step A: known slugs in services.yaml order */}}
+  {{ range site.Data.services }}
+    {{ if index $.Params.service_images .slug }}
+      {{ $services = $services | append .slug }}
+    {{ end }}
+  {{ end }}
+  {{/* Step B: unknown slugs collected first, then sorted alphabetically */}}
+  {{ $unknown := slice }}
+  {{ range $slug, $_ := .Params.service_images }}
+    {{ if not (in $services $slug) }}
+      {{ $unknown = $unknown | append $slug }}
+    {{ end }}
+  {{ end }}
+  {{ range sort $unknown }}
+    {{ $services = $services | append . }}
+  {{ end }}
+{{ end }}
+{{ $services = $services | default (slice "nano-banana") }}
+{{ return $services }}
