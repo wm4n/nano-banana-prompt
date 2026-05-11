@@ -66,22 +66,33 @@ date: 2026-05-11
 **Relationship between `services` and `service_images`:**
 - `services` is the canonical source for filter/badge. Resolution order (first match wins):
   1. Use `services` if explicitly set in frontmatter
-  2. If `services` is absent but `service_images` is set, derive `services` from the keys of `service_images`
+  2. If `services` is absent but `service_images` is set, derive `services` from the keys of `service_images`, **sorted by the order they appear in `data/services.yaml`** (unknown slugs appended alphabetically at the end)
   3. If neither is set, default to `["nano-banana"]`
 - `service_images` keys must be a subset of (or equal to) the resolved `services` list.
-- Best practice: always set `services` explicitly.
+- **Best practice: always set `services` explicitly** — this guarantees display order and avoids runtime sorting.
 
 **Template resolution logic:**
 ```go-html-template
 {{ $services := .Params.services }}
 {{ if and (not $services) .Params.service_images }}
+  {{/* Derive services from service_images keys, sorted by data/services.yaml order */}}
   {{ $services = slice }}
+  {{ range $svc := site.Data.services }}
+    {{ if index $.Params.service_images $svc.slug }}
+      {{ $services = $services | append $svc.slug }}
+    {{ end }}
+  {{ end }}
+  {{/* Append any slugs not in services.yaml, sorted alphabetically */}}
   {{ range $slug, $_ := .Params.service_images }}
-    {{ $services = $services | append $slug }}
+    {{ if not (in $services $slug) }}
+      {{ $services = $services | append $slug }}
+    {{ end }}
   {{ end }}
 {{ end }}
 {{ $services = $services | default (slice "nano-banana") }}
 ```
+
+> **Note:** The derivation code above requires `data/services.yaml` to be a list (not a map) so that iteration order is deterministic. See the Service Data section for the list format.
 
 **Backward compatibility:** Prompts without `services` or `service_images` resolve to `["nano-banana"]` via step 3 above. No existing files need to be modified.
 
@@ -89,14 +100,14 @@ date: 2026-05-11
 
 All service references use slugs as the canonical key. Responsibilities are split to avoid duplication:
 
-- **`data/services.yaml`** — canonical source for slug → display name only. Templates read display names via `site.Data.services`. The service filter bar enumerates all services from this file (not derived from content).
+- **`data/services.yaml`** — canonical source for slug → display name only. **Format: a YAML list** (not map) so Hugo template iteration is order-deterministic. Templates read display names by scanning the list. The service filter bar enumerates all services from this file (not derived from content).
 - **`assets/css/main.css`** — canonical source for badge colors, via per-slug CSS classes (`.service-nano-banana`, `.service-gpt-image`, etc.). CSS owns colors; no color duplication in the data file.
 
 ```yaml
-# data/services.yaml
-nano-banana:
+# data/services.yaml  — list format (order determines display order everywhere)
+- slug: "nano-banana"
   name: "Nano Banana"
-gpt-image:
+- slug: "gpt-image"
   name: "GPT Image"
 ```
 
@@ -106,14 +117,17 @@ gpt-image:
 .service-gpt-image   { background: #10b981; color: #fff; }
 ```
 
-Templates apply the CSS class by slug and read display name from `site.Data.services`:
+Templates apply the CSS class by slug and read display name by scanning the list:
 ```go-html-template
-{{ $svcData := index site.Data.services $slug }}
-{{ $displayName := cond (and $svcData $svcData.name) $svcData.name $slug }}
+{{/* Helper: look up display name for a slug */}}
+{{ $displayName := $slug }}
+{{ range site.Data.services }}
+  {{ if eq .slug $slug }}{{ $displayName = .name }}{{ end }}
+{{ end }}
 <span class="service-badge service-{{ $slug }}">{{ $displayName }}</span>
 ```
 
-Adding a new service: add one entry to `data/services.yaml` and one CSS rule to `assets/css/main.css`. No template or JS changes required.
+Adding a new service: append one entry to `data/services.yaml` and one CSS rule to `assets/css/main.css`. No template or JS changes required.
 
 > **Important:** If a prompt's frontmatter uses a `services` slug not present in `data/services.yaml`, the card badge will fall back to showing the raw slug and the homepage filter bar will have **no button** for that service. Always add new slugs to `data/services.yaml` before (or at the same time as) using them in content.
 
@@ -229,9 +243,18 @@ Frontmatter (services, service_images)
 ```go-html-template
 {{ $services := .Params.services }}
 {{ if and (not $services) .Params.service_images }}
+  {{/* Derive services from service_images keys, sorted by data/services.yaml order */}}
   {{ $services = slice }}
+  {{ range site.Data.services }}
+    {{ if index $.Params.service_images .slug }}
+      {{ $services = $services | append .slug }}
+    {{ end }}
+  {{ end }}
+  {{/* Append any slugs not in services.yaml, sorted alphabetically */}}
   {{ range $slug, $_ := .Params.service_images }}
-    {{ $services = $services | append $slug }}
+    {{ if not (in $services $slug) }}
+      {{ $services = $services | append $slug }}
+    {{ end }}
   {{ end }}
 {{ end }}
 {{ $services = $services | default (slice "nano-banana") }}
@@ -252,8 +275,10 @@ Rendering rules based on number of entries in `service_images`:
     {{ range $slug := $services }}
       {{ $img := index $images $slug }}
       {{ if $img }}
-        {{ $svcData := index site.Data.services $slug }}
-        {{ $displayName := cond (and $svcData $svcData.name) $svcData.name $slug }}
+        {{ $displayName := $slug }}
+        {{ range site.Data.services }}
+          {{ if eq .slug $slug }}{{ $displayName = .name }}{{ end }}
+        {{ end }}
         <div class="service-col">
           <span class="service-badge service-{{ $slug }}">{{ $displayName }}</span>
           <img src="{{ $img }}" alt="{{ $displayName }} result" loading="lazy">
