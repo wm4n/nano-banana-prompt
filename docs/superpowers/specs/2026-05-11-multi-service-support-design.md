@@ -115,6 +115,8 @@ Templates apply the CSS class by slug and read display name from `site.Data.serv
 
 Adding a new service: add one entry to `data/services.yaml` and one CSS rule to `static/`. No template or JS changes required.
 
+> **Important:** If a prompt's frontmatter uses a `services` slug not present in `data/services.yaml`, the card badge will fall back to showing the raw slug and the homepage filter bar will have **no button** for that service. Always add new slugs to `data/services.yaml` before (or at the same time as) using them in content.
+
 | Slug | Display Name | Badge CSS Class |
 |---|---|---|
 | `nano-banana` | Nano Banana | `.service-nano-banana` |
@@ -141,9 +143,9 @@ Cards gain:
 
 ### 5. Detail Page (`layouts/_default/single.html`)
 
-When `service_images` is set and has more than one entry, a comparison block is rendered at the top of the page (before the markdown content):
+When `service_images` is set, a comparison block is rendered at the top of the detail page (before the markdown content). The card thumbnail always uses the `cover` field regardless of whether `service_images` is present — `cover` and `service_images` are independent.
 
-- Two-column grid, one column per service
+- Two-column grid when two or more entries are present
 - Each column: service badge label + image
 - Falls back gracefully when only one service image is present (single column, no comparison header)
 - When `service_images` is absent, the page renders exactly as today
