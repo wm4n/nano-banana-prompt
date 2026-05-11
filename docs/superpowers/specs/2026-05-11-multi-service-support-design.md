@@ -152,7 +152,46 @@ When `service_images` is set, a comparison block is rendered at the top of the d
 
 ---
 
-## Component Summary
+### 6. New Prompt Script (`scripts/new-prompt.sh`)
+
+The script is updated to support service selection and per-service image collection. Changes:
+
+**Header comment:** Update from "Nano Banana gallery" to "Image Gen Prompts gallery".
+
+**New step — Service selection** (inserted after Source URL, before the step loop):
+
+- Reads the service list from `data/services.yaml` (parsed with `yq` or a simple line-by-line grep; fall back to hardcoded slug list if `yq` is unavailable)
+- Presents a numbered multi-select list identical in style to the existing tag selector
+- Default: `nano-banana` pre-selected (all existing behaviour is preserved when user presses Enter without changing selection)
+- Stores result in `SELECTED_SERVICES` array of slugs
+
+**New step — Service images** (inserted after the step loop, only when `${#SELECTED_SERVICES[@]} > 1`):
+
+- For each selected service, prompt: `Service image URL for <display-name> (or press Enter to skip):`
+- Stores results in associative array `SERVICE_IMAGES` (slug → URL)
+- If a URL is provided, it is written to `service_images` in the frontmatter
+- No image file copy is performed for service images (URLs only, consistent with how `cover` works for GitHub-hosted images)
+
+**Frontmatter template update:**
+
+```bash
+# services block (always written)
+SERVICES_YAML=""
+for slug in "${SELECTED_SERVICES[@]}"; do
+  SERVICES_YAML="${SERVICES_YAML}  - \"${slug}\""$'\n'
+done
+
+# service_images block (only written if any URL was provided)
+SERVICE_IMAGES_YAML=""
+for slug in "${SELECTED_SERVICES[@]}"; do
+  url="${SERVICE_IMAGES[$slug]:-}"
+  [[ -n "$url" ]] && SERVICE_IMAGES_YAML="${SERVICE_IMAGES_YAML}  ${slug}: \"${url}\""$'\n'
+done
+```
+
+The generated frontmatter includes `services:` always, and `service_images:` only when at least one URL was provided. Single-service prompts (the common case) produce only the `services:` block with one entry — no `service_images` block.
+
+---
 
 | Component | Change |
 |---|---|
@@ -161,7 +200,7 @@ When `service_images` is set, a comparison block is rendered at the top of the d
 | `content/prompts/*.md` | No changes required for existing prompts |
 | `layouts/index.html` | Add service filter bar (enumerate from `site.Data.services`); refactor card markup to use `partials/card.html` |
 | `layouts/partials/card.html` | Add `data-services` attribute (full resolution logic); add service badges with display names and `.service-{slug}` CSS classes |
-| `layouts/_default/single.html` | Add conditional side-by-side comparison block; badge shows display name |
+| `scripts/new-prompt.sh` | Add service multi-select step; add service_images URL collection; update frontmatter generation; update header comment |
 | `static/` CSS | Add `.service-{slug}` badge color classes |
 
 ---
