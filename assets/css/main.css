@@ -472,3 +472,43 @@ img { display: block; max-width: 100%; }
   .card-body { padding: 10px 12px 12px; }
   .card-title { font-size: 12px; }
 }
+
+/* ── Service Badges ── */
+.service-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 12px;
+  color: #fff;
+  border: none;
+  white-space: nowrap;
+}
+/* Per-service colors — add one rule per service slug */
+.service-nano-banana { background: #f5a623; color: #000; }
+.service-gpt-image   { background: #10b981; color: #fff; }
+
+/* ── Two-row filter bar sticky stacking ── */
+/* Service filter bar sticks below site header (56px) */
+.service-filter-bar { top: 56px; }
+/* Tag filter bar sticks below service filter bar.
+   Service bar height: 14px top-pad + ~30px button + 14px bot-pad + 1px border = ~59px */
+.tag-filter-bar { top: calc(56px + 59px); }
+
+/* ── Service Comparison Block (detail page) ── */
+.service-comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.service-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+.service-col img {
+  width: 100%;
+  border-radius: var(--radius);
+  cursor: zoom-in;
+}
