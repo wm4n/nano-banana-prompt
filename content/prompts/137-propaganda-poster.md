@@ -5,6 +5,12 @@ tags:
   - "Art Styles"
   - "Effects & Composite"
   - "Poster & Nature"
+services:
+  - "nano-banana"
+  - "gpt-image"
+service_images:
+  nano-banana: "/nano-banana-prompt/images/prompts/137-propaganda-poster-2.png"
+  gpt-image: "/nano-banana-prompt/images/prompts/137-propaganda-poster-1.png"
 cover: "/nano-banana-prompt/images/prompts/137-propaganda-poster-1.png"
 source: "@SimplyAnnisa"
 sourceUrl: "https://x.com/SimplyAnnisa/status/2050870223763366201?s=20"

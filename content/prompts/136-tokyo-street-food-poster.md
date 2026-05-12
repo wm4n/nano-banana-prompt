@@ -6,7 +6,12 @@ tags:
   - "Infographic & UI"
   - "Effects & Composite"
   - "Food & Commercial"
-  - "GPT Image2"
+services:
+  - "nano-banana"
+  - "gpt-image"
+service_images:
+  nano-banana: "/nano-banana-prompt/images/prompts/136-tokyo-street-food-poster-2.png"
+  gpt-image: "/nano-banana-prompt/images/prompts/136-tokyo-street-food-poster-1.png"
 cover: "/nano-banana-prompt/images/prompts/136-tokyo-street-food-poster-1.png"
 source: "@MrDasOnX"
 sourceUrl: "https://x.com/MrDasOnX/status/2049747799261257846?s=20"

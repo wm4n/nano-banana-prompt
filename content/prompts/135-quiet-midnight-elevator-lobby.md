@@ -4,7 +4,12 @@ num: 135
 tags:
   - "Character & Portrait"
   - "Photo & Cinematic"
-  - "GPT Image2"
+services:
+  - "nano-banana"
+  - "gpt-image"
+service_images:
+  nano-banana: "/nano-banana-prompt/images/prompts/135-quiet-midnight-elevator-lobby-2.png"
+  gpt-image: "/nano-banana-prompt/images/prompts/135-quiet-midnight-elevator-lobby-1.png"
 cover: "/nano-banana-prompt/images/prompts/135-quiet-midnight-elevator-lobby-1.png"
 source: "@BubbleBrain"
 sourceUrl: "https://x.com/BubbleBrain/status/2049543788818034992?s=20"

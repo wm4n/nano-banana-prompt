@@ -4,7 +4,12 @@ num: 138
 tags:
   - "Art Styles"
   - "Character & Portrait"
-  - "GPT Image2"
+services:
+  - "nano-banana"
+  - "gpt-image"
+service_images:
+  nano-banana: "/nano-banana-prompt/images/prompts/138-stylized-illustration-2.png"
+  gpt-image: "/nano-banana-prompt/images/prompts/138-stylized-illustration-1.png"
 cover: "/nano-banana-prompt/images/prompts/138-stylized-illustration-1.png"
 source: "@Shorelyn_"
 sourceUrl: "https://x.com/Shorelyn_/status/2052056952759550083?s=20"

@@ -5,7 +5,12 @@ tags:
   - "City & Architecture"
   - "Art Styles"
   - "Poster & Nature"
-  - "GPT Image2"
+services:
+  - "nano-banana"
+  - "gpt-image"
+service_images:
+  nano-banana: "/nano-banana-prompt/images/prompts/139-travel-poster-illustration-2.png"
+  gpt-image: "/nano-banana-prompt/images/prompts/139-travel-poster-illustration-1.png"
 cover: "/nano-banana-prompt/images/prompts/139-travel-poster-illustration-1.png"
 source: "@Naiknelofar788"
 sourceUrl: "https://x.com/Naiknelofar788/status/2052405499363221863?s=20"
