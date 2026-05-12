@@ -66,7 +66,7 @@ function applyFilters() {
   let visible = 0;
   cards.forEach(card => {
     const tags = (card.dataset.tags || '').toLowerCase();
-    const services = (card.dataset.services || '').split(',');
+    const services = (card.dataset.services || '').split(',').map(s => s.trim()).filter(Boolean);
     const title = (card.dataset.title || '').toLowerCase();
     const tagMatch = activeTag === 'all' || tags.includes(activeTag.toLowerCase());
     const serviceMatch = activeService === 'all' || services.includes(activeService);
