@@ -20,7 +20,7 @@
 <body>
 
 <header class="site-header">
-  <a class="site-logo" href="{{ site.Home.RelPermalink }}">🍌 <span>Nano Banana</span> Prompts</a>
+  <a class="site-logo" href="{{ site.Home.RelPermalink }}">🖼️ <span>Image Gen</span> Prompts</a>
   <span class="header-count">{{ len site.RegularPages }} prompts</span>
   <div class="header-right">
     <input class="header-search" type="search" placeholder="Search prompts…" id="search-input">
@@ -48,26 +48,30 @@ lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('op
 document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
 window.openLightbox = (src, alt) => { lbImg.src = src; lbImg.alt = alt || ''; lb.classList.add('open'); };
 
-// ── Image lightbox on prompt pages ──
-document.querySelectorAll('.prompt-content img').forEach(img => {
+// ── Image lightbox on prompt pages + service comparison ──
+document.querySelectorAll('.prompt-content img, .service-comparison img').forEach(img => {
   img.addEventListener('click', () => openLightbox(img.src, img.alt));
 });
 
-// ── Gallery search + tag filter ──
+// ── Gallery search + service + tag filter ──
 const cards = document.querySelectorAll('.card');
-const filterBtns = document.querySelectorAll('.tag-btn');
+const tagBtns = document.querySelectorAll('.tag-btn[data-tag]');
+const serviceBtns = document.querySelectorAll('.service-btn[data-service]');
 const searchInput = document.getElementById('search-input');
 let activeTag = 'all';
+let activeService = 'all';
 
 function applyFilters() {
   const q = (searchInput?.value || '').toLowerCase().trim();
   let visible = 0;
   cards.forEach(card => {
     const tags = (card.dataset.tags || '').toLowerCase();
+    const services = (card.dataset.services || '').split(',');
     const title = (card.dataset.title || '').toLowerCase();
     const tagMatch = activeTag === 'all' || tags.includes(activeTag.toLowerCase());
+    const serviceMatch = activeService === 'all' || services.includes(activeService);
     const searchMatch = !q || title.includes(q) || tags.includes(q);
-    const show = tagMatch && searchMatch;
+    const show = tagMatch && serviceMatch && searchMatch;
     card.hidden = !show;
     if (show) visible++;
   });
@@ -75,14 +79,24 @@ function applyFilters() {
   if (empty) empty.hidden = visible > 0;
 }
 
-filterBtns.forEach(btn => {
+tagBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
+    tagBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     activeTag = btn.dataset.tag;
     applyFilters();
   });
 });
+
+serviceBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    serviceBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeService = btn.dataset.service;
+    applyFilters();
+  });
+});
+
 if (searchInput) searchInput.addEventListener('input', applyFilters);
 </script>
 
