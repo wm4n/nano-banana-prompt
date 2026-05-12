@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# new-prompt.sh — Interactively add a new prompt to the Nano Banana gallery.
+# new-prompt.sh — Interactively add a new prompt to the Image Gen Prompts gallery.
 # Usage: ./scripts/new-prompt.sh   (run from repo root, requires bash 3.2+)
 set -euo pipefail
 
@@ -145,6 +145,87 @@ HANDLE=""
 [[ -n "$SOURCE_URL" ]] && HANDLE=$(extract_handle "$SOURCE_URL")
 SOURCEVAL="${HANDLE:+@${HANDLE}}"
 
+# ── Service selection ─────────────────────────────────────────────────────────
+# Read available services from data/services.yaml using bash 3.2+ compatible parsing.
+# Uses parallel arrays (no associative arrays).
+SVC_SLUGS=()
+SVC_NAMES=()
+SERVICES_YAML_FILE="$REPO_ROOT/data/services.yaml"
+
+if [[ -f "$SERVICES_YAML_FILE" ]]; then
+  if command -v yq &>/dev/null; then
+    # Fast path: yq available
+    while IFS= read -r slug; do
+      SVC_SLUGS+=("$slug")
+    done < <(yq '.[].slug' "$SERVICES_YAML_FILE" 2>/dev/null | tr -d '"')
+    while IFS= read -r name; do
+      SVC_NAMES+=("$name")
+    done < <(yq '.[].name' "$SERVICES_YAML_FILE" 2>/dev/null | tr -d '"')
+  else
+    # Fallback: line-by-line grep parsing of the YAML list format
+    # Matches: `  slug: "nano-banana"` and `  name: "Nano Banana"`
+    while IFS= read -r line; do
+      if [[ "$line" =~ slug:[[:space:]]+\"([^\"]+)\" ]]; then
+        SVC_SLUGS+=("${BASH_REMATCH[1]}")
+      elif [[ "$line" =~ name:[[:space:]]+\"([^\"]+)\" ]]; then
+        SVC_NAMES+=("${BASH_REMATCH[1]}")
+      fi
+    done < "$SERVICES_YAML_FILE"
+  fi
+fi
+
+# Last-resort fallback: file missing or parse yielded nothing
+if [[ ${#SVC_SLUGS[@]} -eq 0 ]]; then
+  warn "Could not read data/services.yaml — using built-in defaults"
+  SVC_SLUGS=("nano-banana" "gpt-image")
+  SVC_NAMES=("Nano Banana" "GPT Image")
+fi
+
+# Default: nano-banana pre-selected
+SVC_SELECTED=()
+for i in "${!SVC_SLUGS[@]}"; do
+  [[ "${SVC_SLUGS[$i]}" == "nano-banana" ]] && SVC_SELECTED+=(1) || SVC_SELECTED+=(0)
+done
+
+echo ""
+info "--- Services ---"
+while true; do
+  echo ""
+  for i in "${!SVC_SLUGS[@]}"; do
+    mark="  "
+    [[ "${SVC_SELECTED[$i]}" == "1" ]] && mark="✓ "
+    printf "  [%2d] %s%s\n" "$((i+1))" "$mark" "${SVC_NAMES[$i]}"
+  done
+  echo ""
+  printf "Toggle service number(s) (space-separated), or press Enter to accept: "
+  IFS= read -r toggles
+  [[ -z "$toggles" ]] && break
+  for t in $toggles; do
+    if [[ "$t" =~ ^[0-9]+$ ]] && (( t >= 1 && t <= ${#SVC_SLUGS[@]} )); then
+      idx=$((t - 1))
+      [[ "${SVC_SELECTED[$idx]}" == "1" ]] && SVC_SELECTED[$idx]=0 || SVC_SELECTED[$idx]=1
+    else
+      warn "  Invalid: $t (must be 1–${#SVC_SLUGS[@]})"
+    fi
+  done
+done
+
+SELECTED_SERVICES=()
+SELECTED_SERVICE_NAMES=()
+for i in "${!SVC_SLUGS[@]}"; do
+  if [[ "${SVC_SELECTED[$i]}" == "1" ]]; then
+    SELECTED_SERVICES+=("${SVC_SLUGS[$i]}")
+    SELECTED_SERVICE_NAMES+=("${SVC_NAMES[$i]}")
+  fi
+done
+
+# Ensure at least one service is selected
+if [[ ${#SELECTED_SERVICES[@]} -eq 0 ]]; then
+  warn "No service selected — defaulting to Nano Banana"
+  SELECTED_SERVICES=("nano-banana")
+  SELECTED_SERVICE_NAMES=("Nano Banana")
+fi
+
 # ── Step loop ─────────────────────────────────────────────────────────────────
 STEP_TITLES=()
 STEP_IMAGE_SRCS=()
@@ -193,6 +274,28 @@ while true; do
   IFS= read -r more
   [[ "$more" != "y" && "$more" != "Y" ]] && break
 done
+
+# ── Service images (only when 2+ services selected) ──────────────────────────
+# Parallel arrays for bash 3.2+ compatibility
+SERVICE_IMAGE_SLUGS=()
+SERVICE_IMAGE_URLS=()
+
+if [[ ${#SELECTED_SERVICES[@]} -gt 1 ]]; then
+  echo ""
+  info "--- Service Images ---"
+  info "(Optional: provide a result image URL for each service, or press Enter to skip)"
+  for i in "${!SELECTED_SERVICES[@]}"; do
+    slug="${SELECTED_SERVICES[$i]}"
+    name="${SELECTED_SERVICE_NAMES[$i]}"
+    printf "  Image URL for %s (or Enter to skip): " "$name"
+    IFS= read -r svc_img_url
+    svc_img_url="${svc_img_url# }"; svc_img_url="${svc_img_url% }"
+    if [[ -n "$svc_img_url" ]]; then
+      SERVICE_IMAGE_SLUGS+=("$slug")
+      SERVICE_IMAGE_URLS+=("$svc_img_url")
+    fi
+  done
+fi
 
 # ── Build image URL and dest arrays ───────────────────────────────────────────
 COVER_URL=""
@@ -305,11 +408,32 @@ for i in "${!STEP_TITLES[@]}"; do
   CONTENT_BODY="${CONTENT_BODY}"$'\n'"${formatted_prompt}"
 done
 
+# Build services YAML block (always written)
+SERVICES_YAML_BLOCK=""
+for slug in "${SELECTED_SERVICES[@]}"; do
+  SERVICES_YAML_BLOCK="${SERVICES_YAML_BLOCK}  - \"${slug}\""$'\n'
+done
+
+# Build service_images YAML block (only if any URLs were provided)
+SERVICE_IMAGES_YAML_BLOCK=""
+for i in "${!SERVICE_IMAGE_SLUGS[@]}"; do
+  slug="${SERVICE_IMAGE_SLUGS[$i]}"
+  url="${SERVICE_IMAGE_URLS[$i]}"
+  [[ -n "$url" ]] && SERVICE_IMAGES_YAML_BLOCK="${SERVICE_IMAGES_YAML_BLOCK}  ${slug}: \"${url}\""$'\n'
+done
+
+# Build service_images frontmatter section (empty string if no images)
+SVC_IMAGES_FM=""
+if [[ -n "$SERVICE_IMAGES_YAML_BLOCK" ]]; then
+  SVC_IMAGES_FM="service_images:"$'\n'"${SERVICE_IMAGES_YAML_BLOCK}"
+fi
+
 CONTENT="---
 title: \"${TITLE}\"
 num: ${NUM}
 tags:
-${TAG_YAML}cover: \"${COVER_URL}\"
+${TAG_YAML}services:
+${SERVICES_YAML_BLOCK}${SVC_IMAGES_FM}cover: \"${COVER_URL}\"
 source: \"${SOURCEVAL}\"
 sourceUrl: \"${SOURCE_URL}\"
 date: ${TODAY}
