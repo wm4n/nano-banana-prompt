@@ -286,8 +286,8 @@ if [[ ${#SELECTED_SERVICES[@]} -gt 1 ]]; then
   info "(Optional: provide a result image URL for each service, or press Enter to skip)"
   for i in "${!SELECTED_SERVICES[@]}"; do
     slug="${SELECTED_SERVICES[$i]}"
-    name="${SELECTED_SERVICE_NAMES[$i]}"
-    printf "  Image URL for %s (or Enter to skip): " "$name"
+    service_name="${SELECTED_SERVICE_NAMES[$i]}"
+    printf "  Image URL for %s (or Enter to skip): " "$service_name"
     IFS= read -r svc_img_url
     svc_img_url="${svc_img_url# }"; svc_img_url="${svc_img_url% }"
     if [[ -n "$svc_img_url" ]]; then
