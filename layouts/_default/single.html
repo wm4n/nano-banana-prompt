@@ -20,6 +20,26 @@
     </div>
   </header>
 
+  {{ $images := .Params.service_images }}
+  {{ if $images }}
+    {{ $services := partial "service-resolve.html" . }}
+    <div class="service-comparison">
+      {{ range $slug := $services }}
+        {{ $img := index $images $slug }}
+        {{ if $img }}
+          {{ $displayName := $slug }}
+          {{ range site.Data.services }}
+            {{ if eq .slug $slug }}{{ $displayName = .name }}{{ end }}
+          {{ end }}
+          <div class="service-col">
+            <span class="service-badge service-{{ $slug }}">{{ $displayName }}</span>
+            <img src="{{ $img }}" alt="{{ $displayName }} result" loading="lazy">
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  {{ end }}
+
   <div class="prompt-content">
     {{ .Content }}
   </div>
