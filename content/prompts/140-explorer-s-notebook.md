@@ -21,8 +21,6 @@ date: 2026-05-12
 
 ### Prompt
 
-<img width="750" alt="Explorer’s Notebook" src="/nano-banana-prompt/images/prompts/140-explorer-s-notebook-1.png" />
-
 > Use the uploaded image as the exact facial identity reference for the main character. Preserve facial structure, hairstyle, skin tone, expression, and overall vibe while transforming the person into an anime-inspired fantasy creature trainer inside a nostalgic adventure scrapbook journal.
 > 
 > Create a highly detailed vertical illustration styled like a premium explorer’s notebook page from a monster-collecting universe. Blend cozy anime aesthetics, watercolor textures, vintage travel journals, layered collage design, and cinematic fantasy storytelling.
