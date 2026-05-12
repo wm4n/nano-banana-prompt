@@ -21,6 +21,7 @@ TAG_DEFS=(
   "icons-stickers|Icons & Stickers|icon generation|themed icon|different style icon"
   "gamification-education|Gamification & Education|gamification|workshop|team building|educational tool|scoring table|evaluation guide|training material|quiz|ranking logic|step by step guide|learning path|instructional design"
   "storytelling-scenario|Storytelling & Scenario|survival scenario|storytelling|roleplay|narrative context|world building|game setting|adventure|situation analysis|decision making|lost at sea|survival guide"
+  "gpt-image2|GPT Image2|gpt image2|image generation|dall-e"
 )
 
 ALL_SLUGS=()

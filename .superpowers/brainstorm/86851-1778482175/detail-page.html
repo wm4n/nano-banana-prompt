@@ -1,0 +1,51 @@
+<h2>Detail Page 佈局</h2>
+<p class="subtitle">有多個服務版本時，prompt 詳細頁的結構</p>
+
+<div class="mockup">
+  <div class="mockup-header">單一服務（現有 prompts，無 service_images）</div>
+  <div class="mockup-body" style="padding:16px;">
+    <div style="font-size:18px;font-weight:700;margin-bottom:8px;">Isometric City Scene</div>
+    <div style="display:flex;gap:6px;margin-bottom:12px;">
+      <span style="background:#f5a623;color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;">🍌 Nano Banana</span>
+      <span style="background:#e0e0e0;color:#555;padding:2px 8px;border-radius:10px;font-size:11px;">City & Architecture</span>
+    </div>
+    <div class="placeholder" style="height:120px;display:flex;align-items:center;justify-content:center;font-size:12px;">封面圖（現有 cover 欄位）</div>
+    <div style="margin-top:12px;background:#f9f9f9;border-radius:6px;padding:10px;font-size:12px;color:#555;">
+      <strong>Prompt</strong><br>Present a clear, 45° top-down isometric miniature...
+    </div>
+  </div>
+</div>
+
+<div style="height:16px;"></div>
+
+<div class="mockup">
+  <div class="mockup-header">多服務版本（有 service_images — 並排比較）</div>
+  <div class="mockup-body" style="padding:16px;">
+    <div style="font-size:18px;font-weight:700;margin-bottom:8px;">Isometric City Scene</div>
+    <div style="display:flex;gap:6px;margin-bottom:12px;">
+      <span style="background:#f5a623;color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;">🍌 Nano Banana</span>
+      <span style="background:#10b981;color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;">🤖 GPT Image</span>
+      <span style="background:#e0e0e0;color:#555;padding:2px 8px;border-radius:10px;font-size:11px;">City & Architecture</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+      <div>
+        <div style="text-align:center;margin-bottom:4px;">
+          <span style="background:#f5a623;color:#fff;padding:2px 10px;border-radius:10px;font-size:11px;">🍌 Nano Banana</span>
+        </div>
+        <div class="placeholder" style="height:100px;display:flex;align-items:center;justify-content:center;font-size:11px;">service_images.nano-banana</div>
+      </div>
+      <div>
+        <div style="text-align:center;margin-bottom:4px;">
+          <span style="background:#10b981;color:#fff;padding:2px 10px;border-radius:10px;font-size:11px;">🤖 GPT Image</span>
+        </div>
+        <div class="placeholder" style="height:100px;display:flex;align-items:center;justify-content:center;font-size:11px;">service_images.gpt-image</div>
+      </div>
+    </div>
+
+    <div style="background:#f9f9f9;border-radius:6px;padding:10px;font-size:12px;color:#555;">
+      <strong>Prompt</strong><br>Present a clear, 45° top-down isometric miniature...
+    </div>
+    <div style="margin-top:10px;font-size:11px;color:#aaa;">↓ 以下維持現有 markdown 內容（img tags、詳細說明）</div>
+  </div>
+</div>

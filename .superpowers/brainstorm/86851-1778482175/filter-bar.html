@@ -1,0 +1,44 @@
+<h2>首頁 Filter Bar 配置</h2>
+<p class="subtitle">Service filter 和 Tag filter 如何排列？</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>上下兩列（Service 在上，Tag 在下）</h3>
+      <p>兩個 filter 各自獨立一列，層次清晰，一眼就知道先選服務、再選分類。</p>
+      <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px;">
+        <div style="display:flex;gap:6px;flex-wrap:wrap;padding:6px;background:#f5f5f5;border-radius:6px;">
+          <span style="background:#333;color:#fff;padding:4px 10px;border-radius:16px;font-size:11px;">All Services</span>
+          <span style="background:#f5a623;color:#fff;padding:4px 10px;border-radius:16px;font-size:11px;">🍌 Nano Banana</span>
+          <span style="background:#10b981;color:#fff;padding:4px 10px;border-radius:16px;font-size:11px;">🤖 GPT Image</span>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;padding:6px;background:#f5f5f5;border-radius:6px;">
+          <span style="background:#333;color:#fff;padding:4px 10px;border-radius:16px;font-size:11px;">All Tags</span>
+          <span style="background:#e0e0e0;color:#555;padding:4px 10px;border-radius:16px;font-size:11px;">Art Styles</span>
+          <span style="background:#e0e0e0;color:#555;padding:4px 10px;border-radius:16px;font-size:11px;">City & Architecture</span>
+          <span style="background:#e0e0e0;color:#555;padding:4px 10px;border-radius:16px;font-size:11px;">3D & Miniature</span>
+          <span style="background:#e0e0e0;color:#555;padding:4px 10px;border-radius:16px;font-size:11px;">...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>單列合併（Service badge + Tag 混排，用分隔線區分）</h3>
+      <p>一列顯示，用「|」或間距分開 service 和 tag 群組，節省垂直空間。</p>
+      <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:6px;background:#f5f5f5;border-radius:6px;">
+        <span style="background:#333;color:#fff;padding:4px 10px;border-radius:16px;font-size:11px;">All</span>
+        <span style="background:#f5a623;color:#fff;padding:4px 10px;border-radius:16px;font-size:11px;">🍌 NB</span>
+        <span style="background:#10b981;color:#fff;padding:4px 10px;border-radius:16px;font-size:11px;">🤖 GPT</span>
+        <span style="color:#ccc;font-size:16px;">|</span>
+        <span style="background:#e0e0e0;color:#555;padding:4px 10px;border-radius:16px;font-size:11px;">Art Styles</span>
+        <span style="background:#e0e0e0;color:#555;padding:4px 10px;border-radius:16px;font-size:11px;">City & Arch</span>
+        <span style="background:#e0e0e0;color:#555;padding:4px 10px;border-radius:16px;font-size:11px;">3D</span>
+        <span style="background:#e0e0e0;color:#555;padding:4px 10px;border-radius:16px;font-size:11px;">...</span>
+      </div>
+    </div>
+  </div>
+</div>

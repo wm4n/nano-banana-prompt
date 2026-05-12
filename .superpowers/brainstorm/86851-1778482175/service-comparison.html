@@ -1,0 +1,53 @@
+<h2>服務版本比較方案</h2>
+<p class="subtitle">同一個 prompt 有 Nano Banana 和 GPT Image 兩個版本時，detail page 如何呈現？</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>並排比較（Side by Side）</h3>
+      <p>Detail page 上方兩欄並排，左邊 Nano Banana 生成圖、右邊 GPT Image 生成圖，清楚對照視覺差異。卡片封面用第一張圖（或最新服務的圖）。</p>
+      <div style="display:flex;gap:8px;margin-top:12px;">
+        <div class="placeholder" style="flex:1;height:80px;display:flex;align-items:center;justify-content:center;font-size:12px;">🍌 Nano Banana</div>
+        <div class="placeholder" style="flex:1;height:80px;display:flex;align-items:center;justify-content:center;font-size:12px;">🤖 GPT Image</div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:4px;">
+        <div style="flex:1;text-align:center;font-size:11px;color:#888;">Nano Banana 版</div>
+        <div style="flex:1;text-align:center;font-size:11px;color:#888;">GPT Image 版</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Tab 切換（Tabbed View）</h3>
+      <p>Detail page 圖片區有 tab，點 "Nano Banana" / "GPT Image" 切換查看對應生成圖。適合圖片較大時保持版面整潔。卡片封面用 cover（預設服務的圖）。</p>
+      <div style="margin-top:12px;">
+        <div style="display:flex;gap:4px;border-bottom:2px solid #eee;">
+          <div style="padding:6px 12px;background:#f5a623;color:#fff;border-radius:4px 4px 0 0;font-size:12px;">🍌 Nano Banana</div>
+          <div style="padding:6px 12px;background:#f0f0f0;color:#888;border-radius:4px 4px 0 0;font-size:12px;">🤖 GPT Image</div>
+        </div>
+        <div class="placeholder" style="height:80px;display:flex;align-items:center;justify-content:center;font-size:12px;border-radius:0 4px 4px 4px;">顯示選中服務的圖片</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>垂直堆疊（Stacked）</h3>
+      <p>Detail page 依序展示各服務版本，每個區塊有服務名稱標題 + 對應圖片。類似現有的多圖 prompt 格式（001 號目前就有多張圖），不需要改動太多現有結構。</p>
+      <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="background:#f5a623;color:#fff;padding:2px 8px;border-radius:12px;font-size:11px;">🍌 Nano Banana</span>
+          <div class="placeholder" style="flex:1;height:40px;"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="background:#10b981;color:#fff;padding:2px 8px;border-radius:12px;font-size:11px;">🤖 GPT Image</span>
+          <div class="placeholder" style="flex:1;height:40px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

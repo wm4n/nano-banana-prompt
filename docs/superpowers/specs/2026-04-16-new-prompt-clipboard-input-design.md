@@ -42,14 +42,31 @@ pbpaste available?
 - If unavailable, skip clipboard step, go directly to nano
 
 **Editor fallback:**
-- Create temp file: `mktemp /tmp/nbp-prompt-XXXXX.txt`
+- Create temp file: `mktemp /tmp/nbp-prompt-XXXXX` (no suffix — BSD `mktemp` requires template to end with `X`)
 - Open: `nano "$tmpfile"`
 - Read file content after nano exits
 - Delete temp file with `rm -f "$tmpfile"`
 
+**Empty file handling (nano):**
+- If the file is empty after nano exits (user saved nothing), warn and retry nano once
+- On the second attempt, if still empty, accept as empty prompt (consistent with original behavior which allowed empty input)
+
+**nano not available (all paths):**
+- Check with `command -v nano` before opening, regardless of how we got to the editor step
+- This covers: (a) pbpaste absent → go to nano → nano absent, and (b) pbpaste present, clipboard empty or declined → go to nano → nano absent
+- In all cases where nano is absent, fallback to the original line-by-line `read` loop with `END` sentinel
+
+**Temp file cleanup under `set -euo pipefail`:**
+- Register cleanup immediately after `mktemp` with `trap 'rm -f "$tmpfile"' EXIT`
+- Do NOT rely on a plain `rm -f` at the end of the block — a command failure before that line would leak the temp file
+- The trap ensures cleanup on any exit path (success, error, or signal)
+
+**Clipboard display:**
+- Echo the full clipboard content to the terminal with `echo "$clipboard_content"` (no truncation — user chose full text display)
+
 **Backward compatibility:**
-- If `pbpaste` is absent (Linux/CI), nano is used automatically — no error
-- The `END` sentinel approach is removed for this step only
+- If `pbpaste` is absent (Linux/CI), nano is used; if nano is also absent, use the original `END` loop
+- The `END` sentinel loop is retained as the final fallback only
 
 ---
 

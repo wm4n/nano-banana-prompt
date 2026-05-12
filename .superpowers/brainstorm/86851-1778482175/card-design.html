@@ -1,0 +1,51 @@
+<h2>首頁卡片設計</h2>
+<p class="subtitle">Card 上要怎麼標示這個 prompt 支援哪些服務？</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>小圖示 badge（疊在封面圖上）</h3>
+      <p>封面圖右下角疊加服務 icon/badge，不佔版面空間，視覺乾淨。</p>
+      <div style="position:relative;width:100%;max-width:180px;margin:12px auto 0;">
+        <div class="placeholder" style="height:100px;"></div>
+        <div style="position:absolute;bottom:6px;right:6px;display:flex;gap:4px;">
+          <span style="background:#f5a623;color:#fff;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:bold;">🍌 NB</span>
+          <span style="background:#10b981;color:#fff;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:bold;">🤖 GPT</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>卡片底部 tag 列（與現有分類 tag 同排）</h3>
+      <p>服務 badge 和現有分類 tag 一起顯示在卡片底部，視覺一致，用顏色區分服務與分類。</p>
+      <div style="background:#f9f9f9;border-radius:6px;padding:10px;margin-top:12px;">
+        <div style="background:#e0e0e0;height:60px;border-radius:4px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#aaa;">封面圖</div>
+        <div style="font-size:12px;font-weight:600;margin-bottom:6px;">Isometric City Scene</div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="background:#f5a623;color:#fff;padding:1px 7px;border-radius:10px;font-size:10px;">🍌 Nano Banana</span>
+          <span style="background:#10b981;color:#fff;padding:1px 7px;border-radius:10px;font-size:10px;">🤖 GPT Image</span>
+          <span style="background:#e8e8e8;color:#666;padding:1px 7px;border-radius:10px;font-size:10px;">City & Architecture</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>只在 filter bar 標示，卡片保持現狀</h3>
+      <p>卡片不顯示服務 badge，使用者透過 service filter bar 來篩選。卡片設計最簡潔，不增加視覺噪音。</p>
+      <div style="background:#f9f9f9;border-radius:6px;padding:10px;margin-top:12px;">
+        <div style="background:#e0e0e0;height:60px;border-radius:4px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#aaa;">封面圖</div>
+        <div style="font-size:12px;font-weight:600;margin-bottom:6px;">Isometric City Scene</div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="background:#e8e8e8;color:#666;padding:1px 7px;border-radius:10px;font-size:10px;">City & Architecture</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
