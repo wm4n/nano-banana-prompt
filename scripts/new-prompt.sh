@@ -306,7 +306,11 @@ if [[ ${#SELECTED_SERVICES[@]} -gt 1 ]]; then
     while true; do
       printf "  Image for %s (URL, local file, or Enter to skip): " "$service_name"
       IFS= read -r svc_img_input
-      svc_img_input="${svc_img_input# }"; svc_img_input="${svc_img_input% }"
+      svc_img_input="${svc_img_input//\\ / }"
+      svc_img_input="${svc_img_input%$'\r'}"
+      svc_img_input="${svc_img_input#\'}"; svc_img_input="${svc_img_input%\'}"
+      svc_img_input="${svc_img_input#\"}"; svc_img_input="${svc_img_input%\"}"
+      svc_img_input="${svc_img_input# }";  svc_img_input="${svc_img_input% }"
       
       # Empty input is valid (skip this service image)
       if [[ -z "$svc_img_input" ]]; then
