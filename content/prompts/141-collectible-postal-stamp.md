@@ -10,7 +10,7 @@ services:
   - "gpt-image"
 service_images:
   nano-banana: "/nano-banana-prompt/images/prompts/141-collectible-postal-stamp-nano-banana.png"
-  gpt-image: "/nano-banana-prompt/images/prompts/141-collectible-postal-stamp-gpt-image.png"
+  gpt-image: "/nano-banana-prompt/images/prompts/141-collectible-postal-stamp-1.png"
 cover: "/nano-banana-prompt/images/prompts/141-collectible-postal-stamp-1.png"
 source: "@Goodmanprotocol"
 sourceUrl: "https://x.com/Goodmanprotocol/status/2054257333598077100?s=20"
@@ -18,8 +18,6 @@ date: 2026-05-13
 ---
 
 ### Prompt
-
-<img width="750" alt="Collectible Postal-Stamp" src="/nano-banana-prompt/images/prompts/141-collectible-postal-stamp-1.png" />
 
 > Design a premium 4:5 collectible postal-stamp poster for [CITY], where the entire composition is one monumental luxury postage stamp filling the frame edge-to-edge like a rare national artifact. The stamp should dominate the canvas with oversized tactile perforation edges, elegant engraved borders, and immersive object-focused composition.
 > 
