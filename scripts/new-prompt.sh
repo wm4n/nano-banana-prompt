@@ -279,6 +279,7 @@ done
 # Parallel arrays for bash 3.2+ compatibility
 SERVICE_IMAGE_SLUGS=()
 SERVICE_IMAGE_URLS=()
+SERVICE_IMAGE_DESTS=()
 
 if [[ ${#SELECTED_SERVICES[@]} -gt 1 ]]; then
   echo ""
@@ -313,22 +314,25 @@ if [[ ${#SELECTED_SERVICES[@]} -gt 1 ]]; then
       fi
       
       svc_img_url=""
+      svc_img_dest=""
       
       # Check if input is a local file path
       if [[ -f "$svc_img_input" ]]; then
         # Auto-upload local file
         IMG_EXT=$(lowercase_ext "${svc_img_input##*.}")
-        svc_dest="$IMAGES_DIR/${FILENAME}-${slug}.${IMG_EXT}"
-        cp "$svc_img_input" "$svc_dest"
+        svc_img_dest="$IMAGES_DIR/${FILENAME}-${slug}.${IMG_EXT}"
+        cp "$svc_img_input" "$svc_img_dest"
         svc_img_url="${BASE_URL}/images/prompts/${FILENAME}-${slug}.${IMG_EXT}"
         info "    ✓ Uploaded: ${svc_img_input##*/} → static/images/prompts/${FILENAME}-${slug}.${IMG_EXT}"
         SERVICE_IMAGE_SLUGS+=("$slug")
         SERVICE_IMAGE_URLS+=("$svc_img_url")
+        SERVICE_IMAGE_DESTS+=("$svc_img_dest")
         break
       elif [[ "$svc_img_input" =~ ^(https?://|/) ]]; then
         # Valid URL format
         SERVICE_IMAGE_SLUGS+=("$slug")
         SERVICE_IMAGE_URLS+=("$svc_img_input")
+        SERVICE_IMAGE_DESTS+=("")
         break
       else
         # Invalid input
@@ -519,6 +523,11 @@ info "--- Committing ---"
 cd "$REPO_ROOT"
 for i in "${!STEP_IMAGE_DESTS[@]}"; do
   dest="${STEP_IMAGE_DESTS[$i]}"
+  [[ -z "$dest" ]] && continue
+  git add "${dest#$REPO_ROOT/}"
+done
+for i in "${!SERVICE_IMAGE_DESTS[@]}"; do
+  dest="${SERVICE_IMAGE_DESTS[$i]}"
   [[ -z "$dest" ]] && continue
   git add "${dest#$REPO_ROOT/}"
 done
