@@ -11,8 +11,8 @@ services:
   - "nano-banana"
   - "gpt-image"
 service_images:
-  nano-banana: "/Users/william.chao/Downloads/Gemini_Generated_Image_fq933jfq933jfq93.png"
-  gpt-image: "/Users/william.chao/Downloads/ChatGPT\ Image\ 2026年5月11日\ 下午01_08_45拷貝.png"
+  nano-banana: "/nano-banana-prompt/images/prompts/140-explorer-s-notebook-gemini.png"
+  gpt-image: "/nano-banana-prompt/images/prompts/140-explorer-s-notebook-1.png"
 cover: "/nano-banana-prompt/images/prompts/140-explorer-s-notebook-1.png"
 source: "@Mind_Boticni"
 sourceUrl: "https://x.com/Mind_Boticni/status/2053433266913558643?s=20"
