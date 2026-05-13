@@ -284,11 +284,26 @@ if [[ ${#SELECTED_SERVICES[@]} -gt 1 ]]; then
   echo ""
   info "--- Service Images ---"
   info "(Optional: provide a result image URL or local file for each service, or press Enter to skip)"
+  
+  # Show available step images for quick reference
+  if [[ ${#STEP_IMAGE_URLS[@]} -gt 0 ]]; then
+    echo ""
+    info "Available step images (you can paste these URLs):"
+    for i in "${!STEP_IMAGE_URLS[@]}"; do
+      url="${STEP_IMAGE_URLS[$i]}"
+      if [[ -n "$url" ]]; then
+        step_idx=$((i + 1))
+        printf "  Step %d: %s\n" "$step_idx" "$url"
+      fi
+    done
+    echo ""
+  fi
+  
   for i in "${!SELECTED_SERVICES[@]}"; do
     slug="${SELECTED_SERVICES[$i]}"
     service_name="${SELECTED_SERVICE_NAMES[$i]}"
     while true; do
-      printf "  Image for %s (URL or local file, or Enter to skip): " "$service_name"
+      printf "  Image for %s (URL, local file, or Enter to skip): " "$service_name"
       IFS= read -r svc_img_input
       svc_img_input="${svc_img_input# }"; svc_img_input="${svc_img_input% }"
       
