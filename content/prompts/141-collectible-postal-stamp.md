@@ -10,7 +10,7 @@ services:
   - "gpt-image"
 service_images:
   nano-banana: "/nano-banana-prompt/images/prompts/141-collectible-postal-stamp-nano-banana.png"
-  gpt-image: "/Users/william.chao/Downloads/ChatGPT\ Image\ 2026年5月13日\ 下午06_04_44.png"
+  gpt-image: "/nano-banana-prompt/images/prompts/141-collectible-postal-stamp-gpt-image.png"
 cover: "/nano-banana-prompt/images/prompts/141-collectible-postal-stamp-1.png"
 source: "@Goodmanprotocol"
 sourceUrl: "https://x.com/Goodmanprotocol/status/2054257333598077100?s=20"
