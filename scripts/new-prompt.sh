@@ -283,36 +283,42 @@ SERVICE_IMAGE_URLS=()
 if [[ ${#SELECTED_SERVICES[@]} -gt 1 ]]; then
   echo ""
   info "--- Service Images ---"
-  info "(Optional: provide a result image URL for each service, or press Enter to skip)"
+  info "(Optional: provide a result image URL or local file for each service, or press Enter to skip)"
   for i in "${!SELECTED_SERVICES[@]}"; do
     slug="${SELECTED_SERVICES[$i]}"
     service_name="${SELECTED_SERVICE_NAMES[$i]}"
     while true; do
-      printf "  Image URL for %s (or Enter to skip): " "$service_name"
-      IFS= read -r svc_img_url
-      svc_img_url="${svc_img_url# }"; svc_img_url="${svc_img_url% }"
+      printf "  Image for %s (URL or local file, or Enter to skip): " "$service_name"
+      IFS= read -r svc_img_input
+      svc_img_input="${svc_img_input# }"; svc_img_input="${svc_img_input% }"
       
       # Empty input is valid (skip this service image)
-      if [[ -z "$svc_img_url" ]]; then
+      if [[ -z "$svc_img_input" ]]; then
         break
       fi
       
-      # Check if input looks like a local file path (not a URL)
-      if [[ "$svc_img_url" =~ ^/ ]] || [[ -f "$svc_img_url" ]]; then
-        err "    Local file path detected: '$svc_img_url'"
-        warn "    Please provide an online URL (e.g., https://...) instead."
-        warn "    You can upload the file manually and provide the GitHub URL."
-        continue
-      fi
+      svc_img_url=""
       
-      # Valid URL format check (starts with http/https or /)
-      if [[ "$svc_img_url" =~ ^(https?://|/) ]]; then
+      # Check if input is a local file path
+      if [[ -f "$svc_img_input" ]]; then
+        # Auto-upload local file
+        IMG_EXT=$(lowercase_ext "${svc_img_input##*.}")
+        svc_dest="$IMAGES_DIR/${FILENAME}-${slug}.${IMG_EXT}"
+        cp "$svc_img_input" "$svc_dest"
+        svc_img_url="${BASE_URL}/images/prompts/${FILENAME}-${slug}.${IMG_EXT}"
+        info "    ✓ Uploaded: ${svc_img_input##*/} → static/images/prompts/${FILENAME}-${slug}.${IMG_EXT}"
         SERVICE_IMAGE_SLUGS+=("$slug")
         SERVICE_IMAGE_URLS+=("$svc_img_url")
         break
+      elif [[ "$svc_img_input" =~ ^(https?://|/) ]]; then
+        # Valid URL format
+        SERVICE_IMAGE_SLUGS+=("$slug")
+        SERVICE_IMAGE_URLS+=("$svc_img_input")
+        break
       else
-        err "    Invalid URL format: '$svc_img_url'"
-        warn "    Please enter a valid URL (starting with http://, https://, or /)"
+        # Invalid input
+        err "    File not found and invalid URL format: '$svc_img_input'"
+        warn "    Please provide either a local file path or a URL (https://... or /...)"
         continue
       fi
     done
