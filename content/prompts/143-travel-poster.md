@@ -12,7 +12,7 @@ services:
 service_images:
   nano-banana: "/nano-banana-prompt/images/prompts/143-travel-poster-nano-banana.png"
   gpt-image: "/nano-banana-prompt/images/prompts/143-travel-poster-gpt-image.png"
-cover: "/nano-banana-prompt/images/prompts/143-travel-poster-gpt-image.png""
+cover: "/nano-banana-prompt/images/prompts/143-travel-poster-gpt-image.png"
 source: "@jzaib4269"
 sourceUrl: "https://x.com/jzaib4269/status/2056219475829993724?s=20"
 date: 2026-05-20
