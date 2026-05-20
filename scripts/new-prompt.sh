@@ -275,6 +275,22 @@ while true; do
   [[ "$more" != "y" && "$more" != "Y" ]] && break
 done
 
+# ── Build image URL and dest arrays (needed before service image dedup check) ──
+COVER_URL=""
+for i in "${!STEP_IMAGE_SRCS[@]}"; do
+  src="${STEP_IMAGE_SRCS[$i]}"
+  if [[ -z "$src" ]]; then
+    STEP_IMAGE_URLS[$i]=""
+    STEP_IMAGE_DESTS[$i]=""
+    continue
+  fi
+  IMG_EXT=$(lowercase_ext "${src##*.}")
+  step_idx=$((i + 1))
+  STEP_IMAGE_URLS[$i]="${BASE_URL}/images/prompts/${FILENAME}-${step_idx}.${IMG_EXT}"
+  STEP_IMAGE_DESTS[$i]="$IMAGES_DIR/${FILENAME}-${step_idx}.${IMG_EXT}"
+  [[ -z "$COVER_URL" ]] && COVER_URL="${STEP_IMAGE_URLS[$i]}"
+done
+
 # ── Service images (only when 2+ services selected) ──────────────────────────
 # Parallel arrays for bash 3.2+ compatibility
 SERVICE_IMAGE_SLUGS=()
@@ -322,15 +338,30 @@ if [[ ${#SELECTED_SERVICES[@]} -gt 1 ]]; then
       
       # Check if input is a local file path
       if [[ -f "$svc_img_input" ]]; then
-        # Auto-upload local file
-        IMG_EXT=$(lowercase_ext "${svc_img_input##*.}")
-        svc_img_dest="$IMAGES_DIR/${FILENAME}-${slug}.${IMG_EXT}"
-        cp "$svc_img_input" "$svc_img_dest"
-        svc_img_url="${BASE_URL}/images/prompts/${FILENAME}-${slug}.${IMG_EXT}"
-        info "    ✓ Uploaded: ${svc_img_input##*/} → static/images/prompts/${FILENAME}-${slug}.${IMG_EXT}"
-        SERVICE_IMAGE_SLUGS+=("$slug")
-        SERVICE_IMAGE_URLS+=("$svc_img_url")
-        SERVICE_IMAGE_DESTS+=("$svc_img_dest")
+        # Check if this file is identical to an existing step image — reuse URL if so
+        svc_img_reused=false
+        for j in "${!STEP_IMAGE_SRCS[@]}"; do
+          if [[ "${STEP_IMAGE_SRCS[$j]}" == "$svc_img_input" && -n "${STEP_IMAGE_URLS[$j]:-}" ]]; then
+            svc_img_url="${STEP_IMAGE_URLS[$j]}"
+            info "    ✓ Reused step $((j+1)) image (same file): ${svc_img_url}"
+            SERVICE_IMAGE_SLUGS+=("$slug")
+            SERVICE_IMAGE_URLS+=("$svc_img_url")
+            SERVICE_IMAGE_DESTS+=("")
+            svc_img_reused=true
+            break
+          fi
+        done
+        if [[ "$svc_img_reused" == false ]]; then
+          # Auto-upload local file
+          IMG_EXT=$(lowercase_ext "${svc_img_input##*.}")
+          svc_img_dest="$IMAGES_DIR/${FILENAME}-${slug}.${IMG_EXT}"
+          cp "$svc_img_input" "$svc_img_dest"
+          svc_img_url="${BASE_URL}/images/prompts/${FILENAME}-${slug}.${IMG_EXT}"
+          info "    ✓ Uploaded: ${svc_img_input##*/} → static/images/prompts/${FILENAME}-${slug}.${IMG_EXT}"
+          SERVICE_IMAGE_SLUGS+=("$slug")
+          SERVICE_IMAGE_URLS+=("$svc_img_url")
+          SERVICE_IMAGE_DESTS+=("$svc_img_dest")
+        fi
         break
       elif [[ "$svc_img_input" =~ ^(https?://|/) ]]; then
         # Valid URL format
@@ -347,22 +378,6 @@ if [[ ${#SELECTED_SERVICES[@]} -gt 1 ]]; then
     done
   done
 fi
-
-# ── Build image URL and dest arrays ───────────────────────────────────────────
-COVER_URL=""
-for i in "${!STEP_IMAGE_SRCS[@]}"; do
-  src="${STEP_IMAGE_SRCS[$i]}"
-  if [[ -z "$src" ]]; then
-    STEP_IMAGE_URLS[$i]=""
-    STEP_IMAGE_DESTS[$i]=""
-    continue
-  fi
-  IMG_EXT=$(lowercase_ext "${src##*.}")
-  step_idx=$((i + 1))
-  STEP_IMAGE_URLS[$i]="${BASE_URL}/images/prompts/${FILENAME}-${step_idx}.${IMG_EXT}"
-  STEP_IMAGE_DESTS[$i]="$IMAGES_DIR/${FILENAME}-${step_idx}.${IMG_EXT}"
-  [[ -z "$COVER_URL" ]] && COVER_URL="${STEP_IMAGE_URLS[$i]}"
-done
 
 # ── Tags (AI inference from all step prompts combined, fallback to keywords) ──
 ALL_PROMPTS=""
