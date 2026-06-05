@@ -11,7 +11,7 @@ services:
 service_images:
   nano-banana: "/nano-banana-prompt/images/prompts/151-pastel-paper-collage-nano-banana.png"
   gpt-image: "/nano-banana-prompt/images/prompts/151-pastel-paper-collage-gpt-image.png"
-cover: ""
+cover: "/nano-banana-prompt/images/prompts/151-pastel-paper-collage-gpt-image.png"
 source: "@Naiknelofar788"
 sourceUrl: "https://x.com/Naiknelofar788/status/2062361818291740689?s=20"
 date: 2026-06-05
