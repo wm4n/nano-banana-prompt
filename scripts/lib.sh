@@ -31,22 +31,21 @@ keyword_infer_tags() {
   fi
 }
 
-# AI-based tag inference using Copilot CLI (claude-haiku-4.5).
+# AI-based tag inference using Claude CLI (claude-haiku-4.5).
 # Returns space-separated slugs on stdout, or exits non-zero on failure.
 ai_infer_tags() {
   local prompt_text="$1"
   local tag_list
   tag_list=$(printf '%s\n' "${ALL_SLUGS[@]}" | paste -sd',' - | sed 's/,/, /g')
   local result
-  result=$(copilot --model claude-haiku-4.5 --no-ask-user -s \
-    -p "You are a classifier for AI image generation prompts.
+  result=$(claude -p "You are a classifier for AI image generation prompts.
 Given the prompt below, pick which tags apply from the list.
 Return ONLY the matching tag slugs as a comma-separated list, nothing else.
 You may return one or multiple tags. Use only slugs from the list.
 
 Tags: ${tag_list}
 
-Prompt: ${prompt_text}" 2>/dev/null) || return 1
+Prompt: ${prompt_text}" --model claude-haiku-4-5-20251001 2>/dev/null) || return 1
   [[ -z "$result" ]] && return 1
 
   echo "$result" | tr ',' ' ' | tr -s ' ' | sed 's/^ //;s/ $//'

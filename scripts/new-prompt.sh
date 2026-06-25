@@ -387,7 +387,7 @@ done
 
 echo ""
 info "--- Tags ---"
-echo -n "  Classifying tags with Copilot (claude-haiku-4.5)…"
+echo -n "  Classifying tags with Claude (claude-haiku-4.5)…"
 inferred_str=""
 if inferred_str=$(ai_infer_tags "$ALL_PROMPTS") && [[ -n "$inferred_str" ]]; then
   echo " ✓"
