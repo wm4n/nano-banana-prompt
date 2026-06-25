@@ -444,6 +444,27 @@ if [[ ${#CHOSEN_LABELS[@]} -eq 0 ]]; then
   CHOSEN_LABELS=("Art Styles")
 fi
 
+# ── Cover fallback: pick from service images if cover is still empty ─────────
+if [[ -z "$COVER_URL" && ${#SERVICE_IMAGE_URLS[@]} -gt 0 ]]; then
+  echo ""
+  info "--- Cover Image ---"
+  warn "No cover image set (no step images were provided)."
+  echo ""
+  info "Available service images:"
+  for i in "${!SERVICE_IMAGE_SLUGS[@]}"; do
+    printf "  [%d] %s — %s\n" "$((i+1))" "${SERVICE_IMAGE_SLUGS[$i]}" "${SERVICE_IMAGE_URLS[$i]}"
+  done
+  echo ""
+  printf "Select a service image as cover (1–%d, or press Enter to skip): " "${#SERVICE_IMAGE_URLS[@]}"
+  IFS= read -r cover_choice
+  if [[ "$cover_choice" =~ ^[0-9]+$ ]] && (( cover_choice >= 1 && cover_choice <= ${#SERVICE_IMAGE_URLS[@]} )); then
+    COVER_URL="${SERVICE_IMAGE_URLS[$((cover_choice - 1))]}"
+    success "Cover set to: $COVER_URL"
+  else
+    warn "No cover selected — cover will be empty."
+  fi
+fi
+
 # ── Build markdown content ────────────────────────────────────────────────────
 TAG_YAML=""
 for label in "${CHOSEN_LABELS[@]}"; do
