@@ -3,6 +3,7 @@ title: "Video Game Movie Poster"
 num: 156
 tags:
   - "Poster & Nature"
+  - "Character & Portrait"
 services:
   - "nano-banana"
   - "gpt-image"
